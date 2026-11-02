@@ -1,0 +1,100 @@
+{
+  "errors": [],
+  "reports": [
+    {
+      "view": "Inside the Dojo",
+      "pos": [
+        3.4,
+        -12.5
+      ],
+      "height": 2.54,
+      "fps": 51.82760501909433,
+      "speed": 0,
+      "score": 0,
+      "over": false,
+      "draws": 48,
+      "tris": 1544542,
+      "started": true,
+      "evening": false,
+      "texturesLoaded": 23,
+      "grassBlades": 41704,
+      "windTime": 7.4216999999821445
+    },
+    {
+      "view": "The Falling Water",
+      "pos": [
+        26.5,
+        8
+      ],
+      "height": 2,
+      "fps": 50.23022185014646,
+      "speed": 0,
+      "score": 0,
+      "over": false,
+      "draws": 49,
+      "tris": 1604464,
+      "started": true,
+      "evening": false,
+      "texturesLoaded": 23,
+      "grassBlades": 41704,
+      "windTime": 11.038099999982126
+    },
+    {
+      "view": "The Returning Garden",
+      "pos": [
+        -20,
+        17
+      ],
+      "height": 1.8,
+      "fps": 41.85851820845538,
+      "speed": 0,
+      "score": 0,
+      "over": false,
+      "draws": 113,
+      "tris": 1677350,
+      "started": true,
+      "evening": false,
+      "texturesLoaded": 23,
+      "grassBlades": 41704,
+      "windTime": 14.671199999982111
+    },
+    {
+      "view": "The Silent Bell",
+      "pos": [
+        31,
+        -40
+      ],
+      "height": 12.5,
+      "fps": 36.277382447327994,
+      "speed": 0,
+      "score": 0,
+      "over": false,
+      "draws": 93,
+      "tris": 1693034,
+      "started": true,
+      "evening": false,
+      "texturesLoaded": 23,
+      "grassBlades": 41704,
+      "windTime": 18.320899999982107
+    },
+    {
+      "view": "Cloudveil Courtyard",
+      "pos": [
+        12,
+        29
+      ],
+      "height": 4.4,
+      "fps": 44.64908608901907,
+      "speed": 0,
+      "score": 0,
+      "over": false,
+      "draws": 90,
+      "tris": 1687882,
+      "started": true,
+      "evening": false,
+      "texturesLoaded": 23,
+      "grassBlades": 41704,
+      "windTime": 22.053899999982093
+    }
+  ]
+}

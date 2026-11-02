@@ -1,0 +1,116 @@
+[
+ {
+  "ok": true,
+  "mounts": null,
+  "meshes": 10,
+  "tris": 690,
+  "materials": 2,
+  "size": [
+   3.824,
+   2.08,
+   2.692
+  ],
+  "groundOffset": 0,
+  "centreOffset": [
+   0,
+   0
+  ],
+  "sides": {
+   "front": {
+    "coverage": 0.2362,
+    "edgeDensity": 0.0625
+   },
+   "right": {
+    "coverage": 0.2174,
+    "edgeDensity": 0.064
+   },
+   "back": {
+    "coverage": 0.2442,
+    "edgeDensity": 0.0593
+   },
+   "left": {
+    "coverage": 0.2064,
+    "edgeDensity": 0.0692
+   }
+  },
+  "error": null,
+  "name": "rock_craft",
+  "problems": []
+ },
+ {
+  "ok": true,
+  "mounts": null,
+  "meshes": 5,
+  "tris": 180,
+  "materials": 1,
+  "size": [
+   3.858,
+   2.484,
+   2.701
+  ],
+  "groundOffset": 0,
+  "centreOffset": [
+   0,
+   0
+  ],
+  "sides": {
+   "front": {
+    "coverage": 0.2,
+    "edgeDensity": 0.0611
+   },
+   "right": {
+    "coverage": 0.1765,
+    "edgeDensity": 0.0767
+   },
+   "back": {
+    "coverage": 0.2005,
+    "edgeDensity": 0.0855
+   },
+   "left": {
+    "coverage": 0.1789,
+    "edgeDensity": 0.0714
+   }
+  },
+  "error": null,
+  "name": "rock_primitive",
+  "problems": []
+ },
+ {
+  "ok": true,
+  "mounts": null,
+  "meshes": 5,
+  "tris": 280,
+  "materials": 1,
+  "size": [
+   3.958,
+   2.56,
+   3.1
+  ],
+  "groundOffset": 0,
+  "centreOffset": [
+   0,
+   0
+  ],
+  "sides": {
+   "front": {
+    "coverage": 0.2495,
+    "edgeDensity": 0.0283
+   },
+   "right": {
+    "coverage": 0.2331,
+    "edgeDensity": 0.0317
+   },
+   "back": {
+    "coverage": 0.2492,
+    "edgeDensity": 0.032
+   },
+   "left": {
+    "coverage": 0.2245,
+    "edgeDensity": 0.0348
+   }
+  },
+  "error": null,
+  "name": "rock_profile",
+  "problems": []
+ }
+]

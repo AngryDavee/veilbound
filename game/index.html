@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#182923" />
+  <meta name="description" content="An original, explorable mountain sanctuary. The first chapter of Veilbound." />
+  <title>Veilbound — Cloudveil Sanctuary</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23d9c59b' d='M16 2 30 16 16 30 2 16zm0 5L7 16l9 9 9-9z'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="./style.css" />
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script>
+</head>
+<body>
+  <canvas id="world" aria-label="Cloudveil Sanctuary, an explorable three-dimensional mountain landscape"></canvas>
+  <div id="veil"></div>
+  <div id="loading" role="status"><span class="sigil">◇</span><span>Entering the mountains</span><div class="loading-line"><i id="load-progress"></i></div><small id="load-label">Preparing Cloudveil Sanctuary</small></div>
+  <header class="interface"><a class="brand" href="#" id="home" aria-label="Return to title"><span class="brand-icon">◇</span> VEILBOUND</a><div class="header-actions"><button id="time-toggle" aria-label="Change time of day"><span id="sun-icon">☼</span><span id="time-label">Morning</span></button><button id="audio-toggle" aria-label="Enable ambient sound"><span>♫</span><span id="audio-label">Sound off</span></button><button id="journal-toggle" aria-label="Open field journal">Journal <span id="note-count">0/3</span></button></div></header>
+  <main id="title" class="interface">
+    <div class="eyebrow"><span></span> CHAPTER I · THE VALLEY OF SILENT BELLS</div>
+    <h1>Beyond the mist,<br><em>a promise waits.</em></h1>
+    <p>A sanctuary above the clouds. A missing guardian.<br>And a bell that has forgotten how to ring.</p>
+    <div class="title-buttons"><button id="enter" class="primary">Enter the sanctuary <span>↗</span></button><button id="tour" class="secondary">Explore all locations <span>→</span></button></div>
+    <div class="title-caption"><span class="fine-line"></span><span>CLOUDVEIL SANCTUARY<br><small>First light in the northern mountains</small></span></div>
+  </main>
+  <div id="title-foot" class="interface"><span>AN EXPLORABLE WORLD</span><span>01 <i>/</i> CLOUDVEIL</span></div>
+  <section id="hud" class="interface" hidden>
+    <div id="compass"><span id="bearing">N</span><div><i></i><b>◇</b><i></i></div></div>
+    <div id="location"><span class="eyebrow" id="location-kind">THE MOUNTAIN SANCTUARY</span><h2 id="location-name">Cloudveil Courtyard</h2><span id="location-sub">Follow the sound of water.</span></div>
+    <div id="objective"><span class="objective-dot"></span><span>Find traces of the missing guardian <b id="objective-count">0 / 3</b></span></div>
+    <div id="controls"><span><kbd>W A S D</kbd> Walk</span><span><kbd>DRAG</kbd> Look</span><span><kbd>SHIFT</kbd> Run</span><span><kbd>V</kbd> Views</span><span><kbd>P</kbd> Photo</span></div>
+    <div id="destination-shortcuts"><span>EXPLORE THE SANCTUARY</span><button data-view="interior">Temple interior ↗</button><button data-view="water">Waterfall trail ↗</button><button data-view="garden">Returning garden ↗</button></div>
+    <button id="views-toggle" aria-label="Open scenic viewpoints">◇ All six locations</button>
+    <div id="crosshair">·</div>
+    <div id="interact" hidden><button id="interact-button"><kbd>E</kbd><span id="interact-text">Inspect</span></button></div>
+    <div id="touch-controls"><div id="joystick" aria-label="Movement joystick"><i></i></div><span>Drag the view to look around</span></div>
+  </section>
+  <nav id="views" class="interface" aria-label="Scenic viewpoints" hidden><div class="panel-title">A DIFFERENT PERSPECTIVE <button id="close-views" aria-label="Close viewpoints">×</button></div><button data-view="arrival"><span>01</span>The courtyard <small>Arrival</small></button><button data-view="hall"><span>02</span>The training hall <small>Craft & quiet</small></button><button data-view="interior"><span>03</span>Inside the dojo <small>Tatami, lanterns & training equipment</small></button><button data-view="water"><span>04</span>Falling water <small>The eastern trail</small></button><button data-view="shrine"><span>05</span>The silent bell <small>Above the valley</small></button><button data-view="garden"><span>06</span>A place to return to <small>The garden</small></button></nav>
+  <dialog id="journal"><button class="close-dialog" aria-label="Close journal">×</button><span class="eyebrow">THE VALLEY OF SILENT BELLS</span><h2>A guardian’s traces</h2><p class="journal-intro">Your sibling came to Cloudveil before the mountain bells fell silent. Somewhere in these familiar places, they left a way to follow.</p><div id="journal-notes"></div><div class="journal-footer">Explore the hall, the garden, and the upper bell pavilion.</div></dialog>
+  <dialog id="discovery"><button class="close-dialog" aria-label="Close discovery">×</button><span class="eyebrow">A TRACE REMAINS</span><h2 id="discovery-title"></h2><p id="discovery-text"></p><button id="keep-note" class="primary">Keep in journal <span>↗</span></button></dialog>
+  <div id="toast" role="status" hidden></div>
+  <div id="photo-hint" hidden>PHOTO VIEW · Press P or tap to return</div>
+  <div id="error" hidden role="alert"><h2>The mountain path could not load.</h2><p id="error-text"></p><button onclick="location.reload()">Try again</button></div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

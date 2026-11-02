@@ -1,0 +1,116 @@
+[
+ {
+  "ok": true,
+  "mounts": null,
+  "meshes": 25,
+  "tris": 444,
+  "materials": 3,
+  "size": [
+   0.98,
+   2.025,
+   0.72
+  ],
+  "groundOffset": 0,
+  "centreOffset": [
+   0,
+   0
+  ],
+  "sides": {
+   "front": {
+    "coverage": 0.1767,
+    "edgeDensity": 0.1407
+   },
+   "right": {
+    "coverage": 0.1774,
+    "edgeDensity": 0.138
+   },
+   "back": {
+    "coverage": 0.1767,
+    "edgeDensity": 0.1675
+   },
+   "left": {
+    "coverage": 0.1774,
+    "edgeDensity": 0.1404
+   }
+  },
+  "error": null,
+  "name": "lantern_craft",
+  "problems": []
+ },
+ {
+  "ok": true,
+  "mounts": null,
+  "meshes": 19,
+  "tris": 364,
+  "materials": 3,
+  "size": [
+   0.764,
+   2.025,
+   0.764
+  ],
+  "groundOffset": 0,
+  "centreOffset": [
+   0,
+   0
+  ],
+  "sides": {
+   "front": {
+    "coverage": 0.1702,
+    "edgeDensity": 0.0986
+   },
+   "right": {
+    "coverage": 0.1725,
+    "edgeDensity": 0.1034
+   },
+   "back": {
+    "coverage": 0.1702,
+    "edgeDensity": 0.1056
+   },
+   "left": {
+    "coverage": 0.1725,
+    "edgeDensity": 0.1045
+   }
+  },
+  "error": null,
+  "name": "lantern_primitive",
+  "problems": []
+ },
+ {
+  "ok": true,
+  "mounts": null,
+  "meshes": 18,
+  "tris": 468,
+  "materials": 3,
+  "size": [
+   0.98,
+   2.025,
+   0.72
+  ],
+  "groundOffset": 0,
+  "centreOffset": [
+   0,
+   0
+  ],
+  "sides": {
+   "front": {
+    "coverage": 0.1561,
+    "edgeDensity": 0.1307
+   },
+   "right": {
+    "coverage": 0.1568,
+    "edgeDensity": 0.1079
+   },
+   "back": {
+    "coverage": 0.1561,
+    "edgeDensity": 0.1443
+   },
+   "left": {
+    "coverage": 0.1568,
+    "edgeDensity": 0.1118
+   }
+  },
+  "error": null,
+  "name": "lantern_profile",
+  "problems": []
+ }
+]

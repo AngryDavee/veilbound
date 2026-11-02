@@ -1,0 +1,404 @@
+{
+  "operation": "ef9f8b7a-03f0-4d7e-b903-3c7ba5129b06",
+  "credits": 48,
+  "accountingComplete": true,
+  "files": [
+    {
+      "fid": "12cac41b-e03e-4b9c-b7fc-853cf1fb2337",
+      "name": "roughness",
+      "filename": "roughness.png",
+      "mime_type": "image/png",
+      "size_bytes": 716303,
+      "node_id": "7a5fbdf4-c202-4938-9979-faab01dda4ad",
+      "associated_node_ids": [
+        "7a5fbdf4-c202-4938-9979-faab01dda4ad"
+      ],
+      "run_id": "42a5fea3-998e-41c9-8d42-ff5d88689c5e",
+      "node_run_ids": [
+        "42a5fea3-998e-41c9-8d42-ff5d88689c5e"
+      ],
+      "output_field": "output_roughness",
+      "role": "roughness",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "42a5fea3-998e-41c9-8d42-ff5d88689c5e",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      },
+      "local": "plaster-roughness.png"
+    },
+    {
+      "fid": "172e246f-4275-4c3a-bc13-0eefefa9ba9c",
+      "name": "normal",
+      "filename": "normal.png",
+      "mime_type": "image/png",
+      "size_bytes": 1638079,
+      "node_id": "7a5fbdf4-c202-4938-9979-faab01dda4ad",
+      "associated_node_ids": [
+        "7a5fbdf4-c202-4938-9979-faab01dda4ad"
+      ],
+      "run_id": "42a5fea3-998e-41c9-8d42-ff5d88689c5e",
+      "node_run_ids": [
+        "42a5fea3-998e-41c9-8d42-ff5d88689c5e"
+      ],
+      "output_field": "output_normal",
+      "role": "normal",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "42a5fea3-998e-41c9-8d42-ff5d88689c5e",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      },
+      "local": "plaster-normal.png"
+    },
+    {
+      "fid": "402509bd-83c6-4c6e-a7cf-89d36eaccaee",
+      "name": "roughness",
+      "filename": "roughness.png",
+      "mime_type": "image/png",
+      "size_bytes": 607774,
+      "node_id": "ae544ba4-1e94-425e-be8b-8a1de0d847b5",
+      "associated_node_ids": [
+        "ae544ba4-1e94-425e-be8b-8a1de0d847b5"
+      ],
+      "run_id": "89206264-c77f-44b6-bcd6-4a49529ffb6f",
+      "node_run_ids": [
+        "89206264-c77f-44b6-bcd6-4a49529ffb6f"
+      ],
+      "output_field": "output_roughness",
+      "role": "roughness",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "89206264-c77f-44b6-bcd6-4a49529ffb6f",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      },
+      "local": "tatami-roughness.png"
+    },
+    {
+      "fid": "757b3d74-a391-4e3f-a987-389e495204ce",
+      "name": "output",
+      "filename": "output.png",
+      "mime_type": "image/png",
+      "size_bytes": 1465071,
+      "node_id": "8c9d5e2d-03f3-4b4a-9875-5eec7fffa92c",
+      "associated_node_ids": [
+        "8c9d5e2d-03f3-4b4a-9875-5eec7fffa92c"
+      ],
+      "run_id": "b94e85d8-165b-4030-ae28-a2a71e897209",
+      "node_run_ids": [
+        "b94e85d8-165b-4030-ae28-a2a71e897209"
+      ],
+      "output_field": "output_image",
+      "role": "generated_image",
+      "dimensions": {
+        "width": 768,
+        "height": 1376
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "quality_text_to_image",
+        "generating_run_id": "b94e85d8-165b-4030-ae28-a2a71e897209",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "gemini-3_1-flash-lite"
+      },
+      "local": "pine-scroll.png"
+    },
+    {
+      "fid": "90e03741-5f30-46f4-9519-da79bd0428c3",
+      "name": "normal",
+      "filename": "normal.png",
+      "mime_type": "image/png",
+      "size_bytes": 2706521,
+      "node_id": "997da52a-3ded-48c3-a198-8c37a1c5b295",
+      "associated_node_ids": [
+        "997da52a-3ded-48c3-a198-8c37a1c5b295"
+      ],
+      "run_id": "01849b60-695d-4857-8c73-ba598d4905b8",
+      "node_run_ids": [
+        "01849b60-695d-4857-8c73-ba598d4905b8"
+      ],
+      "output_field": "output_normal",
+      "role": "normal",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "01849b60-695d-4857-8c73-ba598d4905b8",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      },
+      "local": "moss-normal.png"
+    },
+    {
+      "fid": "cb8695f9-65cb-467d-b1b8-e0cb411811c7",
+      "name": "normal",
+      "filename": "normal.png",
+      "mime_type": "image/png",
+      "size_bytes": 1981084,
+      "node_id": "ae544ba4-1e94-425e-be8b-8a1de0d847b5",
+      "associated_node_ids": [
+        "ae544ba4-1e94-425e-be8b-8a1de0d847b5"
+      ],
+      "run_id": "89206264-c77f-44b6-bcd6-4a49529ffb6f",
+      "node_run_ids": [
+        "89206264-c77f-44b6-bcd6-4a49529ffb6f"
+      ],
+      "output_field": "output_normal",
+      "role": "normal",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "89206264-c77f-44b6-bcd6-4a49529ffb6f",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      },
+      "local": "tatami-normal.png"
+    },
+    {
+      "fid": "f1137041-f332-4980-91b0-30a3771cebc7",
+      "name": "roughness",
+      "filename": "roughness.png",
+      "mime_type": "image/png",
+      "size_bytes": 888686,
+      "node_id": "997da52a-3ded-48c3-a198-8c37a1c5b295",
+      "associated_node_ids": [
+        "997da52a-3ded-48c3-a198-8c37a1c5b295"
+      ],
+      "run_id": "01849b60-695d-4857-8c73-ba598d4905b8",
+      "node_run_ids": [
+        "01849b60-695d-4857-8c73-ba598d4905b8"
+      ],
+      "output_field": "output_roughness",
+      "role": "roughness",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "01849b60-695d-4857-8c73-ba598d4905b8",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      },
+      "local": "moss-roughness.png"
+    },
+    {
+      "fid": "2765b5b0-62e6-4dbd-89c7-e55df009ecb7",
+      "name": "basecolor",
+      "filename": "basecolor.png",
+      "mime_type": "image/png",
+      "size_bytes": 2351861,
+      "node_id": "997da52a-3ded-48c3-a198-8c37a1c5b295",
+      "associated_node_ids": [
+        "997da52a-3ded-48c3-a198-8c37a1c5b295"
+      ],
+      "run_id": "01849b60-695d-4857-8c73-ba598d4905b8",
+      "node_run_ids": [
+        "01849b60-695d-4857-8c73-ba598d4905b8"
+      ],
+      "output_field": "output_basecolor",
+      "role": "base_color",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "01849b60-695d-4857-8c73-ba598d4905b8",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      },
+      "local": "moss-basecolor.png"
+    },
+    {
+      "fid": "3eecfd3e-6a6f-431f-9d52-1b386e290028",
+      "name": "basecolor",
+      "filename": "basecolor.png",
+      "mime_type": "image/png",
+      "size_bytes": 1713910,
+      "node_id": "ae544ba4-1e94-425e-be8b-8a1de0d847b5",
+      "associated_node_ids": [
+        "ae544ba4-1e94-425e-be8b-8a1de0d847b5"
+      ],
+      "run_id": "89206264-c77f-44b6-bcd6-4a49529ffb6f",
+      "node_run_ids": [
+        "89206264-c77f-44b6-bcd6-4a49529ffb6f"
+      ],
+      "output_field": "output_basecolor",
+      "role": "base_color",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "89206264-c77f-44b6-bcd6-4a49529ffb6f",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      },
+      "local": "tatami-basecolor.png"
+    },
+    {
+      "fid": "ec7b222f-05f4-4d4c-b331-dfd7e1a35124",
+      "name": "basecolor",
+      "filename": "basecolor.png",
+      "mime_type": "image/png",
+      "size_bytes": 1533308,
+      "node_id": "7a5fbdf4-c202-4938-9979-faab01dda4ad",
+      "associated_node_ids": [
+        "7a5fbdf4-c202-4938-9979-faab01dda4ad"
+      ],
+      "run_id": "42a5fea3-998e-41c9-8d42-ff5d88689c5e",
+      "node_run_ids": [
+        "42a5fea3-998e-41c9-8d42-ff5d88689c5e"
+      ],
+      "output_field": "output_basecolor",
+      "role": "base_color",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "42a5fea3-998e-41c9-8d42-ff5d88689c5e",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      },
+      "local": "plaster-basecolor.png"
+    }
+  ]
+}

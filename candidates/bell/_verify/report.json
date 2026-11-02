@@ -1,0 +1,116 @@
+[
+ {
+  "ok": true,
+  "mounts": null,
+  "meshes": 302,
+  "tris": 7540,
+  "materials": 7,
+  "size": [
+   5.4,
+   5.13,
+   4.64
+  ],
+  "groundOffset": 0,
+  "centreOffset": [
+   0,
+   0
+  ],
+  "sides": {
+   "front": {
+    "coverage": 0.2168,
+    "edgeDensity": 0.3081
+   },
+   "right": {
+    "coverage": 0.174,
+    "edgeDensity": 0.4415
+   },
+   "back": {
+    "coverage": 0.2106,
+    "edgeDensity": 0.3996
+   },
+   "left": {
+    "coverage": 0.1719,
+    "edgeDensity": 0.3851
+   }
+  },
+  "error": null,
+  "name": "bell_craft",
+  "problems": []
+ },
+ {
+  "ok": true,
+  "mounts": null,
+  "meshes": 23,
+  "tris": 1052,
+  "materials": 6,
+  "size": [
+   5,
+   4.677,
+   4.673
+  ],
+  "groundOffset": 0,
+  "centreOffset": [
+   0,
+   0
+  ],
+  "sides": {
+   "front": {
+    "coverage": 0.2166,
+    "edgeDensity": 0.0963
+   },
+   "right": {
+    "coverage": 0.1906,
+    "edgeDensity": 0.1252
+   },
+   "back": {
+    "coverage": 0.1978,
+    "edgeDensity": 0.086
+   },
+   "left": {
+    "coverage": 0.189,
+    "edgeDensity": 0.1183
+   }
+  },
+  "error": null,
+  "name": "bell_primitive",
+  "problems": []
+ },
+ {
+  "ok": true,
+  "mounts": null,
+  "meshes": 22,
+  "tris": 1048,
+  "materials": 6,
+  "size": [
+   5,
+   4.9,
+   4.8
+  ],
+  "groundOffset": 0,
+  "centreOffset": [
+   0,
+   0
+  ],
+  "sides": {
+   "front": {
+    "coverage": 0.2271,
+    "edgeDensity": 0.0764
+   },
+   "right": {
+    "coverage": 0.1814,
+    "edgeDensity": 0.12
+   },
+   "back": {
+    "coverage": 0.2207,
+    "edgeDensity": 0.0553
+   },
+   "left": {
+    "coverage": 0.1802,
+    "edgeDensity": 0.1196
+   }
+  },
+  "error": null,
+  "name": "bell_profile",
+  "problems": []
+ }
+]

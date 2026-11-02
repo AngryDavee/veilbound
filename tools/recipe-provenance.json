@@ -1,0 +1,9 @@
+{
+  "repository": "https://github.com/404-Repo/404-game-recipe",
+  "commit": "4effad311c5e137bca316257259fe5bffd6737de",
+  "sha256": {
+    "assetlib.js": "3865478342514a0f47c56532e595982c659917543a87ebcd85d715cbdead9b3d",
+    "surfaces.js": "0e641d7c13d310093d50470a82260c2b88f369447db038a5df18d426fe5fc1e9",
+    "rig.js": "6462da58719d7323cc154f5807ddc8c09d31046388146e8e0007e13a08b243a8"
+  }
+}

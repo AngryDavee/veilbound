@@ -1,0 +1,116 @@
+[
+ {
+  "ok": true,
+  "mounts": null,
+  "meshes": 422,
+  "tris": 9444,
+  "materials": 6,
+  "size": [
+   8.2,
+   5.5,
+   4.24
+  ],
+  "groundOffset": 0,
+  "centreOffset": [
+   0,
+   0
+  ],
+  "sides": {
+   "front": {
+    "coverage": 0.1875,
+    "edgeDensity": 0.4652
+   },
+   "right": {
+    "coverage": 0.1608,
+    "edgeDensity": 0.5325
+   },
+   "back": {
+    "coverage": 0.1757,
+    "edgeDensity": 0.572
+   },
+   "left": {
+    "coverage": 0.1625,
+    "edgeDensity": 0.4748
+   }
+  },
+  "error": null,
+  "name": "gate_craft",
+  "problems": []
+ },
+ {
+  "ok": true,
+  "mounts": null,
+  "meshes": 32,
+  "tris": 384,
+  "materials": 5,
+  "size": [
+   8,
+   5.029,
+   3.799
+  ],
+  "groundOffset": 0,
+  "centreOffset": [
+   0,
+   0
+  ],
+  "sides": {
+   "front": {
+    "coverage": 0.1841,
+    "edgeDensity": 0.1449
+   },
+   "right": {
+    "coverage": 0.1645,
+    "edgeDensity": 0.1759
+   },
+   "back": {
+    "coverage": 0.1577,
+    "edgeDensity": 0.088
+   },
+   "left": {
+    "coverage": 0.1638,
+    "edgeDensity": 0.1732
+   }
+  },
+  "error": null,
+  "name": "gate_primitive",
+  "problems": []
+ },
+ {
+  "ok": true,
+  "mounts": null,
+  "meshes": 51,
+  "tris": 3396,
+  "materials": 6,
+  "size": [
+   8,
+   5.268,
+   4.027
+  ],
+  "groundOffset": 0,
+  "centreOffset": [
+   0,
+   0
+  ],
+  "sides": {
+   "front": {
+    "coverage": 0.1918,
+    "edgeDensity": 0.2903
+   },
+   "right": {
+    "coverage": 0.1667,
+    "edgeDensity": 0.5917
+   },
+   "back": {
+    "coverage": 0.1788,
+    "edgeDensity": 0.2697
+   },
+   "left": {
+    "coverage": 0.1661,
+    "edgeDensity": 0.58
+   }
+  },
+  "error": null,
+  "name": "gate_profile",
+  "problems": []
+ }
+]

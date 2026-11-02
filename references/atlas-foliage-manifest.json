@@ -1,0 +1,177 @@
+{
+  "provider": "Atlas MCP",
+  "project_id": "99be6c26-c788-4658-b1bd-46e66650ef55",
+  "operation_id": "8b4909db-9dd4-4899-a9d9-2b5c73864c1d",
+  "credits": 33,
+  "selected_file_id": "01f6c277-7298-4532-96e2-79071487a1aa",
+  "local_file": "game/textures/pine-foliage.png",
+  "measured": {
+    "width": 2048,
+    "height": 2048,
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "fully_transparent_pixels": 2652316
+  },
+  "outputs": [
+    {
+      "fid": "01f6c277-7298-4532-96e2-79071487a1aa",
+      "name": "removed_bg",
+      "filename": "removed_bg.png",
+      "mime_type": "image/png",
+      "size_bytes": 4168622,
+      "node_id": "730810af-9b98-4cfd-8f91-0c29fb7971da",
+      "associated_node_ids": [
+        "730810af-9b98-4cfd-8f91-0c29fb7971da"
+      ],
+      "run_id": "518984c3-b61e-4999-979f-5c0ec096c6be",
+      "node_run_ids": [
+        "518984c3-b61e-4999-979f-5c0ec096c6be"
+      ],
+      "output_field": "output_image",
+      "role": "generated_image",
+      "dimensions": {
+        "width": 2048,
+        "height": 2048
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "remove_background",
+        "generating_run_id": "518984c3-b61e-4999-979f-5c0ec096c6be",
+        "sources": [
+          {
+            "fid": "626cc464-ab9a-4578-ab53-13d0d1ac6939",
+            "role": "generated_image"
+          }
+        ],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "Pixelcut"
+      }
+    },
+    {
+      "fid": "3b9c4490-72e3-462a-a66e-1c0a3e839b38",
+      "name": "foreground_mask",
+      "filename": "foreground_mask.png",
+      "mime_type": "image/png",
+      "size_bytes": 74764,
+      "node_id": "730810af-9b98-4cfd-8f91-0c29fb7971da",
+      "associated_node_ids": [
+        "730810af-9b98-4cfd-8f91-0c29fb7971da"
+      ],
+      "run_id": "518984c3-b61e-4999-979f-5c0ec096c6be",
+      "node_run_ids": [
+        "518984c3-b61e-4999-979f-5c0ec096c6be"
+      ],
+      "output_field": "output_mask",
+      "role": "unknown",
+      "dimensions": {
+        "width": 2048,
+        "height": 2048
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "remove_background",
+        "generating_run_id": "518984c3-b61e-4999-979f-5c0ec096c6be",
+        "sources": [
+          {
+            "fid": "626cc464-ab9a-4578-ab53-13d0d1ac6939",
+            "role": "generated_image"
+          }
+        ],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "Pixelcut"
+      }
+    },
+    {
+      "fid": "626cc464-ab9a-4578-ab53-13d0d1ac6939",
+      "name": "output",
+      "filename": "output.png",
+      "mime_type": "image/png",
+      "size_bytes": 6030767,
+      "node_id": "b9d713c0-2230-47d0-bd42-afd21f522d05",
+      "associated_node_ids": [
+        "b9d713c0-2230-47d0-bd42-afd21f522d05"
+      ],
+      "run_id": "70548ec2-adf3-491f-b8de-0a28abbf70e1",
+      "node_run_ids": [
+        "70548ec2-adf3-491f-b8de-0a28abbf70e1"
+      ],
+      "output_field": "output_image",
+      "role": "generated_image",
+      "dimensions": {
+        "width": 2048,
+        "height": 2048
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "quality_text_to_image",
+        "generating_run_id": "70548ec2-adf3-491f-b8de-0a28abbf70e1",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "flux3-image"
+      }
+    },
+    {
+      "fid": "8cf2625d-e72f-4050-87f5-1e63f81d2a73",
+      "name": "removed_bg_flat",
+      "filename": "removed_bg_flat.png",
+      "mime_type": "image/png",
+      "size_bytes": 3578663,
+      "node_id": "730810af-9b98-4cfd-8f91-0c29fb7971da",
+      "associated_node_ids": [
+        "730810af-9b98-4cfd-8f91-0c29fb7971da"
+      ],
+      "run_id": "518984c3-b61e-4999-979f-5c0ec096c6be",
+      "node_run_ids": [
+        "518984c3-b61e-4999-979f-5c0ec096c6be"
+      ],
+      "output_field": "output_flat",
+      "role": "unknown",
+      "dimensions": {
+        "width": 2048,
+        "height": 2048
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "remove_background",
+        "generating_run_id": "518984c3-b61e-4999-979f-5c0ec096c6be",
+        "sources": [
+          {
+            "fid": "626cc464-ab9a-4578-ab53-13d0d1ac6939",
+            "role": "generated_image"
+          }
+        ],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "Pixelcut"
+      }
+    }
+  ]
+}

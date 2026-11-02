@@ -1,0 +1,116 @@
+[
+ {
+  "ok": true,
+  "mounts": null,
+  "meshes": 612,
+  "tris": 43342,
+  "materials": 11,
+  "size": [
+   25.6,
+   8.61,
+   17.353
+  ],
+  "groundOffset": 0,
+  "centreOffset": [
+   0,
+   0
+  ],
+  "sides": {
+   "front": {
+    "coverage": 0.2421,
+    "edgeDensity": 0.5142
+   },
+   "right": {
+    "coverage": 0.2203,
+    "edgeDensity": 0.7422
+   },
+   "back": {
+    "coverage": 0.2343,
+    "edgeDensity": 0.5386
+   },
+   "left": {
+    "coverage": 0.2205,
+    "edgeDensity": 0.7643
+   }
+  },
+  "error": null,
+  "name": "hall_craft",
+  "problems": []
+ },
+ {
+  "ok": true,
+  "mounts": null,
+  "meshes": 255,
+  "tris": 3080,
+  "materials": 7,
+  "size": [
+   25.2,
+   8.58,
+   16.975
+  ],
+  "groundOffset": 0,
+  "centreOffset": [
+   0,
+   0
+  ],
+  "sides": {
+   "front": {
+    "coverage": 0.2467,
+    "edgeDensity": 0.187
+   },
+   "right": {
+    "coverage": 0.2208,
+    "edgeDensity": 0.1562
+   },
+   "back": {
+    "coverage": 0.2406,
+    "edgeDensity": 0.1867
+   },
+   "left": {
+    "coverage": 0.221,
+    "edgeDensity": 0.1905
+   }
+  },
+  "error": null,
+  "name": "hall_primitive",
+  "problems": []
+ },
+ {
+  "ok": true,
+  "mounts": null,
+  "meshes": 350,
+  "tris": 17780,
+  "materials": 7,
+  "size": [
+   25,
+   8.465,
+   17.404
+  ],
+  "groundOffset": 0,
+  "centreOffset": [
+   0,
+   0
+  ],
+  "sides": {
+   "front": {
+    "coverage": 0.2431,
+    "edgeDensity": 0.3441
+   },
+   "right": {
+    "coverage": 0.2268,
+    "edgeDensity": 0.5876
+   },
+   "back": {
+    "coverage": 0.2345,
+    "edgeDensity": 0.3418
+   },
+   "left": {
+    "coverage": 0.2266,
+    "edgeDensity": 0.5818
+   }
+  },
+  "error": null,
+  "name": "hall_profile",
+  "problems": []
+ }
+]

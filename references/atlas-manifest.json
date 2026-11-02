@@ -1,0 +1,710 @@
+{
+  "provider": "Atlas MCP",
+  "project_id": "99be6c26-c788-4658-b1bd-46e66650ef55",
+  "project_url": "https://app.atlas.design/p/edit/99be6c26-c788-4658-b1bd-46e66650ef55?wid=b739e1c3-2a98-4863-9598-967968451284",
+  "operation_id": "4b2cb00f-18e9-489f-82e1-5033faeaf0ff",
+  "credits": 57,
+  "outputs": [
+    {
+      "fid": "00f0f573-106a-43b8-81a2-38b565badf60",
+      "name": "normal",
+      "filename": "normal.png",
+      "mime_type": "image/png",
+      "size_bytes": 1265677,
+      "node_id": "cd3ef6fe-2ff4-4a5f-98ee-993b4674a614",
+      "associated_node_ids": [
+        "cd3ef6fe-2ff4-4a5f-98ee-993b4674a614"
+      ],
+      "run_id": "3f796602-01f3-475a-8dfa-f5c302a17709",
+      "node_run_ids": [
+        "3f796602-01f3-475a-8dfa-f5c302a17709"
+      ],
+      "output_field": "output_normal",
+      "role": "normal",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "3f796602-01f3-475a-8dfa-f5c302a17709",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      }
+    },
+    {
+      "fid": "02f8a837-0380-4a48-9e2b-276e59b4d27f",
+      "name": "roughness",
+      "filename": "roughness.png",
+      "mime_type": "image/png",
+      "size_bytes": 524211,
+      "node_id": "6bbba2ce-a26d-4140-b62b-46df578b2989",
+      "associated_node_ids": [
+        "6bbba2ce-a26d-4140-b62b-46df578b2989"
+      ],
+      "run_id": "a6f5398a-6f53-43b6-a38b-6d9feb0b65ab",
+      "node_run_ids": [
+        "a6f5398a-6f53-43b6-a38b-6d9feb0b65ab"
+      ],
+      "output_field": "output_roughness",
+      "role": "roughness",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "a6f5398a-6f53-43b6-a38b-6d9feb0b65ab",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      }
+    },
+    {
+      "fid": "19988a99-81e9-4140-bd1e-b44b34cd5f49",
+      "name": "texture",
+      "filename": "texture.png",
+      "mime_type": "image/png",
+      "size_bytes": 2373063,
+      "node_id": "6f3cafda-ccd9-4908-a9cd-b50de5231b49",
+      "associated_node_ids": [
+        "6f3cafda-ccd9-4908-a9cd-b50de5231b49"
+      ],
+      "run_id": "7fd013ad-41fb-4db2-9bfd-832c213dc127",
+      "node_run_ids": [
+        "7fd013ad-41fb-4db2-9bfd-832c213dc127"
+      ],
+      "output_field": "output_texture",
+      "role": "texture",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "7fd013ad-41fb-4db2-9bfd-832c213dc127",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      }
+    },
+    {
+      "fid": "1dec4ed1-4409-440e-a266-1807fd4b8902",
+      "name": "basecolor",
+      "filename": "basecolor.png",
+      "mime_type": "image/png",
+      "size_bytes": 2099893,
+      "node_id": "44860805-4eef-4a15-973d-51fa873ba896",
+      "associated_node_ids": [
+        "44860805-4eef-4a15-973d-51fa873ba896"
+      ],
+      "run_id": "b3a5f90c-9332-497f-9134-fc9a4f924917",
+      "node_run_ids": [
+        "b3a5f90c-9332-497f-9134-fc9a4f924917"
+      ],
+      "output_field": "output_basecolor",
+      "role": "base_color",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "b3a5f90c-9332-497f-9134-fc9a4f924917",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      }
+    },
+    {
+      "fid": "59a4d28b-1c91-4ded-9bab-34d5aeabf921",
+      "name": "texture",
+      "filename": "texture.png",
+      "mime_type": "image/png",
+      "size_bytes": 1509694,
+      "node_id": "cd3ef6fe-2ff4-4a5f-98ee-993b4674a614",
+      "associated_node_ids": [
+        "cd3ef6fe-2ff4-4a5f-98ee-993b4674a614"
+      ],
+      "run_id": "3f796602-01f3-475a-8dfa-f5c302a17709",
+      "node_run_ids": [
+        "3f796602-01f3-475a-8dfa-f5c302a17709"
+      ],
+      "output_field": "output_texture",
+      "role": "texture",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "3f796602-01f3-475a-8dfa-f5c302a17709",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      }
+    },
+    {
+      "fid": "64ca978b-082d-466b-a449-a6d344d48982",
+      "name": "roughness",
+      "filename": "roughness.png",
+      "mime_type": "image/png",
+      "size_bytes": 867334,
+      "node_id": "6f3cafda-ccd9-4908-a9cd-b50de5231b49",
+      "associated_node_ids": [
+        "6f3cafda-ccd9-4908-a9cd-b50de5231b49"
+      ],
+      "run_id": "7fd013ad-41fb-4db2-9bfd-832c213dc127",
+      "node_run_ids": [
+        "7fd013ad-41fb-4db2-9bfd-832c213dc127"
+      ],
+      "output_field": "output_roughness",
+      "role": "roughness",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "7fd013ad-41fb-4db2-9bfd-832c213dc127",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      }
+    },
+    {
+      "fid": "6be62f2c-3782-4a2d-8d75-76e2cc1e25a4",
+      "name": "normal",
+      "filename": "normal.png",
+      "mime_type": "image/png",
+      "size_bytes": 1916712,
+      "node_id": "6bbba2ce-a26d-4140-b62b-46df578b2989",
+      "associated_node_ids": [
+        "6bbba2ce-a26d-4140-b62b-46df578b2989"
+      ],
+      "run_id": "a6f5398a-6f53-43b6-a38b-6d9feb0b65ab",
+      "node_run_ids": [
+        "a6f5398a-6f53-43b6-a38b-6d9feb0b65ab"
+      ],
+      "output_field": "output_normal",
+      "role": "normal",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "a6f5398a-6f53-43b6-a38b-6d9feb0b65ab",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      }
+    },
+    {
+      "fid": "81dd88be-7af0-467c-9378-b3bcc30908ac",
+      "name": "output",
+      "filename": "output.png",
+      "mime_type": "image/png",
+      "size_bytes": 1718748,
+      "node_id": "8c1cc6e8-39f5-4145-b145-8995a054a686",
+      "associated_node_ids": [
+        "8c1cc6e8-39f5-4145-b145-8995a054a686"
+      ],
+      "run_id": "a266e660-1995-48db-8dbe-5156ca1de432",
+      "node_run_ids": [
+        "a266e660-1995-48db-8dbe-5156ca1de432"
+      ],
+      "output_field": "output_image",
+      "role": "generated_image",
+      "dimensions": {
+        "width": 1376,
+        "height": 768
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "quality_text_to_image",
+        "generating_run_id": "a266e660-1995-48db-8dbe-5156ca1de432",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "gemini-3_1-flash-lite"
+      }
+    },
+    {
+      "fid": "8400cbea-c231-4bff-99ba-7658afa25d6e",
+      "name": "basecolor",
+      "filename": "basecolor.png",
+      "mime_type": "image/png",
+      "size_bytes": 2652130,
+      "node_id": "6f3cafda-ccd9-4908-a9cd-b50de5231b49",
+      "associated_node_ids": [
+        "6f3cafda-ccd9-4908-a9cd-b50de5231b49"
+      ],
+      "run_id": "7fd013ad-41fb-4db2-9bfd-832c213dc127",
+      "node_run_ids": [
+        "7fd013ad-41fb-4db2-9bfd-832c213dc127"
+      ],
+      "output_field": "output_basecolor",
+      "role": "base_color",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "7fd013ad-41fb-4db2-9bfd-832c213dc127",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      }
+    },
+    {
+      "fid": "90f877fe-5660-40e9-9bd1-7d602f4c27e3",
+      "name": "normal",
+      "filename": "normal.png",
+      "mime_type": "image/png",
+      "size_bytes": 1975050,
+      "node_id": "44860805-4eef-4a15-973d-51fa873ba896",
+      "associated_node_ids": [
+        "44860805-4eef-4a15-973d-51fa873ba896"
+      ],
+      "run_id": "b3a5f90c-9332-497f-9134-fc9a4f924917",
+      "node_run_ids": [
+        "b3a5f90c-9332-497f-9134-fc9a4f924917"
+      ],
+      "output_field": "output_normal",
+      "role": "normal",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "b3a5f90c-9332-497f-9134-fc9a4f924917",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      }
+    },
+    {
+      "fid": "9856e0f4-e497-4345-a1f5-7d860ccb1d1c",
+      "name": "texture",
+      "filename": "texture.png",
+      "mime_type": "image/png",
+      "size_bytes": 2092786,
+      "node_id": "44860805-4eef-4a15-973d-51fa873ba896",
+      "associated_node_ids": [
+        "44860805-4eef-4a15-973d-51fa873ba896"
+      ],
+      "run_id": "b3a5f90c-9332-497f-9134-fc9a4f924917",
+      "node_run_ids": [
+        "b3a5f90c-9332-497f-9134-fc9a4f924917"
+      ],
+      "output_field": "output_texture",
+      "role": "texture",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "b3a5f90c-9332-497f-9134-fc9a4f924917",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      }
+    },
+    {
+      "fid": "ad40ad21-a626-4a35-8a06-0414a4eed017",
+      "name": "normal",
+      "filename": "normal.png",
+      "mime_type": "image/png",
+      "size_bytes": 2344972,
+      "node_id": "6f3cafda-ccd9-4908-a9cd-b50de5231b49",
+      "associated_node_ids": [
+        "6f3cafda-ccd9-4908-a9cd-b50de5231b49"
+      ],
+      "run_id": "7fd013ad-41fb-4db2-9bfd-832c213dc127",
+      "node_run_ids": [
+        "7fd013ad-41fb-4db2-9bfd-832c213dc127"
+      ],
+      "output_field": "output_normal",
+      "role": "normal",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "7fd013ad-41fb-4db2-9bfd-832c213dc127",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      }
+    },
+    {
+      "fid": "b175a6ee-1936-4869-bd9a-63bd0c6887a8",
+      "name": "output",
+      "filename": "output.png",
+      "mime_type": "image/png",
+      "size_bytes": 1090988,
+      "node_id": "8937fed6-846f-434a-957c-7f9fd443f1a2",
+      "associated_node_ids": [
+        "8937fed6-846f-434a-957c-7f9fd443f1a2"
+      ],
+      "run_id": "5fd229f4-8f8b-4dad-a731-8b52d53b4936",
+      "node_run_ids": [
+        "5fd229f4-8f8b-4dad-a731-8b52d53b4936"
+      ],
+      "output_field": "output_image",
+      "role": "generated_image",
+      "dimensions": {
+        "width": 1376,
+        "height": 768
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "quality_text_to_image",
+        "generating_run_id": "5fd229f4-8f8b-4dad-a731-8b52d53b4936",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "gemini-3_1-flash-lite"
+      }
+    },
+    {
+      "fid": "b4148be1-4118-4f43-ad8a-27429b053c03",
+      "name": "roughness",
+      "filename": "roughness.png",
+      "mime_type": "image/png",
+      "size_bytes": 694132,
+      "node_id": "44860805-4eef-4a15-973d-51fa873ba896",
+      "associated_node_ids": [
+        "44860805-4eef-4a15-973d-51fa873ba896"
+      ],
+      "run_id": "b3a5f90c-9332-497f-9134-fc9a4f924917",
+      "node_run_ids": [
+        "b3a5f90c-9332-497f-9134-fc9a4f924917"
+      ],
+      "output_field": "output_roughness",
+      "role": "roughness",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "b3a5f90c-9332-497f-9134-fc9a4f924917",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      }
+    },
+    {
+      "fid": "b8324cc3-574d-4bed-834d-1c50d3aeccdb",
+      "name": "basecolor",
+      "filename": "basecolor.png",
+      "mime_type": "image/png",
+      "size_bytes": 2271729,
+      "node_id": "6bbba2ce-a26d-4140-b62b-46df578b2989",
+      "associated_node_ids": [
+        "6bbba2ce-a26d-4140-b62b-46df578b2989"
+      ],
+      "run_id": "a6f5398a-6f53-43b6-a38b-6d9feb0b65ab",
+      "node_run_ids": [
+        "a6f5398a-6f53-43b6-a38b-6d9feb0b65ab"
+      ],
+      "output_field": "output_basecolor",
+      "role": "base_color",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "a6f5398a-6f53-43b6-a38b-6d9feb0b65ab",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      }
+    },
+    {
+      "fid": "bd932b03-f8c8-43a9-b429-67dd9ade1b14",
+      "name": "basecolor",
+      "filename": "basecolor.png",
+      "mime_type": "image/png",
+      "size_bytes": 1555447,
+      "node_id": "cd3ef6fe-2ff4-4a5f-98ee-993b4674a614",
+      "associated_node_ids": [
+        "cd3ef6fe-2ff4-4a5f-98ee-993b4674a614"
+      ],
+      "run_id": "3f796602-01f3-475a-8dfa-f5c302a17709",
+      "node_run_ids": [
+        "3f796602-01f3-475a-8dfa-f5c302a17709"
+      ],
+      "output_field": "output_basecolor",
+      "role": "base_color",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "3f796602-01f3-475a-8dfa-f5c302a17709",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      }
+    },
+    {
+      "fid": "c9a38550-7587-47da-993e-b342eb5254d7",
+      "name": "roughness",
+      "filename": "roughness.png",
+      "mime_type": "image/png",
+      "size_bytes": 461994,
+      "node_id": "cd3ef6fe-2ff4-4a5f-98ee-993b4674a614",
+      "associated_node_ids": [
+        "cd3ef6fe-2ff4-4a5f-98ee-993b4674a614"
+      ],
+      "run_id": "3f796602-01f3-475a-8dfa-f5c302a17709",
+      "node_run_ids": [
+        "3f796602-01f3-475a-8dfa-f5c302a17709"
+      ],
+      "output_field": "output_roughness",
+      "role": "roughness",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "3f796602-01f3-475a-8dfa-f5c302a17709",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      }
+    },
+    {
+      "fid": "d313fa1f-5488-4dbb-a373-d9252a2c75ba",
+      "name": "texture",
+      "filename": "texture.png",
+      "mime_type": "image/png",
+      "size_bytes": 2115029,
+      "node_id": "6bbba2ce-a26d-4140-b62b-46df578b2989",
+      "associated_node_ids": [
+        "6bbba2ce-a26d-4140-b62b-46df578b2989"
+      ],
+      "run_id": "a6f5398a-6f53-43b6-a38b-6d9feb0b65ab",
+      "node_run_ids": [
+        "a6f5398a-6f53-43b6-a38b-6d9feb0b65ab"
+      ],
+      "output_field": "output_texture",
+      "role": "texture",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "output_index": null,
+      "render_view": null,
+      "geometry": null,
+      "provenance": {
+        "node_type": "material_generation",
+        "generating_run_id": "a6f5398a-6f53-43b6-a38b-6d9feb0b65ab",
+        "sources": [],
+        "sources_status": "recorded",
+        "direction": null,
+        "repeat_grid": null,
+        "evidence": "frozen_generation_record"
+      },
+      "requested_properties": {
+        "backend": "patina",
+        "image_size": "square_hd",
+        "tiling_mode": "both",
+        "upscale_factor": 1
+      }
+    }
+  ],
+  "notes": [
+    "Requested tiling both directions. Measured dimensions from returned files are 1024 x 1024 for PBR maps and 1376 x 768 for concepts.",
+    "Earth roughness is intentionally overridden to 0.96 because generated map is nearly black.",
+    "Images are references, not screenshots of gameplay. Geometry built using 404 Path B."
+  ]
+}

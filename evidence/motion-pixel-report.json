@@ -1,0 +1,20 @@
+{
+  "water": {
+    "mean_absolute_rgb_difference": [
+      9.54617578125,
+      9.7180009765625,
+      7.2852890625
+    ],
+    "pixels_changed_above_8": 276991,
+    "total_pixels": 1024000
+  },
+  "wind": {
+    "mean_absolute_rgb_difference": [
+      10.5604150390625,
+      9.5208662109375,
+      8.6314462890625
+    ],
+    "pixels_changed_above_8": 288893,
+    "total_pixels": 1024000
+  }
+}

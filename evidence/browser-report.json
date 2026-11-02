@@ -1,0 +1,87 @@
+{
+  "passed": true,
+  "reports": [
+    {
+      "check": "keyboard-motion",
+      "pos": [
+        0,
+        -0.30812999999997465
+      ],
+      "height": 1.68,
+      "fps": 48.84175272118322,
+      "speed": 3.3000000000000003,
+      "score": 0,
+      "over": false,
+      "draws": 72,
+      "tris": 1595134,
+      "started": true,
+      "evening": false,
+      "texturesLoaded": 23,
+      "grassBlades": 41704,
+      "windTime": 11.565899999999992,
+      "view": "Cloudveil Courtyard"
+    },
+    {
+      "check": "hall-letter",
+      "pos": [
+        0.6181720431706339,
+        -16.703082436423255
+      ],
+      "height": 2.5399999999252407,
+      "fps": 51.62550579042856,
+      "speed": 0,
+      "score": 1,
+      "over": false,
+      "draws": 44,
+      "tris": 1537726,
+      "started": true,
+      "evening": false,
+      "texturesLoaded": 23,
+      "grassBlades": 41704,
+      "windTime": 26.3486999999998,
+      "view": "The Training Hall"
+    },
+    {
+      "check": "walked-to-bell-all-clues",
+      "pos": [
+        32.098200000000105,
+        -42.097199999999965
+      ],
+      "height": 12.365584068409557,
+      "fps": 60.00558191459683,
+      "speed": 0,
+      "score": 3,
+      "over": false,
+      "draws": 25,
+      "tris": 1158424,
+      "started": true,
+      "evening": false,
+      "texturesLoaded": 23,
+      "grassBlades": 41704,
+      "windTime": 48.63090000000032,
+      "view": "The Silent Bell"
+    },
+    {
+      "check": "touch-motion",
+      "pos": [
+        0,
+        17.74974176470591
+      ],
+      "height": 1.6800000000000002,
+      "fps": 57.206641551555684,
+      "speed": 0,
+      "score": 3,
+      "over": false,
+      "draws": 68,
+      "tris": 1417598,
+      "started": true,
+      "evening": false,
+      "texturesLoaded": 23,
+      "grassBlades": 20862,
+      "windTime": 4.832900000000004,
+      "view": "Cloudveil Courtyard"
+    }
+  ],
+  "errors": [],
+  "requests": []
+}

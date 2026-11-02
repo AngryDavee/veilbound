@@ -1,0 +1,116 @@
+[
+ {
+  "ok": true,
+  "mounts": null,
+  "meshes": 142,
+  "tris": 11322,
+  "materials": 3,
+  "size": [
+   10.549,
+   10.517,
+   11.492
+  ],
+  "groundOffset": 0,
+  "centreOffset": [
+   0,
+   0
+  ],
+  "sides": {
+   "front": {
+    "coverage": 0.1383,
+    "edgeDensity": 0.2623
+   },
+   "right": {
+    "coverage": 0.1416,
+    "edgeDensity": 0.2603
+   },
+   "back": {
+    "coverage": 0.1386,
+    "edgeDensity": 0.2263
+   },
+   "left": {
+    "coverage": 0.1368,
+    "edgeDensity": 0.2628
+   }
+  },
+  "error": null,
+  "name": "pine_craft",
+  "problems": []
+ },
+ {
+  "ok": true,
+  "mounts": null,
+  "meshes": 15,
+  "tris": 382,
+  "materials": 2,
+  "size": [
+   8.829,
+   9.657,
+   8.324
+  ],
+  "groundOffset": 0,
+  "centreOffset": [
+   0,
+   0
+  ],
+  "sides": {
+   "front": {
+    "coverage": 0.1118,
+    "edgeDensity": 0.0911
+   },
+   "right": {
+    "coverage": 0.1224,
+    "edgeDensity": 0.0946
+   },
+   "back": {
+    "coverage": 0.126,
+    "edgeDensity": 0.0934
+   },
+   "left": {
+    "coverage": 0.1095,
+    "edgeDensity": 0.0935
+   }
+  },
+  "error": null,
+  "name": "pine_primitive",
+  "problems": []
+ },
+ {
+  "ok": true,
+  "mounts": null,
+  "meshes": 25,
+  "tris": 1974,
+  "materials": 3,
+  "size": [
+   10.562,
+   9.545,
+   9.914
+  ],
+  "groundOffset": 0,
+  "centreOffset": [
+   0,
+   0
+  ],
+  "sides": {
+   "front": {
+    "coverage": 0.0798,
+    "edgeDensity": 0.556
+   },
+   "right": {
+    "coverage": 0.0754,
+    "edgeDensity": 0.5405
+   },
+   "back": {
+    "coverage": 0.0768,
+    "edgeDensity": 0.5088
+   },
+   "left": {
+    "coverage": 0.0775,
+    "edgeDensity": 0.5029
+   }
+  },
+  "error": null,
+  "name": "pine_profile",
+  "problems": []
+ }
+]

@@ -1,0 +1,20 @@
+{
+  "name": "veilbound-cloudveil-sanctuary",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node tools/serve.mjs",
+    "check": "node tools/check.mjs",
+    "test:browser": "node tools/browser-test.mjs"
+  },
+  "dependencies": {
+    "three": "0.169.0"
+  },
+  "devDependencies": {
+    "puppeteer": "^25.8.0"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

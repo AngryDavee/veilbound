@@ -1,0 +1,33 @@
+import puppeteer from 'puppeteer';
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const root=new URL('../',import.meta.url),out=new URL('evidence/',root);fs.mkdirSync(out,{recursive:true});
+const browser=await puppeteer.launch({headless:true,args:['--no-sandbox']});const errors=[],requests=[];const reports=[];
+const pause=ms=>new Promise(r=>setTimeout(r,ms));
+try{
+ const page=await browser.newPage();await page.setViewport({width:1440,height:900,deviceScaleFactor:1});page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error'&&m.text().includes('THREE.'))errors.push(m.text());});page.on('response',r=>{if(r.status()>=400)requests.push([r.status(),r.url()]);});
+ await page.goto('http://127.0.0.1:4186/veilbound/',{waitUntil:'domcontentloaded',timeout:90000});await page.waitForFunction(()=>window.__READY__,{timeout:90000});await pause(1800);await page.screenshot({path:new URL('title.png',out).pathname});
+ assert.equal(await page.evaluate(()=>window.__GAME__.texturesLoaded),23);
+ await page.click('#enter');await pause(800);const initial=await page.evaluate(()=>window.__GAME__.pos);
+ await page.keyboard.down('w');for(let i=0;i<6;i++){await pause(500);await page.screenshot({path:new URL(`motion-${i}.png`,out).pathname});}await page.keyboard.up('w');const moved=await page.evaluate(()=>window.__GAME__);assert.ok(Math.hypot(moved.pos[0]-initial[0],moved.pos[1]-initial[1])>5,'Real keyboard movement');reports.push({check:'keyboard-motion',...moved});
+ await page.keyboard.press('v');await page.click('#views [data-view="hall"]');await pause(2600);await page.screenshot({path:new URL('hall.png',out).pathname});
+ await page.keyboard.press('v');await page.click('#views [data-view="interior"]');await pause(3000);await page.screenshot({path:new URL('interior.png',out).pathname});await page.keyboard.press('v');await page.click('#views [data-view="hall"]');await pause(2600);
+ // A real walk from the hall viewpoint into the training room and to the letter.
+ await page.keyboard.down('w');await page.waitForFunction(()=>Math.hypot(window.__GAME__.pos[0],window.__GAME__.pos[1]+19)<2.4,{timeout:12000});await page.keyboard.up('w');await pause(200);await page.keyboard.press('e');assert.equal(await page.$eval('#discovery',d=>d.open),true,'Reachable hall discovery');await page.click('#keep-note');await pause(100);assert.ok(await page.evaluate(()=>window.__GAME__.score)>=1);reports.push({check:'hall-letter',...(await page.evaluate(()=>window.__GAME__))});
+ await page.keyboard.press('v');await page.click('#views [data-view="garden"]');await pause(2600);await page.keyboard.down('w');await page.waitForFunction(()=>Math.hypot(window.__GAME__.pos[0]+17,window.__GAME__.pos[1]-8)<2.4,{timeout:10000});await page.keyboard.up('w');await page.keyboard.press('e');assert.equal(await page.$eval('#discovery',d=>d.open),true,'Garden clue reachable');await page.click('#keep-note');await pause(100);
+ await page.click('#home');await page.click('#enter');
+ // Ascend the entire eastern route using keys, without a viewpoint teleport.
+ async function leg(key,condition){await page.keyboard.down('Shift');await page.keyboard.down(key);try{await page.waitForFunction(condition,{timeout:16000});}finally{await page.keyboard.up(key);await page.keyboard.up('Shift');}}
+ await leg('d',()=>window.__GAME__.pos[0]>26);await leg('w',()=>window.__GAME__.pos[1]<-18);await leg('d',()=>window.__GAME__.pos[0]>31.5);await leg('w',()=>window.__GAME__.pos[1]<-42);
+ await pause(300);assert.ok(await page.evaluate(()=>window.__GAME__.height)>12,'Physical stair ascent');await page.keyboard.press('e');assert.equal(await page.$eval('#discovery',d=>d.open),true,'Bell clue reachable by walking');await page.click('#keep-note');await pause(100);assert.equal(await page.evaluate(()=>window.__GAME__.score),3);reports.push({check:'walked-to-bell-all-clues',...(await page.evaluate(()=>window.__GAME__))});
+ await page.keyboard.press('v');await page.click('#views [data-view="shrine"]');await pause(2700);await page.screenshot({path:new URL('shrine.png',out).pathname});
+ await page.keyboard.press('v');await page.click('#views [data-view="water"]');await pause(2700);await page.screenshot({path:new URL('waterfall.png',out).pathname});
+ await page.click('#time-toggle');await pause(900);assert.equal(await page.evaluate(()=>window.__GAME__.evening),true);await page.screenshot({path:new URL('evening.png',out).pathname});
+ await page.keyboard.press('p');assert.equal(await page.evaluate(()=>document.body.classList.contains('photo')),true);await page.screenshot({path:new URL('photo.png',out).pathname});await page.keyboard.press('p');
+ await page.click('#journal-toggle');assert.equal(await page.$eval('#journal',d=>d.open),true);await page.screenshot({path:new URL('journal.png',out).pathname});await page.keyboard.press('Escape');
+ await page.reload({waitUntil:'domcontentloaded',timeout:90000});await page.waitForFunction(()=>window.__READY__);assert.ok(await page.evaluate(()=>window.__GAME__.score)>=1,'Journal persistence');
+ const mobile=await browser.newPage();await mobile.setViewport({width:390,height:844,deviceScaleFactor:1,isMobile:true,hasTouch:true});mobile.on('pageerror',e=>errors.push(e.message));await mobile.goto('http://127.0.0.1:4186/veilbound/',{waitUntil:'domcontentloaded',timeout:90000});await mobile.waitForFunction(()=>window.__READY__,{timeout:90000});await pause(1000);await mobile.screenshot({path:new URL('mobile-title.png',out).pathname});await mobile.tap('#enter');await pause(400);
+ const before=await mobile.evaluate(()=>window.__GAME__.pos);const client=await mobile.createCDPSession();await client.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:78,y:734}]});await client.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:78,y:714}]});await pause(1800);await client.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await pause(300);const after=await mobile.evaluate(()=>window.__GAME__);assert.ok(Math.hypot(after.pos[0]-before[0],after.pos[1]-before[1])>1,'Real touch joystick movement');reports.push({check:'touch-motion',...after});await mobile.screenshot({path:new URL('mobile-explore.png',out).pathname});
+ assert.equal(errors.length,0,errors.join('\n'));assert.equal(requests.filter(r=>r[1].includes('127.0.0.1')).length,0,JSON.stringify(requests));
+ fs.writeFileSync(new URL('browser-report.json',out),JSON.stringify({passed:true,reports,errors,requests},null,2));console.log(JSON.stringify({passed:true,reports,errors,requests},null,2));
+}catch(e){fs.writeFileSync(new URL('browser-report.json',out),JSON.stringify({passed:false,reports,errors,requests,error:e.message},null,2));throw e;}finally{await browser.close();}

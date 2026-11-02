@@ -1,0 +1,2 @@
+338 module(s), 1 page(s) in game
+every module parses, every path stays inside the folder
