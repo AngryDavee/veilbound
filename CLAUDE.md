@@ -65,3 +65,14 @@ Atlas project ID: `99be6c26-c788-4658-b1bd-46e66650ef55`. Project files are alre
 ## How to continue
 
 Start the app and inspect every destination, including the dedicated temple interior and waterfall. Read `references/asset-decisions.md` before changing established choices. Make improvements in the real scene, inspect rendered screenshots and motion, and keep the routes usable. Preserve source/reference attribution and licenses. The user has not asked for deployment, public hosting or character/combat implementation yet.
+
+
+## Latest expansion: four regions
+
+The sanctuary and all its viewpoints are ONE location. The user explicitly requested three additional story-linked environments, battle grounds, and a more realistic element pass. A follow-up specified that the second location should be bush/forest. The implemented order is Sanctuary → Whispering Thicket → Reedwater Crossing → The Folded Court.
+
+Read `game/realms/story.js` for chapter metadata, arena sizes and nine additional clues; `forest.js`, `village.js` and `castle.js` build separate regions using `kit.js`. `main.js` lazy-loads and caches region roots, hides inactive ones, updates atmosphere, and switches collision/height functions with the active world. Never retain sanctuary collision rules in a new region. `M` opens the world map, `V` opens local viewpoints, and contextual exits support walking through the story. Twelve journal traces share the existing persistence key. Existing three-clue saves remain valid.
+
+Roots in both pine assets are now continuous ridged meshes, with a lower-resolution distant variant. The sanctuary cliff is now one eroded mesh. The thicket includes extensive ground cover and bamboo. The castle's moving architecture is decorative; its platforms, bridges and stair route stay fixed. No character/combat work has been started.
+
+Run `node tools/realms-review.mjs` and `node tools/journey-test.mjs` with the server running, in addition to `npm run check`. Read `references/four-regions-design.md` for the art audit and reference sources. No new Atlas generation occurred during this expansion because the image-generation connection was unavailable; all existing textures remain local and usable.

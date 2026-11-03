@@ -1,0 +1,99 @@
+{
+  "passed": true,
+  "reports": [
+    {
+      "realm": "cedar",
+      "realmLoading": false,
+      "arena": "The hidden clearing",
+      "pos": [
+        0,
+        37
+      ],
+      "height": 1.68,
+      "fps": 60.00558191459683,
+      "speed": 0,
+      "score": 0,
+      "over": false,
+      "draws": 42,
+      "tris": 542152,
+      "started": true,
+      "evening": false,
+      "texturesLoaded": 13,
+      "grassBlades": 26634,
+      "windTime": 5.699800000000013,
+      "view": "Whispering Thicket",
+      "walkDistance": 4.949999999999974
+    },
+    {
+      "realm": "reedwater",
+      "realmLoading": false,
+      "arena": "The ferry yard",
+      "pos": [
+        0,
+        32
+      ],
+      "height": 1.68,
+      "fps": 59.997209432119526,
+      "speed": 0,
+      "score": 0,
+      "over": false,
+      "draws": 56,
+      "tris": 307198,
+      "started": true,
+      "evening": false,
+      "texturesLoaded": 12,
+      "grassBlades": 0,
+      "windTime": 10.299600000000002,
+      "view": "Reedwater Crossing",
+      "walkDistance": 4.949999999999978
+    },
+    {
+      "realm": "folded",
+      "realmLoading": false,
+      "arena": "The Meridian Ring",
+      "pos": [
+        0,
+        29
+      ],
+      "height": 1.68,
+      "fps": 59.99720943211938,
+      "speed": 0,
+      "score": 0,
+      "over": false,
+      "draws": 41,
+      "tris": 616154,
+      "started": true,
+      "evening": false,
+      "texturesLoaded": 12,
+      "grassBlades": 0,
+      "windTime": 14.732799999999946,
+      "view": "The Folded Court",
+      "walkDistance": 4.949339999999967
+    },
+    {
+      "realm": "sanctuary",
+      "realmLoading": false,
+      "arena": "Training court",
+      "pos": [
+        0,
+        24
+      ],
+      "height": 1.68,
+      "fps": 59.99720943211938,
+      "speed": 0,
+      "score": 0,
+      "over": false,
+      "draws": 86,
+      "tris": 1638006,
+      "started": true,
+      "evening": false,
+      "texturesLoaded": 23,
+      "grassBlades": 41705,
+      "windTime": 19.249199999999856,
+      "view": "Cloudveil Courtyard",
+      "walkDistance": 4.894889999999993
+    }
+  ],
+  "errors": [],
+  "requests": []
+}

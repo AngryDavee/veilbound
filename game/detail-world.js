@@ -120,16 +120,10 @@ export async function addDetailWorld(scene, renderer, textures, terrainHeight) {
   function sign(x,z,label,arrow){const canvas=document.createElement('canvas');canvas.width=512;canvas.height=128;const ctx=canvas.getContext('2d');ctx.fillStyle='#e4d8b8';ctx.fillRect(0,0,512,128);ctx.fillStyle='#35463b';ctx.font='26px Georgia';ctx.textAlign='center';ctx.fillText(label+'  '+arrow,256,74);const t=new THREE.CanvasTexture(canvas);t.colorSpace=THREE.SRGBColorSpace;box(groups.routes,.10,1.5,.10,x,.75,z,wood);box(groups.routes,2.3,.65,.12,x,1.6,z,darkWood);mesh(groups.routes,new THREE.PlaneGeometry(2.1,.52),new THREE.MeshStandardMaterial({map:t,roughness:1}),x,1.6,z+.065);}
   sign(21,17,'FALLING WATER','→');sign(26,-14,'UPPER BELL','↗');sign(-16,22,'RETURNING GARDEN','←');
 
-  // Angular stratified cliff: smaller surfaces establish scale and a wet channel.
-  for(let row=0;row<9;row++)for(let col=0;col<7;col++){
-    const x=31.8+col*2.65+(rnd()-.5),y=1.6+row*2.85,z=-20.8-rnd()*2;if(col>3&&row>8-(col-3)*1.5)continue;
-    rock(groups.cliff,x,y,z,2.3+rnd()*.9,1.5+rnd()*.7,2+rnd()*.6,col===1?wetStone:stone);
-    if(rnd()>.3)rock(groups.cliff,x,y+1.35,z+.2,1.4,.13,1.0,moss);
-  }
-  for(let i=0;i<22;i++){const x=41+rnd()*20,z=-28-rnd()*15,h=8+rnd()*10;rock(groups.cliff,x,h*.45,z,5+rnd()*4,h*.65,5+rnd()*5,stone);rock(groups.cliff,x,h*.98,z,4,.3,4,moss);}
-  // Vertical dark fissures and little ledges avoid the stacked-ball appearance.
-
-  for(let i=0;i<8;i++)rock(groups.cliff,31+i*.8,25.9+rnd()*.4,-18.8,.55,.3,.65,i%2?moss:wetStone);
+  // One eroded cliff mass replaces the visibly stacked boulder tower.
+  const cliffGeo=new THREE.BoxGeometry(28,28,12,70,70,3),cp=cliffGeo.attributes.position,cc=[],cliffColor=new THREE.Color();
+  for(let i=0;i<cp.count;i++){const x=cp.getX(i)+43,t=(cp.getY(i)+14)/28,v=(cp.getZ(i)+6)/12;const top=5+23*Math.exp(-((x-35)*(x-35))/145)+Math.sin(x*.7)*.7;const y=t*top;const ridge=Math.sin(x*1.4+y*.25)*.35+Math.sin(y*2.1+x*.27)*.18;const front=-20.1+ridge+Math.sin(x*.4)*.5;cp.setXYZ(i,x,y-.2,front-(1-v)*12);cliffColor.setHex(v>.8&&Math.sin(x*.7+y*.14)>.65?0x7c8a70:0x9baba1);cc.push(cliffColor.r,cliffColor.g,cliffColor.b);}
+  cliffGeo.setAttribute('color',new THREE.Float32BufferAttribute(cc,3));cliffGeo.computeVertexNormals();const cliffMaterial=stone.clone();cliffMaterial.vertexColors=true;cliffMaterial.roughnessMap=null;cliffMaterial.roughness=.95;cliffMaterial.map=stone.map.clone();cliffMaterial.map.repeat.set(7,7);mesh(groups.cliff,cliffGeo,cliffMaterial,0,0,0);
   // River stones, wet margins, sediment, and an irregular waterline.
   for(let i=0;i<140;i++){
     const z=-16+rnd()*43,s=rnd()<.5?-1:1,x=riverCenter(z)+s*(3.5+Math.sin(z*.22)*.55)+rnd()*.6;

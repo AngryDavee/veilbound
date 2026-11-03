@@ -1,6 +1,6 @@
-# Veilbound — Cloudveil Sanctuary
+# Veilbound — The Valley of Silent Bells
 
-The first environment of an original anime-inspired sword adventure: a Japanese mountain training sanctuary with an explorable courtyard, raised timber hall, garden, waterfall trail, and upper bell pavilion.
+Four explorable regions for an original anime-inspired sword adventure: a mountain training sanctuary, dense forest thicket, rainy canal town and shifting architectural observatory. Story traces and connected travel routes are implemented; characters and combat come later.
 
 ## Run
 
@@ -18,12 +18,12 @@ Open http://127.0.0.1:4186. The portable `game/` folder also works on a static H
 - Enter the sanctuary: start exploring.
 - WASD / arrow keys: walk. Shift: run.
 - Drag the view: look. Double-click the scene optionally locks the mouse; Escape releases it.
-- E or the contextual button: inspect a nearby clue.
-- V: scenic viewpoints. P: photo view. J: journal.
-- Header controls: morning/evening, optional ambient sound, journal.
+- E or the contextual button: inspect a nearby clue or travel at a marked exit.
+- M: world map. V: viewpoints within the region. P: photo view. J: journal.
+- Header controls: world map, sanctuary morning/evening, optional ambient sound, journal.
 - Touch: left joystick moves; drag the scene to look. Discoveries have a touch button.
 
-The three clues are a letter inside the hall, a ribbon in the western garden, and the upper bell. Journal discoveries persist in browser localStorage. There is no combat or rigged protagonist in this environment-first milestone.
+Twelve story traces span the four regions. The original sanctuary clues remain a letter inside the hall, a ribbon in the western garden, and the upper bell. Journal discoveries persist in browser localStorage. There is no combat or rigged protagonist in this environment-first milestone.
 
 ## Build provenance
 
@@ -47,7 +47,7 @@ Browser checks drive actual keyboard, pointer, and touch input; save screenshots
 
 ## Next stage
 
-Continue environment art refinement and extend the eastern trail toward the valley. Then author the protagonist, skeleton, animation blending, sword attachment, and training combat. The existing metre scale, hall clearance, ground-height function, and static collision rules are the initial character-controller contract. The current collision system is purpose-built for this sanctuary; it is not a general rigid-body engine.
+Continue environment art refinement across all four regions. Then author the protagonist, skeleton, animation blending, sword attachment, and training combat. The existing metre scale, hall clearance, ground-height function, and static collision rules are the initial character-controller contract. The current collision system is purpose-built for the authored region routes; it is not a general rigid-body engine.
 
 ## Environment detail pass
 
@@ -67,3 +67,24 @@ Additional visual/animation checks:
 node tools/detail-review.mjs
 node tools/animation-test.mjs
 ```
+
+## Four-region expansion
+
+The sanctuary is now Chapter I of a four-region journey:
+
+1. Cloudveil Sanctuary — the missing guardian's training grounds.
+2. Whispering Thicket — dense bush, bamboo, moss, ancient trees and a hidden clearing.
+3. Reedwater Crossing — a rainy canal town with bridges, boats, workshops and a ferry-yard arena.
+4. The Folded Court — an original shifting architectural observatory with suspended galleries and a stable route to its heart.
+
+Use **World map** or **M** to travel; **V** shows viewpoints within the current region. You can also walk to a marked region exit and press **E**. All regions are available for environment review. Each has three story traces and room reserved for future battles; characters and combat are not implemented yet.
+
+Region builders live in `game/realms/`. The sanctuary's tree roots and cliff were rebuilt in this pass. New development uses the existing Atlas asset library; no new Atlas generations were available in this session. See `references/four-regions-design.md` for design sources, original creative direction and the element audit.
+
+```sh
+# With npm start running:
+node tools/realms-review.mjs
+node tools/journey-test.mjs
+```
+
+These checks exercise region loading, walking, map travel, physical chapter exits, clue access, the canal bridge, castle stairs, journal persistence and touch navigation. Evidence is saved under `evidence/realms/`.

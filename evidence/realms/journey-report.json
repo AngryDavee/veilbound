@@ -1,0 +1,132 @@
+{
+  "passed": true,
+  "reports": [
+    {
+      "id": "cedar",
+      "clues": [
+        {
+          "id": "founder-mold",
+          "reachable": true,
+          "height": 0
+        },
+        {
+          "id": "cedar-memory",
+          "reachable": true,
+          "height": 0
+        },
+        {
+          "id": "threshold-key",
+          "reachable": true,
+          "height": 0
+        }
+      ],
+      "telemetry": {
+        "realm": "cedar",
+        "realmLoading": false,
+        "arena": "The hidden clearing",
+        "pos": [
+          0,
+          37
+        ],
+        "height": 1.68,
+        "fps": 59.997209432119526,
+        "speed": 0,
+        "score": 0,
+        "over": false,
+        "draws": 42,
+        "tris": 460486,
+        "started": true,
+        "evening": false,
+        "texturesLoaded": 13,
+        "grassBlades": 26638,
+        "windTime": 2.6665999999999994,
+        "view": "Whispering Thicket"
+      }
+    },
+    {
+      "id": "reedwater",
+      "clues": [
+        {
+          "id": "ferry-token",
+          "reachable": true,
+          "height": 0
+        },
+        {
+          "id": "canal-ledger",
+          "reachable": true,
+          "height": 0
+        },
+        {
+          "id": "rain-waybill",
+          "reachable": true,
+          "height": 0
+        }
+      ],
+      "telemetry": {
+        "realm": "reedwater",
+        "realmLoading": false,
+        "arena": "The ferry yard",
+        "pos": [
+          0,
+          32
+        ],
+        "height": 1.68,
+        "fps": 60.005581914596526,
+        "speed": 0,
+        "score": 1,
+        "over": false,
+        "draws": 56,
+        "tris": 307198,
+        "started": true,
+        "evening": false,
+        "texturesLoaded": 12,
+        "grassBlades": 0,
+        "windTime": 17.415899999999937,
+        "view": "Reedwater Crossing"
+      }
+    },
+    {
+      "id": "folded",
+      "clues": [
+        {
+          "id": "west-calibration",
+          "reachable": true,
+          "height": 0
+        },
+        {
+          "id": "east-letter",
+          "reachable": true,
+          "height": 0
+        },
+        {
+          "id": "heart-of-court",
+          "reachable": true,
+          "height": 6
+        }
+      ],
+      "telemetry": {
+        "realm": "folded",
+        "realmLoading": false,
+        "arena": "The Meridian Ring",
+        "pos": [
+          0,
+          29
+        ],
+        "height": 1.68,
+        "fps": 60.00558191459683,
+        "speed": 0,
+        "score": 2,
+        "over": false,
+        "draws": 41,
+        "tris": 616154,
+        "started": true,
+        "evening": false,
+        "texturesLoaded": 12,
+        "grassBlades": 0,
+        "windTime": 30.931899999999533,
+        "view": "The Folded Court"
+      }
+    }
+  ],
+  "errors": []
+}

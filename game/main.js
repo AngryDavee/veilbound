@@ -1,6 +1,9 @@
 import * as THREE from 'three';
 import { Sky } from 'three/addons/objects/Sky.js';
-import { createEnvironment, views, discoveries, canWalk, walkHeight } from './environment.js';
+import { createEnvironment, views, discoveries as sanctuaryClues, canWalk, walkHeight } from './environment.js';
+import { chapters, realmClues } from './realms/story.js';
+const discoveries=[...sanctuaryClues,...realmClues.cedar,...realmClues.reedwater,...realmClues.folded];
+let currentRealm='sanctuary',realmLoading=false,lighting;const realmCache=new Map();
 
 const $=s=>document.querySelector(s),canvas=$('#world');
 let renderer,world,started=false,evening=false,photo=false,yaw=0,pitch=0,dragging=false,transition=null,near=null,viewOverride=null;
@@ -13,20 +16,20 @@ const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 function loadProgress(n,label){$('#load-progress').style.width=`${Math.round(n*100)}%`;$('#load-label').textContent=label;}
 function toast(text){$('#toast').textContent=text;$('#toast').hidden=false;clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('#toast').hidden=true,3600)}
 function orient(target){const d=new THREE.Vector3(...target).sub(camera.position).normalize();yaw=Math.atan2(-d.x,-d.z);pitch=Math.asin(d.y);camera.rotation.set(pitch,yaw,0);}
-function begin(){if(started)return;started=true;$('#title').hidden=true;$('#title-foot').hidden=true;$('#hud').hidden=false;document.body.classList.add('playing');camera.position.set(0,1.68,24);orient([0,3,-16]);lastPosition.copy(camera.position);toast('Explore six places. Use the destination buttons, or follow the stone trails on foot.');}
-function goView(name){if(!started)begin();const v=views[name];viewOverride=v.name;transition={from:camera.position.clone(),to:new THREE.Vector3(...v.pos),start:elapsed,duration:reduced?.01:2.2,look:new THREE.Vector3(...v.look)};$('#views').hidden=true;$('#location-name').textContent=v.name;$('#location-sub').textContent=v.sub;keys.clear();}
-function journal(){const el=$('#journal-notes');el.replaceChildren();for(const d of discoveries){const a=document.createElement('article');a.className=found.has(d.id)?'':'locked';const h=document.createElement('h3'),p=document.createElement('p');h.textContent=found.has(d.id)?d.title:'An undiscovered trace';p.textContent=found.has(d.id)?d.text:'Keep exploring. Something waits here.';a.append(h,p);el.append(a);}$('#note-count').textContent=`${found.size}/3`;$('#objective-count').textContent=`${found.size} / 3`;}
-function interact(){if(!near)return;$('#discovery-title').textContent=near.title;$('#discovery-text').textContent=near.text;$('#discovery').showModal();keys.clear();document.exitPointerLock?.();$('#discovery').dataset.note=near.id;}
+function begin(){if(started||realmLoading)return;started=true;$('#title').hidden=true;$('#title-foot').hidden=true;$('#hud').hidden=false;document.body.classList.add('playing');camera.position.fromArray(chapters[currentRealm].spawn);orient(chapters[currentRealm].look);lastPosition.copy(camera.position);toast('Four regions, one journey. Press M for the world map, or follow the marked exits.');}
+function goView(name){if(!started)begin();const v=(world.views||views)[name];if(!v)return;viewOverride=v.name;transition={from:camera.position.clone(),to:new THREE.Vector3(...v.pos),start:elapsed,duration:reduced?.01:2.2,look:new THREE.Vector3(...v.look)};$('#views').hidden=true;$('#location-name').textContent=v.name;$('#location-sub').textContent=v.sub;keys.clear();}
+function journal(){const el=$('#journal-notes');el.replaceChildren();for(const d of discoveries){const a=document.createElement('article');a.className=found.has(d.id)?'':'locked';const h=document.createElement('h3'),p=document.createElement('p');h.textContent=found.has(d.id)?d.title:'An undiscovered trace';p.textContent=found.has(d.id)?d.text:'Keep exploring. Something waits here.';a.append(h,p);el.append(a);}$('#note-count').textContent=`${found.size}/${discoveries.length}`;$('#objective-count').textContent=`${(world?.discoveries||sanctuaryClues).filter(d=>found.has(d.id)).length} / 3`;}
+function interact(){if(!near||realmLoading)return;if(near.portal){changeRealm(near.portal);return;}$('#discovery-title').textContent=near.title;$('#discovery-text').textContent=near.text;$('#discovery').showModal();keys.clear();document.exitPointerLock?.();$('#discovery').dataset.note=near.id;}
 function setPhoto(){photo=!photo;document.body.classList.toggle('photo',photo);$('#photo-hint').hidden=!photo;}
-$('#enter').onclick=begin;$('#tour').onclick=()=>{begin();$('#views').hidden=false;};$('#home').onclick=e=>{e.preventDefault();started=false;transition=null;$('#title').hidden=false;$('#title-foot').hidden=false;$('#hud').hidden=true;$('#views').hidden=true;document.body.classList.remove('playing');};
+$('#enter').onclick=begin;$('#tour').onclick=()=>$('#journey').showModal();$('#home').onclick=async e=>{e.preventDefault();if(currentRealm!=='sanctuary')await changeRealm('sanctuary');started=false;transition=null;$('#title').hidden=false;$('#title-foot').hidden=false;$('#hud').hidden=true;$('#views').hidden=true;document.body.classList.remove('playing');};
 $('#views-toggle').onclick=()=>$('#views').hidden=!$('#views').hidden;$('#close-views').onclick=()=>$('#views').hidden=true;
 document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>goView(b.dataset.view));
 $('#journal-toggle').onclick=()=>{journal();$('#journal').showModal();keys.clear();document.exitPointerLock?.();};
 document.querySelectorAll('.close-dialog').forEach(b=>b.onclick=()=>b.closest('dialog').close());
 document.querySelectorAll('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close();}}));
-$('#keep-note').onclick=()=>{found.add($('#discovery').dataset.note);try{localStorage.setItem('veilbound-cloudveil-notes',JSON.stringify([...found]));}catch{}journal();$('#discovery').close();toast(found.size===3?'All three traces found. The eastern journey lies ahead.':'A trace has been added to your journal.');};
+$('#keep-note').onclick=()=>{found.add($('#discovery').dataset.note);try{localStorage.setItem('veilbound-cloudveil-notes',JSON.stringify([...found]));}catch{}journal();$('#discovery').close();toast((world?.discoveries||sanctuaryClues).every(d=>found.has(d.id))?'This region’s traces are complete. Follow the marked exit or open the world map.':'A trace has been added to your journal.');};
 $('#interact-button').onclick=interact;$('#photo-hint').onclick=setPhoto;
-window.addEventListener('keydown',e=>{if(e.target.matches('input,textarea'))return;if(document.querySelector('dialog[open]'))return;const k=e.key.toLowerCase();if(['w','a','s','d','arrowup','arrowdown','arrowleft','arrowright',' '].includes(k))e.preventDefault();keys.add(k);if(e.repeat)return;if(k==='e')interact();if(k==='v'&&started)$('#views').hidden=!$('#views').hidden;if(k==='p')setPhoto();if(k==='j')$('#journal-toggle').click();if(k==='escape'){if(photo)setPhoto();$('#views').hidden=true;keys.clear();}});
+window.addEventListener('keydown',e=>{if(e.target.matches('input,textarea'))return;if(document.querySelector('dialog[open]'))return;const k=e.key.toLowerCase();if(['w','a','s','d','arrowup','arrowdown','arrowleft','arrowright',' '].includes(k))e.preventDefault();keys.add(k);if(e.repeat)return;if(k==='e')interact();if(k==='m'&&!realmLoading){keys.clear();$('#journey').showModal();}if(k==='v'&&started)$('#views').hidden=!$('#views').hidden;if(k==='p')setPhoto();if(k==='j')$('#journal-toggle').click();if(k==='escape'){if(photo)setPhoto();$('#views').hidden=true;keys.clear();}});
 window.addEventListener('keyup',e=>keys.delete(e.key.toLowerCase()));
 window.addEventListener('blur',()=>{keys.clear();dragging=false;stick.x=stick.y=0;});
 document.addEventListener('visibilitychange',()=>{keys.clear();if(document.hidden)dragging=false;});
@@ -42,6 +45,30 @@ joystick.addEventListener('pointerdown',e=>{joyPointer=e.pointerId;joystick.setP
 let audioCtx,audioGain,waterAudioGain,audioOn=false;
 $('#audio-toggle').onclick=async()=>{if(!audioCtx){audioCtx=new(window.AudioContext||window.webkitAudioContext)();audioGain=audioCtx.createGain();audioGain.gain.value=0;audioGain.connect(audioCtx.destination);const buffer=audioCtx.createBuffer(1,audioCtx.sampleRate*4,audioCtx.sampleRate),data=buffer.getChannelData(0);let value=0;for(let i=0;i<data.length;i++){value=(value+(Math.random()*2-1)*.03)/1.03;data[i]=value*3;}const source=audioCtx.createBufferSource();source.buffer=buffer;source.loop=true;const filter=audioCtx.createBiquadFilter();filter.type='lowpass';filter.frequency.value=1100;source.connect(filter).connect(audioGain);source.start();waterAudioGain=audioCtx.createGain();waterAudioGain.gain.value=0;const waterFilter=audioCtx.createBiquadFilter();waterFilter.type='highpass';waterFilter.frequency.value=450;const waterSource=audioCtx.createBufferSource();waterSource.buffer=buffer;waterSource.loop=true;waterSource.playbackRate.value=1.7;waterSource.connect(waterFilter).connect(waterAudioGain).connect(audioGain);waterSource.start();}await audioCtx.resume();audioOn=!audioOn;audioGain.gain.setTargetAtTime(audioOn?.25:0,audioCtx.currentTime,.7);$('#audio-label').textContent=audioOn?'Sound on':'Sound off';$('#audio-toggle').setAttribute('aria-label',audioOn?'Disable ambient sound':'Enable ambient sound');};
 
+
+function refreshRegionUI(){
+ const c=chapters[currentRealm];$('#location-kind').textContent='CHAPTER '+c.number+' · '+c.name.toUpperCase();$('#location-name').textContent=c.name;$('#location-sub').textContent=c.description;
+ $('#views').innerHTML='<div class="panel-title">VIEWS WITHIN THIS REGION <button id="close-views" aria-label="Close viewpoints">×</button></div>';
+ const entries=Object.entries(world.views||views);entries.forEach(([id,v],i)=>{const b=document.createElement('button');b.dataset.view=id;b.innerHTML='<span>'+String(i+1).padStart(2,'0')+'</span>'+v.name+'<small>'+v.sub+'</small>';b.onclick=()=>goView(id);$('#views').append(b);});$('#close-views').onclick=()=>$('#views').hidden=true;
+ $('#destination-shortcuts').innerHTML='<span>'+c.name.toUpperCase()+'</span><button id="open-map-shortcut">World map · 4 regions ↗</button>';$('#open-map-shortcut').onclick=()=>$('#journey').showModal();
+ const shortcuts=currentRealm==='sanctuary'?entries.filter(([id])=>['interior','water','garden'].includes(id)):entries.slice(0,3);for(const [id,v]of shortcuts){const b=document.createElement('button');b.dataset.view=id;b.textContent=v.name+' ↗';b.onclick=()=>goView(id);$('#destination-shortcuts').append(b);}
+ $('#views-toggle').textContent='◇ Views in this region';$('#time-toggle').disabled=currentRealm!=='sanctuary';$('#time-label').textContent=currentRealm==='folded'?'Timeless':currentRealm==='reedwater'?'Rain':evening?'Evening':'Morning';
+ $('#journal .journal-footer').textContent='Follow the trail through four regions. The world map lets you revisit any chapter.';journal();
+}
+async function changeRealm(id){
+ if(realmLoading||!chapters[id])return;realmLoading=true;keys.clear();stick.x=stick.y=0;transition=null;near=null;document.exitPointerLock?.();document.querySelectorAll('dialog[open]').forEach(d=>d.close());$('#views').hidden=true;$('#loading').hidden=false;$('#loading').style.opacity='1';loadProgress(.05,'Travelling to '+chapters[id].name);
+ const previous=world;let pendingRoot;
+ try{
+  let next=realmCache.get(id);
+  if(!next){pendingRoot=new THREE.Group();pendingRoot.name='region-'+id;pendingRoot.visible=false;scene.add(pendingRoot);const module=await import(id==='cedar'?'./realms/forest.js':id==='reedwater'?'./realms/village.js':'./realms/castle.js');const create=module.createForest||module.createVillage||module.createCastle;next=await create(pendingRoot,renderer,loadProgress);next.root=pendingRoot;realmCache.set(id,next);}
+  previous.root.visible=false;next.root.visible=true;world=next;currentRealm=id;viewOverride=null;started=true;$('#title').hidden=true;$('#title-foot').hidden=true;$('#hud').hidden=false;document.body.classList.add('playing');
+  const c=chapters[id],t=c.theme;camera.position.fromArray(c.spawn);orient(c.look);lastPosition.copy(camera.position);lighting.sky.visible=t.sky;lighting.uniforms.sunPosition.value.set(-.5,.65,.45);lighting.uniforms.turbidity.value=5;scene.background=t.sky?null:new THREE.Color(t.fog);scene.fog=new THREE.FogExp2(t.fog,t.density);lighting.sun.color.setHex(t.sun);lighting.sun.intensity=t.power;lighting.sun.position.set(-45,80,40);lighting.sun.target.position.set(0,0,id==='folded'?-25:-8);lighting.hemi.intensity=t.ambient;lighting.hemi.color.setHex(t.sky?0xb9d8e1:0x90aaba);renderer.toneMappingExposure=id==='folded'?1.12:1.05;renderer.shadowMap.needsUpdate=true;evening=false;world.setEvening(false);refreshRegionUI();loadProgress(.98,'Preparing the light in '+c.name);await renderer.compileAsync(scene,camera);renderer.render(scene,camera);loadProgress(1,c.name);window.__SCENE__.views=world.views;toast(c.tag+' — '+c.name);
+ }catch(error){console.error(error);if(pendingRoot)pendingRoot.removeFromParent();previous.root.visible=true;toast('This region could not load. '+error.message);}
+ finally{realmLoading=false;$('#loading').style.opacity='0';setTimeout(()=>{if(!realmLoading)$('#loading').hidden=true;},500);}
+}
+$('#world-map-toggle').onclick=()=>{keys.clear();$('#journey').showModal();};
+const regionOrder=['sanctuary','cedar','reedwater','folded'];for(const id of regionOrder){const c=chapters[id],b=document.createElement('button');b.dataset.world=id;b.innerHTML='<span>CHAPTER '+c.number+'</span><strong>'+c.name+'</strong><small>'+c.description+'</small><em>'+c.arena.name+' · '+c.arena.size.join(' × ')+' m</em>';b.onclick=()=>changeRealm(id);$('#journey-regions').append(b);}
+
 try{
  renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});
  renderer.setPixelRatio(Math.min(devicePixelRatio,matchMedia('(max-width:760px)').matches?1.3:1.7));renderer.setSize(innerWidth,innerHeight);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.shadowMap.autoUpdate=false;renderer.shadowMap.needsUpdate=true;
@@ -51,36 +78,38 @@ try{
  const initialSun=new THREE.Vector3(-.5,.65,.45);uniforms.sunPosition.value.copy(initialSun);
  const pmrem=new THREE.PMREMGenerator(renderer);const skyScene=new THREE.Scene();skyScene.add(sky.clone());let environmentTarget=pmrem.fromScene(skyScene,.05,.1,2500);scene.environment=environmentTarget.texture;scene.environmentIntensity=.32;
  scene.fog=new THREE.FogExp2(0xb4c8c1,.0018);
- $('#time-toggle').onclick=()=>{evening=!evening;sun.position.set(evening?-95:-65,evening?25:100,65);sun.color.setHex(evening?0xffbf80:0xffe3b1);sun.intensity=evening?2.3:3.2;hemi.intensity=evening?.95:1.45;hemi.color.setHex(evening?0x97b3d3:0xb9d8e1);uniforms.sunPosition.value.set(-.5,evening?.14:.65,.45);uniforms.turbidity.value=evening?8:5;scene.fog.color.setHex(evening?0xa7aca9:0xb4c8c1);renderer.toneMappingExposure=evening?1.0:1.05;renderer.shadowMap.needsUpdate=true;world?.setEvening(evening);skyScene.children[0].material.uniforms.sunPosition.value.copy(uniforms.sunPosition.value);const previousEnvironment=environmentTarget;environmentTarget=pmrem.fromScene(skyScene,.05,.1,2500);scene.environment=environmentTarget.texture;previousEnvironment.dispose();$('#time-label').textContent=evening?'Evening':'Morning';$('#sun-icon').textContent=evening?'☾':'☼';};
- world=await createEnvironment(scene,renderer,loadProgress);journal();loadProgress(1,'Cloudveil awaits');
+ $('#time-toggle').onclick=()=>{if(currentRealm!=='sanctuary')return;evening=!evening;sun.position.set(evening?-95:-65,evening?25:100,65);sun.color.setHex(evening?0xffbf80:0xffe3b1);sun.intensity=evening?2.3:3.2;hemi.intensity=evening?.95:1.45;hemi.color.setHex(evening?0x97b3d3:0xb9d8e1);uniforms.sunPosition.value.set(-.5,evening?.14:.65,.45);uniforms.turbidity.value=evening?8:5;scene.fog.color.setHex(evening?0xa7aca9:0xb4c8c1);renderer.toneMappingExposure=evening?1.0:1.05;renderer.shadowMap.needsUpdate=true;world?.setEvening(evening);skyScene.children[0].material.uniforms.sunPosition.value.copy(uniforms.sunPosition.value);const previousEnvironment=environmentTarget;environmentTarget=pmrem.fromScene(skyScene,.05,.1,2500);scene.environment=environmentTarget.texture;previousEnvironment.dispose();$('#time-label').textContent=evening?'Evening':'Morning';$('#sun-icon').textContent=evening?'☾':'☼';};
+ const sanctuaryRoot=new THREE.Group();sanctuaryRoot.name='region-sanctuary';scene.add(sanctuaryRoot);world=await createEnvironment(sanctuaryRoot,renderer,loadProgress);Object.assign(world,{root:sanctuaryRoot,views,discoveries:sanctuaryClues,canWalk,walkHeight});realmCache.set('sanctuary',world);lighting={sky,sun,hemi,uniforms};refreshRegionUI();journal();loadProgress(1,'Cloudveil awaits');
  camera.position.set(11,4.2,30);orient([0,5,-15]);renderer.render(scene,camera);
  $('#loading').style.opacity='0';setTimeout(()=>$('#loading').hidden=true,750);
  window.__READY__=true;window.__START__=begin;
- window.__SCENE__={scene,camera,renderer,views,discoveries};
+ window.__SCENE__={scene,camera,renderer,views,discoveries,getActiveWorld:()=>world};
  let previous=performance.now(),fpsTime=previous;
  function tick(now){
    requestAnimationFrame(tick);const raw=(now-previous)/1000;previous=now;const dt=Math.max(0,Math.min(.05,raw));elapsed+=dt;frames++;if(now-fpsTime>700){fps=frames*1000/(now-fpsTime);frames=0;fpsTime=now;}
+   if(realmLoading){window.__GAME__={...window.__GAME__,realmLoading:true};return;}
    if(!started){const a=reduced?0:Math.sin(elapsed*.045);camera.position.set(11+a*1.5,4.2+a*.3,30);orient([0,5,-15]);}
    else if(transition){const t=THREE.MathUtils.clamp((elapsed-transition.start)/transition.duration,0,1),s=t*t*(3-2*t);camera.position.lerpVectors(transition.from,transition.to,s);orient(transition.look.toArray());if(t>=1)transition=null;}
-   else if(!document.querySelector('dialog[open]')){
+   else if(!realmLoading&&!document.querySelector('dialog[open]')){
      let f=(keys.has('w')||keys.has('arrowup')?1:0)-(keys.has('s')||keys.has('arrowdown')?1:0)-stick.y;
      let r=(keys.has('d')||keys.has('arrowright')?1:0)-(keys.has('a')||keys.has('arrowleft')?1:0)+stick.x;
      const len=Math.max(1,Math.hypot(f,r));f/=len;r/=len;const rate=keys.has('shift')?6:3.3;
      const dx=(-Math.sin(yaw)*f+Math.cos(yaw)*r)*rate*dt,dz=(-Math.cos(yaw)*f-Math.sin(yaw)*r)*rate*dt;
-     const clear=(x,z)=>canWalk(x,z)&&!world.trunks.some(([tx,tz,rad])=>Math.hypot(x-tx,z-tz)<rad+.28);
+     const clear=(x,z)=>world.canWalk(x,z)&&!world.trunks.some(([tx,tz,rad])=>Math.hypot(x-tx,z-tz)<rad+.28);
      if(clear(camera.position.x+dx,camera.position.z))camera.position.x+=dx;
      if(clear(camera.position.x,camera.position.z+dz))camera.position.z+=dz;
      const moving=Math.abs(dx)+Math.abs(dz)>.0001;
-     if(moving){viewOverride=null;const ground=walkHeight(camera.position.x,camera.position.z);camera.position.y=THREE.MathUtils.lerp(camera.position.y,ground+1.68,Math.min(1,dt*8));}
+     if(moving){viewOverride=null;const ground=world.walkHeight(camera.position.x,camera.position.z);camera.position.y=THREE.MathUtils.lerp(camera.position.y,ground+1.68,Math.min(1,dt*8));}
      camera.rotation.set(pitch,yaw,0);
    }
    speed=lastPosition.distanceTo(camera.position)/Math.max(raw,.001);lastPosition.copy(camera.position);
-   if(waterAudioGain)waterAudioGain.gain.setTargetAtTime(Math.max(0,1-Math.hypot(camera.position.x-38.8,camera.position.z+17)/55)*1.3,audioCtx.currentTime,.4);const indoors=started&&Math.abs(camera.position.x)<10.5&&camera.position.z<-10.5&&camera.position.z>-21.5;hemi.intensity=THREE.MathUtils.lerp(hemi.intensity,indoors?.38:(evening?.95:1.45),Math.min(1,dt*3));scene.environmentIntensity=indoors?.10:.32;world.update(elapsed);renderer.render(scene,camera);
-   if(started){const x=camera.position.x,z=camera.position.z;const label=z<-38?'The Silent Bell':x>21?'The Falling Water':z<-7&&Math.abs(x)<12?'The Training Hall':x<-12?'The Returning Garden':'Cloudveil Courtyard';if(!transition)$('#location-name').textContent=viewOverride||label;
+   if(waterAudioGain)waterAudioGain.gain.setTargetAtTime(Math.max(0,1-Math.hypot(camera.position.x-38.8,camera.position.z+17)/55)*1.3,audioCtx.currentTime,.4);const indoors=currentRealm==='sanctuary'&&started&&Math.abs(camera.position.x)<10.5&&camera.position.z<-10.5&&camera.position.z>-21.5;hemi.intensity=THREE.MathUtils.lerp(hemi.intensity,indoors?.38:(currentRealm==='sanctuary'?(evening?.95:1.45):chapters[currentRealm].theme.ambient),Math.min(1,dt*3));scene.environmentIntensity=indoors?.10:currentRealm==='folded'?.08:.26;world.update(elapsed);renderer.render(scene,camera);
+   if(started&&!realmLoading){const x=camera.position.x,z=camera.position.z;const label=currentRealm!=='sanctuary'?chapters[currentRealm].name:z<-38?'The Silent Bell':x>21?'The Falling Water':z<-7&&Math.abs(x)<12?'The Training Hall':x<-12?'The Returning Garden':'Cloudveil Courtyard';if(!transition)$('#location-name').textContent=viewOverride||label;
      const a=((yaw*180/Math.PI)%360+360)%360;$('#bearing').textContent=['N','NW','W','SW','S','SE','E','NE'][Math.round(a/45)%8];
-     near=discoveries.find(d=>Math.hypot(x-d.pos[0],z-d.pos[2])<3.6&&Math.abs(camera.position.y-d.pos[1])<3.5)??null;$('#interact').hidden=!near;if(near)$('#interact-text').textContent=(found.has(near.id)?'Read again: ':'Inspect: ')+near.title;
+     const regionClues=world.discoveries||sanctuaryClues;const clue=regionClues.find(d=>Math.hypot(x-d.pos[0],z-d.pos[2])<3.6&&Math.abs(camera.position.y-d.pos[1])<3.5)??null;const chapter=chapters[currentRealm];const at=p=>Math.hypot(x-p[0],z-p[2])<3.2&&Math.abs(camera.position.y-p[1])<3;let portal=null;if(at(chapter.exit))portal={portal:chapter.next,title:'Travel to '+chapters[chapter.next].name};else if(chapter.previous&&at(chapter.returnPoint))portal={portal:chapter.previous,title:'Return to '+chapters[chapter.previous].name};near=clue&&!found.has(clue.id)?clue:portal||clue;$('#interact').hidden=!near;if(near)$('#interact-text').textContent=near.portal?near.title:(found.has(near.id)?'Read again: ':'Inspect: ')+near.title;
+     const arena=chapter.arena;const inArena=Math.abs(x-arena.center[0])<arena.size[0]/2&&Math.abs(z-arena.center[2])<arena.size[1]/2;$('#arena-label').hidden=!inArena;$('#arena-label').textContent=arena.name+' · Future battle ground';
    }
-   window.__GAME__={pos:[camera.position.x,camera.position.z],height:camera.position.y,fps,speed,score:found.size,over:false,draws:renderer.info.render.calls,tris:renderer.info.render.triangles,started,evening,texturesLoaded:world.texturesLoaded,grassBlades:world.grassBlades,windTime:elapsed,view:$('#location-name').textContent};
+   window.__GAME__={realm:currentRealm,realmLoading,arena:chapters[currentRealm].arena.name,pos:[camera.position.x,camera.position.z],height:camera.position.y,fps,speed,score:found.size,over:false,draws:renderer.info.render.calls,tris:renderer.info.render.triangles,started,evening,texturesLoaded:world.texturesLoaded,grassBlades:world.grassBlades,windTime:elapsed,view:$('#location-name').textContent};
  }
  requestAnimationFrame(tick);
  window.addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});

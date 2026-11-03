@@ -24,3 +24,10 @@ Use the 404 recipe Path B: import-free asset modules default-export a function o
 Assets are original; Demon Slayer is a visual reference. Sanctuary is environment-first, with an environmental story and no combat or animated protagonist in this milestone. Future character clearance matters now. Desktop and touch exploration, cinematic viewpoints, morning/evening lighting, contextual discoveries.
 
 Visual acceptance: roof clearly articulated from front and back; foreground/middle/distant layers; continuous navigable courtyard and hall entrance; mountain silhouettes above architecture; readable shadows; flora with irregular silhouettes; no missing textures. Three bounded visual improvement rounds; record limitations honestly.
+
+
+## Four-region extension
+
+Keep the sanctuary as one region. Chapter II is Whispering Thicket: dense bush, cedar and bamboo, moss green ground cover, filtered daylight and a clear 26 m battle clearing. Chapter III is Reedwater Crossing: rain-darkened timber, blue-gray masonry, muted plaster and amber lanterns around a canal. Chapter IV is The Folded Court: violet depth, dark cedar, brass calibration rings and warm lit galleries surrounding an original radial observatory.
+
+Tree bases must merge into continuous, irregular root flares; avoid straight log spokes. Preserve real scale, open battle spaces and physical navigation. The castle's moving outer architecture is decorative; the connected playable route stays fixed. Prefer material batching and instancing to increasing draw calls. Inspect all four regions after shared material edits. Current expansion reuses the local Atlas library; new image generation requires the actual Atlas generation connection.
