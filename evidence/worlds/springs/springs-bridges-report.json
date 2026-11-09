@@ -1,0 +1,136 @@
+{
+  "region": "springs-bridges",
+  "shots": [
+    {
+      "name": "spawn",
+      "file": "evidence/worlds/springs/springs-bridges-spawn.png",
+      "pos": [
+        0,
+        45
+      ],
+      "height": 1.68,
+      "draws": 50,
+      "tris": 1791632,
+      "fps": 53
+    },
+    {
+      "name": "view-arrival",
+      "file": "evidence/worlds/springs/springs-bridges-view-arrival.png",
+      "pos": [
+        0,
+        47
+      ],
+      "height": 2.1,
+      "draws": 50,
+      "tris": 1791632,
+      "fps": 49
+    },
+    {
+      "name": "view-bridge",
+      "file": "evidence/worlds/springs/springs-bridges-view-bridge.png",
+      "pos": [
+        -2.2,
+        10
+      ],
+      "height": 2.7,
+      "draws": 50,
+      "tris": 1791632,
+      "fps": 53
+    },
+    {
+      "name": "view-square",
+      "file": "evidence/worlds/springs/springs-bridges-view-square.png",
+      "pos": [
+        9,
+        -18
+      ],
+      "height": 2.3,
+      "draws": 46,
+      "tris": 1791404,
+      "fps": 60
+    },
+    {
+      "name": "view-great",
+      "file": "evidence/worlds/springs/springs-bridges-view-great.png",
+      "pos": [
+        0,
+        -19
+      ],
+      "height": 2,
+      "draws": 46,
+      "tris": 1791404,
+      "fps": 39
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "loadSeconds": 0.94,
+  "portals": {
+    "spawn": {
+      "at": [
+        0,
+        1.68,
+        45
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "exit": {
+      "at": [
+        0,
+        1,
+        -57.5
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "returnPoint": {
+      "at": [
+        0,
+        1,
+        49
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "arenaCenter": {
+      "at": [
+        0,
+        0,
+        -28
+      ],
+      "walk": true,
+      "ground": 0
+    }
+  },
+  "views": [
+    "arrival",
+    "bridge",
+    "square",
+    "great"
+  ],
+  "clues": [
+    {
+      "id": "springs-inn-register",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "springs-blade",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "springs-lamp",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    }
+  ],
+  "walkDistance": 5.0047799999999825
+}

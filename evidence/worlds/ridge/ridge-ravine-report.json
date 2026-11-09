@@ -1,0 +1,172 @@
+{
+  "region": "ridge-ravine",
+  "shots": [
+    {
+      "name": "spawn",
+      "file": "evidence/worlds/ridge/ridge-ravine-spawn.png",
+      "pos": [
+        0,
+        44
+      ],
+      "height": 1.68,
+      "draws": 51,
+      "tris": 910517,
+      "fps": 60
+    },
+    {
+      "name": "view-trail",
+      "file": "evidence/worlds/ridge/ridge-ravine-view-trail.png",
+      "pos": [
+        1,
+        42
+      ],
+      "height": 2.2,
+      "draws": 51,
+      "tris": 910517,
+      "fps": 60
+    },
+    {
+      "name": "view-bridge",
+      "file": "evidence/worlds/ridge/ridge-ravine-view-bridge.png",
+      "pos": [
+        0.19999999999999996,
+        6
+      ],
+      "height": 1.3,
+      "draws": 43,
+      "tris": 901537,
+      "fps": 60
+    },
+    {
+      "name": "view-falls",
+      "file": "evidence/worlds/ridge/ridge-ravine-view-falls.png",
+      "pos": [
+        -9,
+        -9
+      ],
+      "height": 2.5,
+      "draws": 40,
+      "tris": 863257,
+      "fps": 60
+    },
+    {
+      "name": "view-shelf",
+      "file": "evidence/worlds/ridge/ridge-ravine-view-shelf.png",
+      "pos": [
+        8,
+        -28
+      ],
+      "height": 3,
+      "draws": 50,
+      "tris": 910439,
+      "fps": 60
+    },
+    {
+      "name": "bridgewest",
+      "file": "evidence/worlds/ridge/ridge-ravine-bridgewest.png",
+      "pos": [
+        0.2,
+        6
+      ],
+      "height": 0.3,
+      "draws": 43,
+      "tris": 901537,
+      "fps": 60
+    },
+    {
+      "name": "rim",
+      "file": "evidence/worlds/ridge/ridge-ravine-rim.png",
+      "pos": [
+        2,
+        19
+      ],
+      "height": 1.7,
+      "draws": 43,
+      "tris": 901537,
+      "fps": 60
+    },
+    {
+      "name": "skyup",
+      "file": "evidence/worlds/ridge/ridge-ravine-skyup.png",
+      "pos": [
+        0,
+        30
+      ],
+      "height": 1.7,
+      "draws": 39,
+      "tris": 898787,
+      "fps": 60
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "loadSeconds": 1.333,
+  "portals": {
+    "spawn": {
+      "at": [
+        0,
+        1.68,
+        44
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "exit": {
+      "at": [
+        0,
+        2.5,
+        -50
+      ],
+      "walk": true,
+      "ground": 2
+    },
+    "returnPoint": {
+      "at": [
+        0,
+        1,
+        48
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "arenaCenter": {
+      "at": [
+        0,
+        0,
+        -17
+      ],
+      "walk": true,
+      "ground": 0
+    }
+  },
+  "views": [
+    "trail",
+    "bridge",
+    "falls",
+    "shelf"
+  ],
+  "clues": [
+    {
+      "id": "ridge-bridge-knot",
+      "walk": true,
+      "ground": -1.3892274546014158,
+      "y": -0.4,
+      "ok": true
+    },
+    {
+      "id": "ridge-shrine",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "ridge-cut-thread",
+      "walk": true,
+      "ground": 1.3989481592787378,
+      "y": 2.4,
+      "ok": true
+    }
+  ],
+  "walkDistance": 5.004779999999975
+}

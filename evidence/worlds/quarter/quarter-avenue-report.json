@@ -1,0 +1,149 @@
+{
+  "region": "quarter-avenue",
+  "shots": [
+    {
+      "name": "spawn",
+      "file": "evidence/worlds/quarter/quarter-avenue-spawn.png",
+      "pos": [
+        -5.2,
+        52
+      ],
+      "height": 1.68,
+      "draws": 54,
+      "tris": 463764,
+      "fps": 60
+    },
+    {
+      "name": "view-arrival",
+      "file": "evidence/worlds/quarter/quarter-avenue-view-arrival.png",
+      "pos": [
+        0,
+        55
+      ],
+      "height": 2.1,
+      "draws": 54,
+      "tris": 463764,
+      "fps": 60
+    },
+    {
+      "name": "view-balconies",
+      "file": "evidence/worlds/quarter/quarter-avenue-view-balconies.png",
+      "pos": [
+        -7.5,
+        26
+      ],
+      "height": 2.2,
+      "draws": 52,
+      "tris": 463724,
+      "fps": 59
+    },
+    {
+      "name": "view-crossing",
+      "file": "evidence/worlds/quarter/quarter-avenue-view-crossing.png",
+      "pos": [
+        8,
+        10
+      ],
+      "height": 2.4,
+      "draws": 51,
+      "tris": 463704,
+      "fps": 60
+    },
+    {
+      "name": "view-blossom",
+      "file": "evidence/worlds/quarter/quarter-avenue-view-blossom.png",
+      "pos": [
+        4,
+        -10
+      ],
+      "height": 1.9,
+      "draws": 50,
+      "tris": 463684,
+      "fps": 54
+    },
+    {
+      "name": "view-firelight",
+      "file": "evidence/worlds/quarter/quarter-avenue-view-firelight.png",
+      "pos": [
+        0,
+        -46
+      ],
+      "height": 2.2,
+      "draws": 43,
+      "tris": 461776,
+      "fps": 42
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "loadSeconds": 0.678,
+  "portals": {
+    "spawn": {
+      "at": [
+        -5.2,
+        1.68,
+        52
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "exit": {
+      "at": [
+        0,
+        1,
+        -56
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "returnPoint": {
+      "at": [
+        0,
+        1,
+        54
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "arenaCenter": {
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "walk": true,
+      "ground": 0
+    }
+  },
+  "views": [
+    "arrival",
+    "balconies",
+    "crossing",
+    "blossom",
+    "firelight"
+  ],
+  "clues": [
+    {
+      "id": "quarter-teahouse",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "quarter-blossom",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "quarter-fan",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    }
+  ],
+  "walkDistance": 5.004779999999945
+}

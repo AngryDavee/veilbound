@@ -1,0 +1,136 @@
+{
+  "region": "springs-forge",
+  "shots": [
+    {
+      "name": "spawn",
+      "file": "evidence/worlds/springs/springs-forge-spawn.png",
+      "pos": [
+        0,
+        40
+      ],
+      "height": 1.68,
+      "draws": 59,
+      "tris": 1742916,
+      "fps": 37
+    },
+    {
+      "name": "view-arrival",
+      "file": "evidence/worlds/springs/springs-forge-view-arrival.png",
+      "pos": [
+        0,
+        41
+      ],
+      "height": 2.1,
+      "draws": 59,
+      "tris": 1742916,
+      "fps": 56
+    },
+    {
+      "name": "view-casting",
+      "file": "evidence/worlds/springs/springs-forge-view-casting.png",
+      "pos": [
+        6,
+        3
+      ],
+      "height": 2.4,
+      "draws": 49,
+      "tris": 1739086,
+      "fps": 60
+    },
+    {
+      "name": "view-tatara",
+      "file": "evidence/worlds/springs/springs-forge-view-tatara.png",
+      "pos": [
+        -7.4,
+        3.2
+      ],
+      "height": 3.6,
+      "draws": 52,
+      "tris": 1740556,
+      "fps": 60
+    },
+    {
+      "name": "view-terraces",
+      "file": "evidence/worlds/springs/springs-forge-view-terraces.png",
+      "pos": [
+        2,
+        -45.5
+      ],
+      "height": 11.5,
+      "draws": 59,
+      "tris": 1742916,
+      "fps": 60
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "loadSeconds": 0.697,
+  "portals": {
+    "spawn": {
+      "at": [
+        0,
+        1.68,
+        40
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "exit": {
+      "at": [
+        0,
+        6,
+        -44.5
+      ],
+      "walk": true,
+      "ground": 5
+    },
+    "returnPoint": {
+      "at": [
+        0,
+        1,
+        45
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "arenaCenter": {
+      "at": [
+        0,
+        0,
+        -6
+      ],
+      "walk": true,
+      "ground": 0
+    }
+  },
+  "views": [
+    "arrival",
+    "casting",
+    "tatara",
+    "terraces"
+  ],
+  "clues": [
+    {
+      "id": "springs-tatara",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "springs-mold",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "springs-hammer",
+      "walk": true,
+      "ground": 5,
+      "y": 6,
+      "ok": true
+    }
+  ],
+  "walkDistance": 5.059889999999946
+}

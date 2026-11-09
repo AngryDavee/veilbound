@@ -1,0 +1,172 @@
+{
+  "region": "express-dawn",
+  "shots": [
+    {
+      "name": "spawn",
+      "file": "evidence/worlds/express/express-dawn-spawn.png",
+      "pos": [
+        0,
+        36
+      ],
+      "height": 1.68,
+      "draws": 69,
+      "tris": 2102986,
+      "fps": 41
+    },
+    {
+      "name": "view-plain",
+      "file": "evidence/worlds/express/express-dawn-view-plain.png",
+      "pos": [
+        3,
+        40
+      ],
+      "height": 1.8,
+      "draws": 69,
+      "tris": 2102986,
+      "fps": 38
+    },
+    {
+      "name": "view-engine",
+      "file": "evidence/worlds/express/express-dawn-view-engine.png",
+      "pos": [
+        -3,
+        -14
+      ],
+      "height": 2.1,
+      "draws": 65,
+      "tris": 2096654,
+      "fps": 60
+    },
+    {
+      "name": "view-clearing",
+      "file": "evidence/worlds/express/express-dawn-view-clearing.png",
+      "pos": [
+        18,
+        10
+      ],
+      "height": 2.2,
+      "draws": 59,
+      "tris": 2101760,
+      "fps": 60
+    },
+    {
+      "name": "view-branch",
+      "file": "evidence/worlds/express/express-dawn-view-branch.png",
+      "pos": [
+        -1.5,
+        -38
+      ],
+      "height": 2.4,
+      "draws": 51,
+      "tris": 2080716,
+      "fps": 60
+    },
+    {
+      "name": "close",
+      "file": "evidence/worlds/express/express-dawn-close.png",
+      "pos": [
+        2,
+        10
+      ],
+      "height": 1.68,
+      "draws": 58,
+      "tris": 2101440,
+      "fps": 60
+    },
+    {
+      "name": "forecourt-low",
+      "file": "evidence/worlds/express/express-dawn-forecourt-low.png",
+      "pos": [
+        6,
+        38
+      ],
+      "height": 1.68,
+      "draws": 65,
+      "tris": 2102682,
+      "fps": 60
+    },
+    {
+      "name": "warehouse",
+      "file": "evidence/worlds/express/express-dawn-warehouse.png",
+      "pos": [
+        8,
+        30
+      ],
+      "height": 1.68,
+      "draws": 59,
+      "tris": 2096562,
+      "fps": 59
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "loadSeconds": 1.329,
+  "portals": {
+    "spawn": {
+      "at": [
+        0,
+        1.68,
+        36
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "exit": {
+      "at": [
+        0,
+        1,
+        -44
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "returnPoint": {
+      "at": [
+        0,
+        1,
+        40
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "arenaCenter": {
+      "at": [
+        8,
+        0,
+        0
+      ],
+      "walk": true,
+      "ground": 0
+    }
+  },
+  "views": [
+    "plain",
+    "engine",
+    "clearing",
+    "branch"
+  ],
+  "clues": [
+    {
+      "id": "express-bell",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "express-ticket-stub",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "express-tracks",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    }
+  ],
+  "walkDistance": 4.949669999999932
+}

@@ -1,0 +1,149 @@
+{
+  "region": "city-tower",
+  "shots": [
+    {
+      "name": "spawn",
+      "file": "evidence/worlds/city/city-tower-spawn.png",
+      "pos": [
+        0,
+        10.5
+      ],
+      "height": 1.68,
+      "draws": 38,
+      "tris": 299204,
+      "fps": 60
+    },
+    {
+      "name": "view-terrace",
+      "file": "evidence/worlds/city/city-tower-view-terrace.png",
+      "pos": [
+        0,
+        11
+      ],
+      "height": 2,
+      "draws": 38,
+      "tris": 299204,
+      "fps": 60
+    },
+    {
+      "name": "view-north",
+      "file": "evidence/worlds/city/city-tower-view-north.png",
+      "pos": [
+        -8,
+        -14.2
+      ],
+      "height": 1.9,
+      "draws": 33,
+      "tris": 295584,
+      "fps": 60
+    },
+    {
+      "name": "view-city",
+      "file": "evidence/worlds/city/city-tower-view-city.png",
+      "pos": [
+        -12,
+        11.5
+      ],
+      "height": 1.9,
+      "draws": 33,
+      "tris": 295512,
+      "fps": 60
+    },
+    {
+      "name": "view-moon",
+      "file": "evidence/worlds/city/city-tower-view-moon.png",
+      "pos": [
+        -14,
+        -6
+      ],
+      "height": 1.9,
+      "draws": 34,
+      "tris": 295808,
+      "fps": 60
+    },
+    {
+      "name": "view-precinct",
+      "file": "evidence/worlds/city/city-tower-view-precinct.png",
+      "pos": [
+        12,
+        11.5
+      ],
+      "height": 1.9,
+      "draws": 31,
+      "tris": 295500,
+      "fps": 60
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "loadSeconds": 1.148,
+  "portals": {
+    "spawn": {
+      "at": [
+        0,
+        1.68,
+        10.5
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "exit": {
+      "at": [
+        0,
+        1,
+        -14
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "returnPoint": {
+      "at": [
+        0,
+        1,
+        14
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "arenaCenter": {
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "walk": true,
+      "ground": 0
+    }
+  },
+  "views": [
+    "terrace",
+    "north",
+    "city",
+    "moon",
+    "precinct"
+  ],
+  "clues": [
+    {
+      "id": "city-telescope",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "city-lamp-oil",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "city-letter",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    }
+  ],
+  "walkDistance": 4.94999999999999
+}

@@ -1,0 +1,136 @@
+{
+  "region": "springs-basin",
+  "shots": [
+    {
+      "name": "spawn",
+      "file": "evidence/worlds/springs/springs-basin-spawn.png",
+      "pos": [
+        0,
+        30
+      ],
+      "height": 1.68,
+      "draws": 39,
+      "tris": 2076818,
+      "fps": 43
+    },
+    {
+      "name": "view-arrival",
+      "file": "evidence/worlds/springs/springs-basin-view-arrival.png",
+      "pos": [
+        0,
+        33
+      ],
+      "height": 2,
+      "draws": 39,
+      "tris": 2076818,
+      "fps": 46
+    },
+    {
+      "name": "view-shelf",
+      "file": "evidence/worlds/springs/springs-basin-view-shelf.png",
+      "pos": [
+        -6,
+        4
+      ],
+      "height": 2.4,
+      "draws": 39,
+      "tris": 2076818,
+      "fps": 60
+    },
+    {
+      "name": "view-bell",
+      "file": "evidence/worlds/springs/springs-basin-view-bell.png",
+      "pos": [
+        3.1999999999999993,
+        -17.6
+      ],
+      "height": 2.2,
+      "draws": 38,
+      "tris": 2076806,
+      "fps": 60
+    },
+    {
+      "name": "view-door",
+      "file": "evidence/worlds/springs/springs-basin-view-door.png",
+      "pos": [
+        14.6,
+        -25
+      ],
+      "height": 2.6,
+      "draws": 35,
+      "tris": 2058654,
+      "fps": 60
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "loadSeconds": 1.227,
+  "portals": {
+    "spawn": {
+      "at": [
+        0,
+        1.68,
+        30
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "exit": {
+      "at": [
+        15.2,
+        1,
+        -33.8
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "returnPoint": {
+      "at": [
+        0,
+        1,
+        36.5
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "arenaCenter": {
+      "at": [
+        0,
+        0,
+        -4
+      ],
+      "walk": true,
+      "ground": 0
+    }
+  },
+  "views": [
+    "arrival",
+    "shelf",
+    "bell",
+    "door"
+  ],
+  "clues": [
+    {
+      "id": "springs-last-bell",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "springs-steam-letter",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "springs-door",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    }
+  ],
+  "walkDistance": 4.949999999999974
+}

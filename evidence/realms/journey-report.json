@@ -22,6 +22,7 @@
       ],
       "telemetry": {
         "realm": "cedar",
+        "worldId": "valley",
         "realmLoading": false,
         "arena": "The hidden clearing",
         "pos": [
@@ -29,17 +30,17 @@
           37
         ],
         "height": 1.68,
-        "fps": 59.997209432119526,
+        "fps": 60.005581914596675,
         "speed": 0,
         "score": 0,
         "over": false,
         "draws": 42,
-        "tris": 460486,
+        "tris": 542152,
         "started": true,
         "evening": false,
         "texturesLoaded": 13,
-        "grassBlades": 26638,
-        "windTime": 2.6665999999999994,
+        "grassBlades": 26634,
+        "windTime": 2.6163999999999987,
         "view": "Whispering Thicket"
       }
     },
@@ -64,6 +65,7 @@
       ],
       "telemetry": {
         "realm": "reedwater",
+        "worldId": "valley",
         "realmLoading": false,
         "arena": "The ferry yard",
         "pos": [
@@ -71,7 +73,7 @@
           32
         ],
         "height": 1.68,
-        "fps": 60.005581914596526,
+        "fps": 60.013956734124214,
         "speed": 0,
         "score": 1,
         "over": false,
@@ -81,7 +83,7 @@
         "evening": false,
         "texturesLoaded": 12,
         "grassBlades": 0,
-        "windTime": 17.415899999999937,
+        "windTime": 17.349199999999914,
         "view": "Reedwater Crossing"
       }
     },
@@ -106,6 +108,7 @@
       ],
       "telemetry": {
         "realm": "folded",
+        "worldId": "valley",
         "realmLoading": false,
         "arena": "The Meridian Ring",
         "pos": [
@@ -113,7 +116,7 @@
           29
         ],
         "height": 1.68,
-        "fps": 60.00558191459683,
+        "fps": 59.99142979574359,
         "speed": 0,
         "score": 2,
         "over": false,
@@ -123,7 +126,7 @@
         "evening": false,
         "texturesLoaded": 12,
         "grassBlades": 0,
-        "windTime": 30.931899999999533,
+        "windTime": 30.865299999999532,
         "view": "The Folded Court"
       }
     }

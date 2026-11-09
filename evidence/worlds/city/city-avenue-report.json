@@ -1,0 +1,136 @@
+{
+  "region": "city-avenue",
+  "shots": [
+    {
+      "name": "spawn",
+      "file": "evidence/worlds/city/city-avenue-spawn.png",
+      "pos": [
+        0,
+        40
+      ],
+      "height": 1.68,
+      "draws": 61,
+      "tris": 196964,
+      "fps": 59
+    },
+    {
+      "name": "view-arrival",
+      "file": "evidence/worlds/city/city-avenue-view-arrival.png",
+      "pos": [
+        2.5,
+        44
+      ],
+      "height": 2,
+      "draws": 61,
+      "tris": 196964,
+      "fps": 60
+    },
+    {
+      "name": "view-crossing",
+      "file": "evidence/worlds/city/city-avenue-view-crossing.png",
+      "pos": [
+        -8,
+        4
+      ],
+      "height": 2.4,
+      "draws": 56,
+      "tris": 196920,
+      "fps": 60
+    },
+    {
+      "name": "view-bank",
+      "file": "evidence/worlds/city/city-avenue-view-bank.png",
+      "pos": [
+        6,
+        -12
+      ],
+      "height": 2,
+      "draws": 52,
+      "tris": 196886,
+      "fps": 60
+    },
+    {
+      "name": "view-kerb",
+      "file": "evidence/worlds/city/city-avenue-view-kerb.png",
+      "pos": [
+        8.8,
+        30
+      ],
+      "height": 1.5,
+      "draws": 60,
+      "tris": 196960,
+      "fps": 59
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "loadSeconds": 1.664,
+  "portals": {
+    "spawn": {
+      "at": [
+        0,
+        1.68,
+        40
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "exit": {
+      "at": [
+        0,
+        1,
+        -46
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "returnPoint": {
+      "at": [
+        0,
+        1,
+        44
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "arenaCenter": {
+      "at": [
+        0,
+        0,
+        -8
+      ],
+      "walk": true,
+      "ground": 0
+    }
+  },
+  "views": [
+    "arrival",
+    "crossing",
+    "bank",
+    "kerb"
+  ],
+  "clues": [
+    {
+      "id": "city-lamp-pass",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "city-portrait",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "city-tram-ticket",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    }
+  ],
+  "walkDistance": 4.949669999999976
+}

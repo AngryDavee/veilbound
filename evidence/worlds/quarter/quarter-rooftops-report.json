@@ -1,0 +1,148 @@
+{
+  "region": "quarter-rooftops",
+  "shots": [
+    {
+      "name": "spawn",
+      "file": "evidence/worlds/quarter/quarter-rooftops-spawn.png",
+      "pos": [
+        0,
+        26
+      ],
+      "height": 1.68,
+      "draws": 51,
+      "tris": 935914,
+      "fps": 26
+    },
+    {
+      "name": "view-arrival",
+      "file": "evidence/worlds/quarter/quarter-rooftops-view-arrival.png",
+      "pos": [
+        0,
+        31
+      ],
+      "height": 2.1,
+      "draws": 51,
+      "tris": 935914,
+      "fps": 27
+    },
+    {
+      "name": "view-plaza",
+      "file": "evidence/worlds/quarter/quarter-rooftops-view-plaza.png",
+      "pos": [
+        -9,
+        9
+      ],
+      "height": 2.6,
+      "draws": 42,
+      "tris": 934818,
+      "fps": 53
+    },
+    {
+      "name": "view-tower",
+      "file": "evidence/worlds/quarter/quarter-rooftops-view-tower.png",
+      "pos": [
+        -4.5,
+        -13
+      ],
+      "height": 2.2,
+      "draws": 43,
+      "tris": 934832,
+      "fps": 46
+    },
+    {
+      "name": "view-burning",
+      "file": "evidence/worlds/quarter/quarter-rooftops-view-burning.png",
+      "pos": [
+        11,
+        -9
+      ],
+      "height": 2.4,
+      "draws": 39,
+      "tris": 934648,
+      "fps": 60
+    },
+    {
+      "name": "skyline",
+      "file": "evidence/worlds/quarter/quarter-rooftops-skyline.png",
+      "pos": [
+        0,
+        8
+      ],
+      "height": 2,
+      "draws": 46,
+      "tris": 934874,
+      "fps": 33
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "loadSeconds": 2.572,
+  "portals": {
+    "spawn": {
+      "at": [
+        0,
+        1.68,
+        26
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "exit": {
+      "at": [
+        0,
+        1,
+        -30
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "returnPoint": {
+      "at": [
+        0,
+        1,
+        30
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "arenaCenter": {
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "walk": true,
+      "ground": 0
+    }
+  },
+  "views": [
+    "arrival",
+    "plaza",
+    "tower",
+    "burning"
+  ],
+  "clues": [
+    {
+      "id": "quarter-tower",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "quarter-two-faces",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "quarter-sparks",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    }
+  ],
+  "walkDistance": 4.893899999999967
+}

@@ -4,37 +4,39 @@
     {
       "check": "keyboard-motion",
       "realm": "sanctuary",
+      "worldId": "valley",
       "realmLoading": false,
       "arena": "Training court",
       "pos": [
         0,
-        -0.47411999999995685
+        5.740770000000064
       ],
       "height": 1.6799999999999997,
-      "fps": 59.99720943211938,
-      "speed": 3.2999999999999985,
+      "fps": 60.005581914596675,
+      "speed": 3.3000000000000154,
       "score": 0,
       "over": false,
-      "draws": 69,
-      "tris": 1567466,
+      "draws": 71,
+      "tris": 1589082,
       "started": true,
       "evening": false,
       "texturesLoaded": 23,
       "grassBlades": 41705,
-      "windTime": 10.699499999999992,
+      "windTime": 8.749700000000031,
       "view": "Cloudveil Courtyard"
     },
     {
       "check": "hall-letter",
       "realm": "sanctuary",
+      "worldId": "valley",
       "realmLoading": false,
       "arena": "Training court",
       "pos": [
-        0.618232858387196,
-        -16.70275808860158
+        0.6182328583871975,
+        -16.702758088601556
       ],
-      "height": 2.539999999856438,
-      "fps": 59.99720943211938,
+      "height": 2.5399999998376352,
+      "fps": 60.00558191459683,
       "speed": 0,
       "score": 1,
       "over": false,
@@ -44,20 +46,21 @@
       "evening": false,
       "texturesLoaded": 23,
       "grassBlades": 41705,
-      "windTime": 24.632199999999752,
+      "windTime": 22.165799999999795,
       "view": "The Training Hall"
     },
     {
       "check": "walked-to-bell-all-clues",
       "realm": "sanctuary",
+      "worldId": "valley",
       "realmLoading": false,
       "arena": "Training court",
       "pos": [
-        31.5996,
-        -42.09540000000003
+        31.598400000000048,
+        -42.09780000000001
       ],
-      "height": 12.365543433137963,
-      "fps": 60.00558191459622,
+      "height": 12.365598195041759,
+      "fps": 60.00558191459683,
       "speed": 0,
       "score": 3,
       "over": false,
@@ -67,17 +70,18 @@
       "evening": false,
       "texturesLoaded": 23,
       "grassBlades": 41705,
-      "windTime": 46.19780000000024,
+      "windTime": 43.81500000000022,
       "view": "The Silent Bell"
     },
     {
       "check": "touch-motion",
       "realm": "sanctuary",
+      "worldId": "valley",
       "realmLoading": false,
       "arena": "Training court",
       "pos": [
         0,
-        17.79803823529412
+        17.798329411764694
       ],
       "height": 1.6799999999999997,
       "fps": 60.00558191459675,
@@ -90,7 +94,7 @@
       "evening": false,
       "texturesLoaded": 23,
       "grassBlades": 20861,
-      "windTime": 3.9665999999999975,
+      "windTime": 3.9498999999999995,
       "view": "Cloudveil Courtyard"
     }
   ],

@@ -8,7 +8,8 @@
     "check": "node tools/check.mjs",
     "test:browser": "node tools/browser-test.mjs",
     "test:regions": "node tools/realms-review.mjs",
-    "test:journey": "node tools/journey-test.mjs"
+    "test:journey": "node tools/journey-test.mjs",
+    "test:chain": "node tools/chain-test.mjs"
   },
   "dependencies": {
     "three": "0.169.0"

@@ -1,0 +1,148 @@
+{
+  "region": "ridge-hamlet",
+  "shots": [
+    {
+      "name": "spawn",
+      "file": "evidence/worlds/ridge/ridge-hamlet-spawn.png",
+      "pos": [
+        0,
+        40
+      ],
+      "height": 1.68,
+      "draws": 68,
+      "tris": 740812,
+      "fps": 35
+    },
+    {
+      "name": "view-arrival",
+      "file": "evidence/worlds/ridge/ridge-hamlet-view-arrival.png",
+      "pos": [
+        2,
+        44
+      ],
+      "height": 2.2,
+      "draws": 83,
+      "tris": 741012,
+      "fps": 32
+    },
+    {
+      "name": "view-yard",
+      "file": "evidence/worlds/ridge/ridge-hamlet-view-yard.png",
+      "pos": [
+        -8,
+        12
+      ],
+      "height": 3,
+      "draws": 52,
+      "tris": 738670,
+      "fps": 38
+    },
+    {
+      "name": "view-terraces",
+      "file": "evidence/worlds/ridge/ridge-hamlet-view-terraces.png",
+      "pos": [
+        23,
+        40
+      ],
+      "height": 3.5,
+      "draws": 45,
+      "tris": 726942,
+      "fps": 42
+    },
+    {
+      "name": "view-threads",
+      "file": "evidence/worlds/ridge/ridge-hamlet-view-threads.png",
+      "pos": [
+        -6,
+        -20
+      ],
+      "height": 3.5,
+      "draws": 41,
+      "tris": 726520,
+      "fps": 60
+    },
+    {
+      "name": "wide",
+      "file": "evidence/worlds/ridge/ridge-hamlet-wide.png",
+      "pos": [
+        -12,
+        46
+      ],
+      "height": 9,
+      "draws": 84,
+      "tris": 741036,
+      "fps": 56
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "loadSeconds": 4.08,
+  "portals": {
+    "spawn": {
+      "at": [
+        0,
+        1.68,
+        40
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "exit": {
+      "at": [
+        0,
+        1,
+        -46
+      ],
+      "walk": true,
+      "ground": 1.1663999999999999
+    },
+    "returnPoint": {
+      "at": [
+        0,
+        1,
+        44
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "arenaCenter": {
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "walk": true,
+      "ground": 0
+    }
+  },
+  "views": [
+    "arrival",
+    "yard",
+    "terraces",
+    "threads"
+  ],
+  "clues": [
+    {
+      "id": "ridge-attic",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "ridge-loom",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "ridge-trail",
+      "walk": true,
+      "ground": 0.7776,
+      "y": 1.8,
+      "ok": true
+    }
+  ],
+  "walkDistance": 4.949670000000012
+}

@@ -1,0 +1,149 @@
+{
+  "region": "city-precinct",
+  "shots": [
+    {
+      "name": "spawn",
+      "file": "evidence/worlds/city/city-precinct-spawn.png",
+      "pos": [
+        0,
+        45
+      ],
+      "height": 1.68,
+      "draws": 64,
+      "tris": 112556,
+      "fps": 60
+    },
+    {
+      "name": "view-gate",
+      "file": "evidence/worlds/city/city-precinct-view-gate.png",
+      "pos": [
+        3,
+        46
+      ],
+      "height": 1.9,
+      "draws": 64,
+      "tris": 112556,
+      "fps": 60
+    },
+    {
+      "name": "view-approach",
+      "file": "evidence/worlds/city/city-precinct-view-approach.png",
+      "pos": [
+        0,
+        21
+      ],
+      "height": 1.8,
+      "draws": 53,
+      "tris": 105922,
+      "fps": 40
+    },
+    {
+      "name": "view-pagoda",
+      "file": "evidence/worlds/city/city-precinct-view-pagoda.png",
+      "pos": [
+        -6,
+        4
+      ],
+      "height": 1.8,
+      "draws": 29,
+      "tris": 95348,
+      "fps": 60
+    },
+    {
+      "name": "view-bell",
+      "file": "evidence/worlds/city/city-precinct-view-bell.png",
+      "pos": [
+        12,
+        -14
+      ],
+      "height": 2.2,
+      "draws": 35,
+      "tris": 91478,
+      "fps": 47
+    },
+    {
+      "name": "view-court",
+      "file": "evidence/worlds/city/city-precinct-view-court.png",
+      "pos": [
+        -10,
+        -19
+      ],
+      "height": 2.4,
+      "draws": 49,
+      "tris": 106698,
+      "fps": 52
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "loadSeconds": 0.434,
+  "portals": {
+    "spawn": {
+      "at": [
+        0,
+        1.68,
+        45
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "exit": {
+      "at": [
+        22,
+        1,
+        -46
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "returnPoint": {
+      "at": [
+        0,
+        1,
+        48.8
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "arenaCenter": {
+      "at": [
+        0,
+        0,
+        -6
+      ],
+      "walk": true,
+      "ground": 0
+    }
+  },
+  "views": [
+    "gate",
+    "approach",
+    "pagoda",
+    "bell",
+    "court"
+  ],
+  "clues": [
+    {
+      "id": "city-ema",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "city-incense",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "city-black-cloth",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    }
+  ],
+  "walkDistance": 5.004779999999961
+}

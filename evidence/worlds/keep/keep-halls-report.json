@@ -1,0 +1,136 @@
+{
+  "region": "keep-halls",
+  "shots": [
+    {
+      "name": "spawn",
+      "file": "evidence/worlds/keep/keep-halls-spawn.png",
+      "pos": [
+        0,
+        30
+      ],
+      "height": 1.68,
+      "draws": 83,
+      "tris": 1131256,
+      "fps": 60
+    },
+    {
+      "name": "view-landing",
+      "file": "evidence/worlds/keep/keep-halls-view-landing.png",
+      "pos": [
+        0,
+        34
+      ],
+      "height": 3.2,
+      "draws": 83,
+      "tris": 1131256,
+      "fps": 60
+    },
+    {
+      "name": "view-void",
+      "file": "evidence/worlds/keep/keep-halls-view-void.png",
+      "pos": [
+        2.2,
+        24
+      ],
+      "height": 1.9,
+      "draws": 69,
+      "tris": 1098368,
+      "fps": 60
+    },
+    {
+      "name": "view-pagoda",
+      "file": "evidence/worlds/keep/keep-halls-view-pagoda.png",
+      "pos": [
+        -10,
+        10
+      ],
+      "height": 1.8,
+      "draws": 78,
+      "tris": 1130824,
+      "fps": 60
+    },
+    {
+      "name": "view-onward",
+      "file": "evidence/worlds/keep/keep-halls-view-onward.png",
+      "pos": [
+        0,
+        -24
+      ],
+      "height": 2,
+      "draws": 69,
+      "tris": 1089716,
+      "fps": 60
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "loadSeconds": 0.322,
+  "portals": {
+    "spawn": {
+      "at": [
+        0,
+        1.68,
+        30
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "exit": {
+      "at": [
+        0,
+        1,
+        -36
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "returnPoint": {
+      "at": [
+        0,
+        1,
+        34
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "arenaCenter": {
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "walk": true,
+      "ground": 0
+    }
+  },
+  "views": [
+    "landing",
+    "void",
+    "pagoda",
+    "onward"
+  ],
+  "clues": [
+    {
+      "id": "keep-own-bell",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "keep-scarf",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "keep-map",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    }
+  ],
+  "walkDistance": 4.949669999999973
+}

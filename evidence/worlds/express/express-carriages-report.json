@@ -1,0 +1,149 @@
+{
+  "region": "express-carriages",
+  "shots": [
+    {
+      "name": "spawn",
+      "file": "evidence/worlds/express/express-carriages-spawn.png",
+      "pos": [
+        0,
+        40
+      ],
+      "height": 1.68,
+      "draws": 209,
+      "tris": 171784,
+      "fps": 57
+    },
+    {
+      "name": "view-third",
+      "file": "evidence/worlds/express/express-carriages-view-third.png",
+      "pos": [
+        0.2,
+        44.4
+      ],
+      "height": 1.62,
+      "draws": 204,
+      "tris": 168728,
+      "fps": 60
+    },
+    {
+      "name": "view-window",
+      "file": "evidence/worlds/express/express-carriages-view-window.png",
+      "pos": [
+        0.35,
+        35
+      ],
+      "height": 1.5,
+      "draws": 91,
+      "tris": 121954,
+      "fps": 60
+    },
+    {
+      "name": "view-dining",
+      "file": "evidence/worlds/express/express-carriages-view-dining.png",
+      "pos": [
+        0.2,
+        22
+      ],
+      "height": 1.6,
+      "draws": 171,
+      "tris": 135854,
+      "fps": 44
+    },
+    {
+      "name": "view-sleeper",
+      "file": "evidence/worlds/express/express-carriages-view-sleeper.png",
+      "pos": [
+        0,
+        0.6000000000000014
+      ],
+      "height": 1.6,
+      "draws": 165,
+      "tris": 159742,
+      "fps": 42
+    },
+    {
+      "name": "view-baggage",
+      "file": "evidence/worlds/express/express-carriages-view-baggage.png",
+      "pos": [
+        0.3,
+        -24.5
+      ],
+      "height": 1.65,
+      "draws": 126,
+      "tris": 153650,
+      "fps": 53
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "loadSeconds": 1.531,
+  "portals": {
+    "spawn": {
+      "at": [
+        0,
+        1.68,
+        40
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "exit": {
+      "at": [
+        0,
+        1,
+        -46.4
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "returnPoint": {
+      "at": [
+        0,
+        1,
+        45.6
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "arenaCenter": {
+      "at": [
+        0,
+        0,
+        -36
+      ],
+      "walk": true,
+      "ground": 0
+    }
+  },
+  "views": [
+    "third",
+    "window",
+    "dining",
+    "sleeper",
+    "baggage"
+  ],
+  "clues": [
+    {
+      "id": "express-hat",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "express-menu",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "express-whistle",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    }
+  ],
+  "walkDistance": 4.949999999999974
+}

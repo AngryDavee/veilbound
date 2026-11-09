@@ -1,0 +1,136 @@
+{
+  "region": "keep-corridors",
+  "shots": [
+    {
+      "name": "spawn",
+      "file": "evidence/worlds/keep/keep-corridors-spawn.png",
+      "pos": [
+        0,
+        44
+      ],
+      "height": 1.68,
+      "draws": 49,
+      "tris": 1284194,
+      "fps": 60
+    },
+    {
+      "name": "view-corridor",
+      "file": "evidence/worlds/keep/keep-corridors-view-corridor.png",
+      "pos": [
+        0,
+        46
+      ],
+      "height": 1.9,
+      "draws": 49,
+      "tris": 1284194,
+      "fps": 60
+    },
+    {
+      "name": "view-chamber",
+      "file": "evidence/worlds/keep/keep-corridors-view-chamber.png",
+      "pos": [
+        8,
+        8
+      ],
+      "height": 2.2,
+      "draws": 47,
+      "tris": 1283830,
+      "fps": 60
+    },
+    {
+      "name": "view-folded",
+      "file": "evidence/worlds/keep/keep-corridors-view-folded.png",
+      "pos": [
+        -5.5,
+        -8.100000000000001
+      ],
+      "height": 1.75,
+      "draws": 46,
+      "tris": 1283828,
+      "fps": 60
+    },
+    {
+      "name": "view-crossing",
+      "file": "evidence/worlds/keep/keep-corridors-view-crossing.png",
+      "pos": [
+        9,
+        0
+      ],
+      "height": 2,
+      "draws": 38,
+      "tris": 1277908,
+      "fps": 60
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "loadSeconds": 0.347,
+  "portals": {
+    "spawn": {
+      "at": [
+        0,
+        1.68,
+        44
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "exit": {
+      "at": [
+        0,
+        1,
+        -52
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "returnPoint": {
+      "at": [
+        0,
+        1,
+        48
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "arenaCenter": {
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "walk": true,
+      "ground": 0
+    }
+  },
+  "views": [
+    "corridor",
+    "chamber",
+    "folded",
+    "crossing"
+  ],
+  "clues": [
+    {
+      "id": "keep-upside-lantern",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "keep-valley-room",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "keep-keepers",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    }
+  ],
+  "walkDistance": 4.949999999999932
+}

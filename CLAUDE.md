@@ -76,3 +76,15 @@ Read `game/realms/story.js` for chapter metadata, arena sizes and nine additiona
 Roots in both pine assets are now continuous ridged meshes, with a lower-resolution distant variant. The sanctuary cliff is now one eroded mesh. The thicket includes extensive ground cover and bamboo. The castle's moving architecture is decorative; its platforms, bridges and stair route stay fixed. No character/combat work has been started.
 
 Run `node tools/realms-review.mjs` and `node tools/journey-test.mjs` with the server running, in addition to `npm run check`. Read `references/four-regions-design.md` for the art audit and reference sources. No new Atlas generation occurred during this expansion because the image-generation connection was unavailable; all existing textures remain local and usable.
+
+
+## Campaign expansion: seven worlds (2026-11-09)
+
+The user clarified that the four regions above are ONE world, the Valley of Silent Bells. Every remaining world has to be built to complete the story and the game environments **before** character design or combat. Read `references/campaign-design.md` for the story spine, world table and research sources.
+
+- Worlds: I Valley (4 regions) · II Ward of a Thousand Lamps (`realms/city/`) · III Mistweave Ridge (`realms/ridge/`) · IV Midnight Express (`realms/express/`) · V Floating Quarter (`realms/quarter/`) · VI Ember Springs (`realms/springs/`) · VII Endless Keep (`realms/keep/`, 4 regions). 23 regions and 69 journal traces in total.
+- `realms/campaign.js` is the registry. It chains exits through every region; the last one leads home to the sanctuary. Each world's `story.js` owns its text, spawn/exit/return points, arenas and `theme` lighting.
+- Region module contract: `export async function create(root,renderer,progress,{camera,scene})` returns `{discoveries, views, canWalk, walkHeight, update(t,dt,camera), setEvening, texturesLoaded, grassBlades, trunks?, dispose?, locationAt?}`. Valley modules keep their legacy `createForest`/`createVillage`/`createCastle` names through the `factory` field.
+- Shared night sky and precipitation live in `realms/atmosphere.js`. `main.js` keeps at most 4 non-sanctuary regions resident and disposes the rest.
+- Inspect any region: `PORT=4190 node tools/serve.mjs`, then `node tools/region-shot.mjs --port 4190 --region <id> --views`. `tools/map-shot.mjs` captures the map. `npm run test:regions` walks all 23 regions; `test:journey` now expects the Folded Court exit to lead into World II.
+- Per-world design notes are in `references/worlds/`, and screenshots are in `evidence/worlds/`.

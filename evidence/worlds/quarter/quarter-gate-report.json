@@ -1,0 +1,136 @@
+{
+  "region": "quarter-gate",
+  "shots": [
+    {
+      "name": "spawn",
+      "file": "evidence/worlds/quarter/quarter-gate-spawn.png",
+      "pos": [
+        0,
+        44
+      ],
+      "height": 1.68,
+      "draws": 162,
+      "tris": 368466,
+      "fps": 32
+    },
+    {
+      "name": "view-arrival",
+      "file": "evidence/worlds/quarter/quarter-gate-view-arrival.png",
+      "pos": [
+        0,
+        46
+      ],
+      "height": 2.2,
+      "draws": 162,
+      "tris": 368466,
+      "fps": 27
+    },
+    {
+      "name": "view-willow",
+      "file": "evidence/worlds/quarter/quarter-gate-view-willow.png",
+      "pos": [
+        -2.5,
+        32
+      ],
+      "height": 1.9,
+      "draws": 110,
+      "tris": 353134,
+      "fps": 43
+    },
+    {
+      "name": "view-moat",
+      "file": "evidence/worlds/quarter/quarter-gate-view-moat.png",
+      "pos": [
+        6,
+        24.5
+      ],
+      "height": 2.8,
+      "draws": 151,
+      "tris": 366466,
+      "fps": 31
+    },
+    {
+      "name": "view-plaza",
+      "file": "evidence/worlds/quarter/quarter-gate-view-plaza.png",
+      "pos": [
+        0,
+        3
+      ],
+      "height": 2.4,
+      "draws": 72,
+      "tris": 338208,
+      "fps": 24
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "loadSeconds": 2.809,
+  "portals": {
+    "spawn": {
+      "at": [
+        0,
+        1.68,
+        44
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "exit": {
+      "at": [
+        0,
+        1,
+        -46
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "returnPoint": {
+      "at": [
+        0,
+        1,
+        48
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "arenaCenter": {
+      "at": [
+        0,
+        0,
+        -20
+      ],
+      "walk": true,
+      "ground": 0
+    }
+  },
+  "views": [
+    "arrival",
+    "willow",
+    "moat",
+    "plaza"
+  ],
+  "clues": [
+    {
+      "id": "quarter-willow",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "quarter-gatebook",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "quarter-mask",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    }
+  ],
+  "walkDistance": 5.0592300000000066
+}

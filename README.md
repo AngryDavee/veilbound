@@ -1,6 +1,6 @@
 # Veilbound — The Valley of Silent Bells
 
-Four explorable regions for an original anime-inspired sword adventure: a mountain training sanctuary, dense forest thicket, rainy canal town and shifting architectural observatory. Story traces and connected travel routes are implemented; characters and combat come later.
+Seven explorable worlds (23 regions) for an original anime-inspired sword adventure: a mountain valley, a lamplit Taisho capital, a misted silk ridge, a midnight express, a burning pleasure quarter, a snowbound smith village and an endless keep. Story traces and connected travel routes run end to end; characters and combat come later.
 
 ## Run
 
@@ -47,7 +47,7 @@ Browser checks drive actual keyboard, pointer, and touch input; save screenshots
 
 ## Next stage
 
-Continue environment art refinement across all four regions. Then author the protagonist, skeleton, animation blending, sword attachment, and training combat. The existing metre scale, hall clearance, ground-height function, and static collision rules are the initial character-controller contract. The current collision system is purpose-built for the authored region routes; it is not a general rigid-body engine.
+Continue environment art refinement across all 23 regions. Then author the protagonist, skeleton, animation blending, sword attachment, and training combat. The existing metre scale, hall clearance, ground-height function, and static collision rules are the initial character-controller contract. The current collision system is purpose-built for the authored region routes; it is not a general rigid-body engine.
 
 ## Environment detail pass
 
@@ -88,3 +88,21 @@ node tools/journey-test.mjs
 ```
 
 These checks exercise region loading, walking, map travel, physical chapter exits, clue access, the canal bridge, castle stairs, journal persistence and touch navigation. Evidence is saved under `evidence/realms/`.
+
+
+## Seven-world campaign
+
+The four regions above are World I, the Valley of Silent Bells. Six more worlds complete the story before character work begins:
+
+| World | Regions |
+| --- | --- |
+| II · The Ward of a Thousand Lamps | Lamplight Avenue · Thunderbell Precinct · The Cloudpiercer |
+| III · Mistweave Ridge | Silkfarm Hamlet · Threadbound Ravine · Cocoon Hollow |
+| IV · The Midnight Express | Hollowmoor Station · Sleeping Carriages · Dawn Plain |
+| V · The Floating Quarter | Willow Gate · Avenue of Blossoms · Burning Rooftops |
+| VI · Ember Springs | Gaslamp Bridges · Forge Terraces · Steam Basin |
+| VII · The Endless Keep | Falling Halls · Inverted Corridors · Stacked Atrium · Nightwright's Meridian |
+
+Every region has three journal traces (69 in total), named views, explicit collision and a reserved battle ground. Exits chain all 23 regions; the finale leads home to the sanctuary. All new scenery is code-built geometry, shaders and canvas textures over the existing Atlas library; no new Atlas generation was available.
+
+Validation (with `npm start` running): `npm run check`, `npm run test:regions` (all 23 regions), `npm run test:journey`, `npm run test:chain` (every exit, sanctuary → Meridian → home) and `npm run test:browser`. Story spine and research sources: `references/campaign-design.md`; per-world notes: `references/worlds/`; screenshots: `evidence/worlds/`.

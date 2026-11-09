@@ -1,0 +1,136 @@
+{
+  "region": "keep-meridian",
+  "shots": [
+    {
+      "name": "spawn",
+      "file": "evidence/worlds/keep/keep-meridian-spawn.png",
+      "pos": [
+        0,
+        30
+      ],
+      "height": 1.68,
+      "draws": 81,
+      "tris": 233226,
+      "fps": 60
+    },
+    {
+      "name": "view-arrival",
+      "file": "evidence/worlds/keep/keep-meridian-view-arrival.png",
+      "pos": [
+        0,
+        32
+      ],
+      "height": 2.2,
+      "draws": 77,
+      "tris": 232780,
+      "fps": 60
+    },
+    {
+      "name": "view-fold",
+      "file": "evidence/worlds/keep/keep-meridian-view-fold.png",
+      "pos": [
+        16,
+        6
+      ],
+      "height": 2.4,
+      "draws": 58,
+      "tris": 226610,
+      "fps": 60
+    },
+    {
+      "name": "view-orbit",
+      "file": "evidence/worlds/keep/keep-meridian-view-orbit.png",
+      "pos": [
+        -6,
+        10
+      ],
+      "height": 1.8,
+      "draws": 63,
+      "tris": 226200,
+      "fps": 60
+    },
+    {
+      "name": "view-home",
+      "file": "evidence/worlds/keep/keep-meridian-view-home.png",
+      "pos": [
+        0,
+        -30
+      ],
+      "height": 2,
+      "draws": 31,
+      "tris": 199794,
+      "fps": 60
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "loadSeconds": 0.632,
+  "portals": {
+    "spawn": {
+      "at": [
+        0,
+        1.68,
+        30
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "exit": {
+      "at": [
+        0,
+        1,
+        -34
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "returnPoint": {
+      "at": [
+        0,
+        1,
+        34
+      ],
+      "walk": true,
+      "ground": 0
+    },
+    "arenaCenter": {
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "walk": true,
+      "ground": 0
+    }
+  },
+  "views": [
+    "arrival",
+    "fold",
+    "orbit",
+    "home"
+  ],
+  "clues": [
+    {
+      "id": "keep-sibling",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "keep-first-fold",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    },
+    {
+      "id": "keep-way-home",
+      "walk": true,
+      "ground": 0,
+      "y": 1,
+      "ok": true
+    }
+  ],
+  "walkDistance": 4.949669999999973
+}
