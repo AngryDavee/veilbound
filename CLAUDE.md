@@ -1,5 +1,7 @@
 # Veilbound development handoff
 
+> **Continuing from another session? Read `HANDOFF.md` first.** It has the current status, the user’s working preferences and the pending visual-quality plan.
+
 ## What the user is building
 
 An original anime-inspired sword adventure, visually informed by Demon Slayer, The Hinokami Chronicles, and Infinity Castle. The priority is rich, explorable Three.js environments. Character creation, rigging, sword animation and combat come after the environments. Do not substitute a static generated image for the playable world.
