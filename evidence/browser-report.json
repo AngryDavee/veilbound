@@ -3,98 +3,174 @@
   "reports": [
     {
       "check": "keyboard-motion",
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "walk"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "bow",
+          "pos": [
+            0,
+            3.85
+          ]
+        }
+      },
       "realm": "sanctuary",
       "worldId": "valley",
       "realmLoading": false,
       "arena": "Training court",
       "pos": [
         0,
-        5.740770000000064
+        4.530990000000031
       ],
-      "height": 1.6799999999999997,
-      "fps": 60.005581914596675,
-      "speed": 3.3000000000000154,
+      "height": 1.68,
+      "fps": 30.005455537370402,
+      "speed": 3.3,
       "score": 0,
       "over": false,
-      "draws": 71,
-      "tris": 1589082,
+      "draws": 115,
+      "tris": 2003250,
       "started": true,
       "evening": false,
       "texturesLoaded": 23,
       "grassBlades": 41705,
-      "windTime": 8.749700000000031,
+      "windTime": 9.149600000000012,
       "view": "Cloudveil Courtyard"
     },
     {
       "check": "hall-letter",
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            3.85
+          ]
+        }
+      },
       "realm": "sanctuary",
       "worldId": "valley",
       "realmLoading": false,
       "arena": "Training court",
       "pos": [
-        0.6182328583871975,
-        -16.702758088601556
+        0.6080159020040107,
+        -16.757248522645273
       ],
-      "height": 2.5399999998376352,
-      "fps": 60.00558191459683,
+      "height": 2.5399999999785168,
+      "fps": 30.005455537370402,
       "speed": 0,
       "score": 1,
       "over": false,
-      "draws": 44,
-      "tris": 1520714,
+      "draws": 70,
+      "tris": 1760328,
       "started": true,
       "evening": false,
       "texturesLoaded": 23,
       "grassBlades": 41705,
-      "windTime": 22.165799999999795,
+      "windTime": 22.74910000000007,
       "view": "The Training Hall"
     },
     {
       "check": "walked-to-bell-all-clues",
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            3.85
+          ]
+        }
+      },
       "realm": "sanctuary",
       "worldId": "valley",
       "realmLoading": false,
       "arena": "Training court",
       "pos": [
-        31.598400000000048,
-        -42.09780000000001
+        31.598400000000044,
+        -42.19740000000009
       ],
-      "height": 12.365598195041759,
-      "fps": 60.00558191459683,
+      "height": 12.371874383700625,
+      "fps": 30.00545553737055,
       "speed": 0,
       "score": 3,
       "over": false,
-      "draws": 23,
-      "tris": 1131084,
+      "draws": 49,
+      "tris": 1375914,
       "started": true,
       "evening": false,
       "texturesLoaded": 23,
       "grassBlades": 41705,
-      "windTime": 43.81500000000022,
+      "windTime": 44.23160000000022,
       "view": "The Silent Bell"
     },
     {
       "check": "touch-motion",
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            3.85
+          ]
+        }
+      },
       "realm": "sanctuary",
       "worldId": "valley",
       "realmLoading": false,
       "arena": "Training court",
       "pos": [
         0,
-        17.798329411764694
+        17.53611529411768
       ],
       "height": 1.6799999999999997,
-      "fps": 60.00558191459675,
+      "fps": 29.99727297518409,
       "speed": 0,
       "score": 3,
       "over": false,
-      "draws": 68,
-      "tris": 1400250,
+      "draws": 105,
+      "tris": 1834776,
       "started": true,
       "evening": false,
       "texturesLoaded": 23,
       "grassBlades": 20861,
-      "windTime": 3.9498999999999995,
+      "windTime": 4.183199999999997,
       "view": "Cloudveil Courtyard"
     }
   ],

@@ -33,6 +33,7 @@ Puppeteer installs a browser during normal dependency installation. If browser d
 ## Code map
 
 - `game/main.js`: renderer, sky, lighting, input, first-person movement, journal, discovery interactions, audio, scenic camera transitions, telemetry.
+- `game/assets/fighter.js`, `game/fighter-moves.js`, `game/combat.js`: the two code-sculpted fighters (Haru, Mitsuki), their IK/sword-led animation and the spar system. See HANDOFF.md.
 - `game/environment.js`: core layout, mountains, scenery placements, clues, viewpoints, `canWalk` collision rules and `walkHeight` elevation.
 - `game/detail-world.js`: furnished interior, terrain/river details, dense animated grass, ferns, forest billboards, waterfall layers, mist, droplets, foam, reflected water and shared wind shaders.
 - `game/assets/`: import-free code geometry constructors. No downloaded 3D meshes.

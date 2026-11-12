@@ -1,8 +1,31 @@
-# Handoff: pick up here (2026-11-10)
+# Handoff: pick up here (2026-11-12)
 
 Read this first, then `CLAUDE.md` for setup, the code map and the recipe rules.
 
-## Where things stand
+## Latest session (2026-11-12): painted-anime pass tried and REJECTED
+
+The user tried a painted/cel-shaded look (ink outlines, Kuwahara paint filter, rim light, bloom, per-world grade, hand-painted Atlas materials) and said: "I don't like this cell shading or painting shading thing. Revert to the previous build."
+
+- The game code was reverted to commit `5d0da92`. Do **not** reintroduce ink outlines, paint/Kuwahara filters or cel shading.
+- The six paid Atlas painted material sets (55 credits) are archived, not loaded, in `references/painted-pilot/` with their provenance in `manifest.json`.
+- Character work is now unblocked: the user asked for **two code-built characters (404 recipe, no imported models), "pushed to the limits", fluid anime humans, not boxy, not built like a skeleton, who spar in different locations**. Reference for the fights: the Hinokami Chronicles Steam trailer (camera, effects, anime characters). The user chose: code-built (not Atlas 3D), third-person camera.
+
+## Latest session (2026-11-12): the fighters
+
+**Haru** (player, Apprentice Warden, teal haori, two-handed style) and **Mitsuki** (Bell Warden, crimson haori, silver ponytail, one-handed style). Both original.
+
+- `game/assets/fighter.js` (Path B, import-free): each body is ONE signed-distance-field sculpt (rounded cones/ellipsoids smooth-blended, carved hems/cuffs, pleats), polygonized with surface nets into one continuous skinned mesh. Skin weights come from how much each sculpted form contributes to a vertex. Colour borders (haori hem zigzag, open front V, lapels, belt) are cut exactly into the mesh, so they stay crisp. Separate finer grids for head and hands (seams hidden under collar/cuffs). Hair = tapered flattened locks hugging the skull from a crown whorl; Mitsuki's ponytail, the sleeve bags and the coat tail are spring bones. Face = canvas-painted anime eyes/brows/mouth, redrawn for blinks and expressions. Two-tone toon shading + rim light + inverted-hull ink outline **on the characters only** (the world keeps its normal look; the user rejected cel/paint post on the world). ~110k triangles and ~1 s build per fighter.
+- `game/fighter-moves.js`: poses in fighter root space, two-bone IK for arms and legs, **sword-led attacks** (grip position + blade direction + edge are keyed; the arms solve to follow), procedural walk/run/battle-run, combo slash1→slash2→slash3→finisher, guard, dash, hit, knockdown, win, bow.
+- `game/combat.js`: spar logic, AI, hit detection (reach + arc), guard/dash, hit-stop, camera shake, slash trails, sparks, impact star, shock ring, blob shadows, duel HUD.
+- `game/main.js`: third-person `viewCam` follows Haru (the logical `camera` is still the player eye, so every existing test and route works unchanged). In any region's battle ground press **E** to spar. Controls: F/click strike (chain), Q/right-click guard, Space dash, R art when the gauge glows, K let both fight on their own. Leaving the battle ground ends the spar. `window.__DUEL__` = start/stop/auto/state.
+- Lab: `game/lab/index.html?cam=front|side|back|face|face2|three&clip=slash1&t=.22` and `node tools/fighter-shot.mjs` for stills; `node tools/duel-test.mjs --regions sanctuary,city-avenue` plays a real spar and saves frames to `evidence/duel/`.
+
+Ideas not yet done: per-world opponents (Heralds), more moves per character, touch-tested pads, building fighters in a worker to shave load time.
+
+## Previous state (2026-11-10)
+
+
+### Where things stand
 
 - All seven worlds are built: 23 regions and 69 journal traces. The story chain runs from the sanctuary through every world and back home. Commit `d6d51d6` on `main`.
 - Every check passes:
@@ -14,13 +37,13 @@ Read this first, then `CLAUDE.md` for setup, the code map and the recipe rules.
 - **Still on hold until the user says go:** character design, combat and the protagonist. Each region already has an empty `arena` set aside for a future battle.
 - Story outline: `references/campaign-design.md`. Notes and known limits for each world: `references/worlds/*.md`.
 
-## How the user works
+### How the user works
 
 - **Act, don't instruct.** Never give the user steps or commands to run. Do the work, check it with screenshots and tests, then report the result in plain language.
 - Use original content only. Demon Slayer, Infinity Castle and Hinokami Chronicles are visual references. Their names, maps and characters stay out of the game.
 - Commit or push only when the user asks. Never put Atlas credentials or signed URLs in the repo.
 
-## The conversation left off here: visual quality
+### The conversation left off here: visual quality
 
 The user asked why the game looks like "shapes here and there" when other Three.js games look realistic, and what could improve it while still following the 404 recipe.
 
@@ -55,7 +78,7 @@ Suggested order once the user agrees:
 
 Separately, Reedwater Crossing is the weakest-looking region in the game and is due a rebuild.
 
-## Inspecting a region
+### Inspecting a region
 
 ```
 PORT=4190 node tools/serve.mjs

@@ -2,6 +2,25 @@
   "passed": true,
   "reports": [
     {
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            -14.55
+          ]
+        }
+      },
       "realm": "cedar",
       "worldId": "valley",
       "realmLoading": false,
@@ -11,21 +30,40 @@
         37
       ],
       "height": 1.68,
-      "fps": 59.997209432119455,
+      "fps": 30.001363698349955,
       "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 42,
-      "tris": 542152,
+      "draws": 75,
+      "tris": 976576,
       "started": true,
       "evening": false,
       "texturesLoaded": 13,
       "grassBlades": 26634,
-      "windTime": 4.316599999999995,
+      "windTime": 4.9332,
       "view": "Whispering Thicket",
-      "walkDistance": 4.94966999999987
+      "walkDistance": 4.9500000000000455
     },
     {
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            11.85
+          ]
+        }
+      },
       "realm": "reedwater",
       "worldId": "valley",
       "realmLoading": false,
@@ -35,21 +73,40 @@
         32
       ],
       "height": 1.68,
-      "fps": 60.005581914596675,
+      "fps": 30.001363698349955,
       "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 56,
-      "tris": 307198,
+      "draws": 92,
+      "tris": 741674,
       "started": true,
       "evening": false,
       "texturesLoaded": 12,
       "grassBlades": 0,
-      "windTime": 8.916500000000019,
+      "windTime": 9.833100000000016,
       "view": "Reedwater Crossing",
-      "walkDistance": 5.004779999999975
+      "walkDistance": 4.94966999999998
     },
     {
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            -4.55
+          ]
+        }
+      },
       "realm": "folded",
       "worldId": "valley",
       "realmLoading": false,
@@ -59,21 +116,40 @@
         29
       ],
       "height": 1.68,
-      "fps": 59.99720943211938,
+      "fps": 30.001363698349806,
       "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 41,
-      "tris": 616154,
+      "draws": 84,
+      "tris": 1051026,
       "started": true,
       "evening": false,
       "texturesLoaded": 12,
       "grassBlades": 0,
-      "windTime": 13.332899999999952,
+      "windTime": 15.099500000000008,
       "view": "The Folded Court",
-      "walkDistance": 4.950000000000038
+      "walkDistance": 4.949669999999987
     },
     {
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            -11.5
+          ]
+        }
+      },
       "realm": "city-avenue",
       "worldId": "city",
       "realmLoading": false,
@@ -83,21 +159,40 @@
         40
       ],
       "height": 1.68,
-      "fps": 59.99720943211938,
+      "fps": 30.005455537370402,
       "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 61,
-      "tris": 196964,
+      "draws": 105,
+      "tris": 631838,
       "started": true,
       "evening": false,
       "texturesLoaded": 14,
       "grassBlades": 0,
-      "windTime": 18.03269999999989,
+      "windTime": 19.932700000000047,
       "view": "Lamplight Avenue",
-      "walkDistance": 4.949669999999891
+      "walkDistance": 4.94967000000004
     },
     {
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            -9.85
+          ]
+        }
+      },
       "realm": "city-precinct",
       "worldId": "city",
       "realmLoading": false,
@@ -107,21 +202,40 @@
         45
       ],
       "height": 1.68,
-      "fps": 59.99720943211968,
+      "fps": 30.001363698349806,
       "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 64,
-      "tris": 112556,
+      "draws": 107,
+      "tris": 547428,
       "started": true,
       "evening": false,
       "texturesLoaded": 16,
       "grassBlades": 0,
-      "windTime": 22.56579999999982,
+      "windTime": 25.18250000000012,
       "view": "The forecourt",
-      "walkDistance": 4.949999999999832
+      "walkDistance": 4.9496699999999905
     },
     {
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            -4.199999999999999
+          ]
+        }
+      },
       "realm": "city-tower",
       "worldId": "city",
       "realmLoading": false,
@@ -131,21 +245,40 @@
         10.5
       ],
       "height": 1.68,
-      "fps": 59.99720943211968,
+      "fps": 30.001363698350104,
       "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 38,
-      "tris": 299204,
+      "draws": 81,
+      "tris": 734076,
       "started": true,
       "evening": false,
       "texturesLoaded": 14,
       "grassBlades": 0,
-      "windTime": 27.382099999999674,
+      "windTime": 30.14910000000017,
       "view": "The roof terrace",
-      "walkDistance": 4.949670000000011
+      "walkDistance": 4.949999999999995
     },
     {
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            -3.5
+          ]
+        }
+      },
       "realm": "ridge-hamlet",
       "worldId": "ridge",
       "realmLoading": false,
@@ -155,21 +288,40 @@
         40
       ],
       "height": 1.68,
-      "fps": 60.013956734124214,
+      "fps": 29.997272975184014,
       "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 68,
-      "tris": 740812,
+      "draws": 117,
+      "tris": 1176562,
       "started": true,
       "evening": false,
       "texturesLoaded": 14,
       "grassBlades": 27604,
-      "windTime": 32.34859999999955,
+      "windTime": 34.99890000000021,
       "view": "The hamlet road",
-      "walkDistance": 4.949999999999989
+      "walkDistance": 5.059559999999962
     },
     {
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            -19.45
+          ]
+        }
+      },
       "realm": "ridge-ravine",
       "worldId": "ridge",
       "realmLoading": false,
@@ -179,21 +331,40 @@
         44
       ],
       "height": 1.68,
-      "fps": 60.00558191459683,
+      "fps": 30.001363698350104,
       "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 51,
-      "tris": 910517,
+      "draws": 94,
+      "tris": 1345389,
       "started": true,
       "evening": false,
       "texturesLoaded": 13,
       "grassBlades": 25537,
-      "windTime": 37.03169999999988,
+      "windTime": 39.78200000000022,
       "view": "The cedar trail",
-      "walkDistance": 4.950000000000003
+      "walkDistance": 4.9499999999999815
     },
     {
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            -0.1499999999999999
+          ]
+        }
+      },
       "realm": "ridge-hollow",
       "worldId": "ridge",
       "realmLoading": false,
@@ -203,21 +374,40 @@
         30
       ],
       "height": 1.68,
-      "fps": 60.00558191459683,
+      "fps": 30.001363698349806,
       "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 41,
-      "tris": 680860,
+      "draws": 85,
+      "tris": 1115996,
       "started": true,
       "evening": false,
       "texturesLoaded": 12,
       "grassBlades": 29670,
-      "windTime": 42.06500000000018,
+      "windTime": 44.731900000000245,
       "view": "The basin stair",
-      "walkDistance": 4.9493400000000065
+      "walkDistance": 4.949670000000033
     },
     {
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            15.2
+          ]
+        }
+      },
       "realm": "express-station",
       "worldId": "express",
       "realmLoading": false,
@@ -227,21 +417,40 @@
         30
       ],
       "height": 1.68,
-      "fps": 60.00558191459622,
+      "fps": 30.001363698349806,
       "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 70,
-      "tris": 75888,
+      "draws": 100,
+      "tris": 510080,
       "started": true,
       "evening": false,
       "texturesLoaded": 14,
       "grassBlades": 0,
-      "windTime": 46.9481000000005,
+      "windTime": 49.53150000000029,
       "view": "Hollowmoor forecourt",
-      "walkDistance": 4.9496699999999585
+      "walkDistance": 4.950000000000003
     },
     {
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            -36.455
+          ]
+        }
+      },
       "realm": "express-carriages",
       "worldId": "express",
       "realmLoading": false,
@@ -251,21 +460,40 @@
         40
       ],
       "height": 1.68,
-      "fps": 60.00558191459622,
+      "fps": 29.995714897871483,
       "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 202,
-      "tris": 170122,
+      "draws": 239,
+      "tris": 578022,
       "started": true,
       "evening": false,
       "texturesLoaded": 14,
       "grassBlades": 0,
-      "windTime": 51.56460000000077,
+      "windTime": 54.298200000000314,
       "view": "Third-class carriage",
-      "walkDistance": 4.949669999999976
+      "walkDistance": 5.059889999999982
     },
     {
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            8,
+            -4.199999999999999
+          ]
+        }
+      },
       "realm": "express-dawn",
       "worldId": "express",
       "realmLoading": false,
@@ -275,21 +503,40 @@
         36
       ],
       "height": 1.68,
-      "fps": 59.99720943211907,
+      "fps": 30.001363698349806,
       "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 69,
-      "tris": 2098290,
+      "draws": 112,
+      "tris": 2533162,
       "started": true,
       "evening": false,
       "texturesLoaded": 14,
       "grassBlades": 455733,
-      "windTime": 56.86450000000111,
+      "windTime": 59.664800000000355,
       "view": "The dawn plain",
-      "walkDistance": 4.949339999999933
+      "walkDistance": 4.949669999999991
     },
     {
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            -23.15
+          ]
+        }
+      },
       "realm": "quarter-gate",
       "worldId": "quarter",
       "realmLoading": false,
@@ -299,21 +546,40 @@
         44
       ],
       "height": 1.68,
-      "fps": 59.99720943211846,
+      "fps": 30.00545553737055,
       "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 162,
-      "tris": 368466,
+      "draws": 187,
+      "tris": 581424,
       "started": true,
       "evening": false,
       "texturesLoaded": 14,
       "grassBlades": 0,
-      "windTime": 61.480900000001405,
+      "windTime": 64.46450000000038,
       "view": "The embankment road",
-      "walkDistance": 4.950000000000188
+      "walkDistance": 4.949999999999974
     },
     {
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            -3.15
+          ]
+        }
+      },
       "realm": "quarter-avenue",
       "worldId": "quarter",
       "realmLoading": false,
@@ -323,21 +589,40 @@
         52
       ],
       "height": 1.68,
-      "fps": 60.00558191459622,
+      "fps": 29.997272975184313,
       "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 54,
-      "tris": 463764,
+      "draws": 97,
+      "tris": 898636,
       "started": true,
       "evening": false,
       "texturesLoaded": 14,
       "grassBlades": 0,
-      "windTime": 66.16430000000204,
+      "windTime": 69.23080000000023,
       "view": "The Avenue of Blossoms",
-      "walkDistance": 4.950000000000126
+      "walkDistance": 4.95000000000002
     },
     {
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            -3.8499999999999996
+          ]
+        }
+      },
       "realm": "quarter-rooftops",
       "worldId": "quarter",
       "realmLoading": false,
@@ -347,21 +632,40 @@
         26
       ],
       "height": 1.68,
-      "fps": 60.00558191459622,
+      "fps": 29.997272975183716,
       "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 51,
-      "tris": 935914,
+      "draws": 94,
+      "tris": 1370786,
       "started": true,
       "evening": false,
       "texturesLoaded": 14,
       "grassBlades": 0,
-      "windTime": 70.730600000003,
+      "windTime": 74.16400000000004,
       "view": "The drying deck",
-      "walkDistance": 4.949670000000051
+      "walkDistance": 4.950000000000021
     },
     {
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            -31.15
+          ]
+        }
+      },
       "realm": "springs-bridges",
       "worldId": "springs",
       "realmLoading": false,
@@ -371,21 +675,40 @@
         45
       ],
       "height": 1.68,
-      "fps": 60.00558191459622,
+      "fps": 29.997272975184313,
       "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 50,
-      "tris": 1791632,
+      "draws": 94,
+      "tris": 2226506,
       "started": true,
       "evening": false,
       "texturesLoaded": 16,
       "grassBlades": 0,
-      "windTime": 75.51380000000403,
+      "windTime": 79.0472999999999,
       "view": "The bridge plaza",
-      "walkDistance": 4.949670000000168
+      "walkDistance": 4.949999999999974
     },
     {
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            -9.5
+          ]
+        }
+      },
       "realm": "springs-forge",
       "worldId": "springs",
       "realmLoading": false,
@@ -395,21 +718,40 @@
         40
       ],
       "height": 1.68,
-      "fps": 60.00558191459622,
+      "fps": 30.001363698349806,
       "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 59,
-      "tris": 1742916,
+      "draws": 102,
+      "tris": 2177788,
       "started": true,
       "evening": false,
       "texturesLoaded": 16,
       "grassBlades": 0,
-      "windTime": 80.24700000000503,
+      "windTime": 83.91369999999965,
       "view": "The smiths’ lane",
-      "walkDistance": 5.004450000000219
+      "walkDistance": 4.949999999999974
     },
     {
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            -7.85
+          ]
+        }
+      },
       "realm": "springs-basin",
       "worldId": "springs",
       "realmLoading": false,
@@ -419,21 +761,40 @@
         30
       ],
       "height": 1.68,
-      "fps": 53.028188668714016,
+      "fps": 29.997272975184313,
       "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 39,
-      "tris": 2076818,
+      "draws": 82,
+      "tris": 2511690,
       "started": true,
       "evening": false,
       "texturesLoaded": 16,
       "grassBlades": 0,
-      "windTime": 85.04650000000584,
+      "windTime": 88.74689999999944,
       "view": "The cedar path",
-      "walkDistance": 4.950000000000053
+      "walkDistance": 4.950000000000028
     },
     {
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            -4.199999999999999
+          ]
+        }
+      },
       "realm": "keep-halls",
       "worldId": "keep",
       "realmLoading": false,
@@ -443,21 +804,40 @@
         30
       ],
       "height": 1.68,
-      "fps": 59.99142979574297,
+      "fps": 30.001363698349806,
       "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 83,
-      "tris": 1131256,
+      "draws": 126,
+      "tris": 1566128,
       "started": true,
       "evening": false,
       "texturesLoaded": 9,
       "grassBlades": 0,
-      "windTime": 89.6296000000067,
+      "windTime": 93.46359999999925,
       "view": "The arrival bridge",
-      "walkDistance": 4.950000000000056
+      "walkDistance": 4.9493400000000385
     },
     {
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            -3.5
+          ]
+        }
+      },
       "realm": "keep-corridors",
       "worldId": "keep",
       "realmLoading": false,
@@ -467,21 +847,40 @@
         44
       ],
       "height": 1.68,
-      "fps": 60.00558191459622,
+      "fps": 30.001363698349806,
       "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 49,
-      "tris": 1284194,
+      "draws": 92,
+      "tris": 1719066,
       "started": true,
       "evening": false,
       "texturesLoaded": 9,
       "grassBlades": 0,
-      "windTime": 94.12940000000768,
+      "windTime": 98.11329999999906,
       "view": "The inverted corridor",
-      "walkDistance": 5.005110000000229
+      "walkDistance": 5.939999999999976
     },
     {
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            -3.8499999999999996
+          ]
+        }
+      },
       "realm": "keep-atrium",
       "worldId": "keep",
       "realmLoading": false,
@@ -491,21 +890,40 @@
         34
       ],
       "height": 1.68,
-      "fps": 59.99720943211968,
+      "fps": 30.00545553737055,
       "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 68,
-      "tris": 1031090,
+      "draws": 111,
+      "tris": 1465962,
       "started": true,
       "evening": false,
       "texturesLoaded": 9,
       "grassBlades": 0,
-      "windTime": 98.71260000000868,
+      "windTime": 103.06309999999888,
       "view": "The entry vestibule",
-      "walkDistance": 4.9496700000000935
+      "walkDistance": 5.060220000000001
     },
     {
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            -4.8999999999999995
+          ]
+        }
+      },
       "realm": "keep-meridian",
       "worldId": "keep",
       "realmLoading": false,
@@ -515,21 +933,40 @@
         30
       ],
       "height": 1.68,
-      "fps": 60.00558191459622,
+      "fps": 30.00545553737055,
       "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 123,
-      "tris": 253064,
+      "draws": 163,
+      "tris": 687400,
       "started": true,
       "evening": false,
       "texturesLoaded": 11,
       "grassBlades": 0,
-      "windTime": 103.36250000000969,
+      "windTime": 107.86309999999871,
       "view": "The descent",
-      "walkDistance": 5.005110000000045
+      "walkDistance": 4.950000000000028
     },
     {
+      "duel": {
+        "active": false,
+        "auto": false,
+        "round": 1,
+        "hero": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle"
+        },
+        "rival": {
+          "hp": 100,
+          "art": 0,
+          "anim": "idle",
+          "pos": [
+            0,
+            3.85
+          ]
+        }
+      },
       "realm": "sanctuary",
       "worldId": "valley",
       "realmLoading": false,
@@ -539,19 +976,19 @@
         24
       ],
       "height": 1.68,
-      "fps": 60.005581914597435,
+      "fps": 30.00545553737055,
       "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 86,
-      "tris": 1638006,
+      "draws": 133,
+      "tris": 2079440,
       "started": true,
       "evening": false,
       "texturesLoaded": 23,
       "grassBlades": 41705,
-      "windTime": 107.89570000001063,
+      "windTime": 112.47949999999854,
       "view": "Cloudveil Courtyard",
-      "walkDistance": 4.94967000000004
+      "walkDistance": 4.949669999999955
     }
   ],
   "errors": [],

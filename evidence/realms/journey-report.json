@@ -21,6 +21,25 @@
         }
       ],
       "telemetry": {
+        "duel": {
+          "active": false,
+          "auto": false,
+          "round": 1,
+          "hero": {
+            "hp": 100,
+            "art": 0,
+            "anim": "idle"
+          },
+          "rival": {
+            "hp": 100,
+            "art": 0,
+            "anim": "idle",
+            "pos": [
+              0,
+              -14.55
+            ]
+          }
+        },
         "realm": "cedar",
         "worldId": "valley",
         "realmLoading": false,
@@ -30,17 +49,17 @@
           37
         ],
         "height": 1.68,
-        "fps": 60.005581914596675,
+        "fps": 30.00136369834988,
         "speed": 0,
         "score": 0,
         "over": false,
-        "draws": 42,
-        "tris": 542152,
+        "draws": 75,
+        "tris": 976576,
         "started": true,
         "evening": false,
         "texturesLoaded": 13,
         "grassBlades": 26634,
-        "windTime": 2.6163999999999987,
+        "windTime": 2.716599999999999,
         "view": "Whispering Thicket"
       }
     },
@@ -64,6 +83,25 @@
         }
       ],
       "telemetry": {
+        "duel": {
+          "active": false,
+          "auto": false,
+          "round": 1,
+          "hero": {
+            "hp": 100,
+            "art": 0,
+            "anim": "idle"
+          },
+          "rival": {
+            "hp": 100,
+            "art": 0,
+            "anim": "idle",
+            "pos": [
+              0,
+              11.85
+            ]
+          }
+        },
         "realm": "reedwater",
         "worldId": "valley",
         "realmLoading": false,
@@ -73,17 +111,17 @@
           32
         ],
         "height": 1.68,
-        "fps": 60.013956734124214,
+        "fps": 30.001363698349806,
         "speed": 0,
         "score": 1,
         "over": false,
-        "draws": 56,
-        "tris": 307198,
+        "draws": 92,
+        "tris": 741674,
         "started": true,
         "evening": false,
         "texturesLoaded": 12,
         "grassBlades": 0,
-        "windTime": 17.349199999999914,
+        "windTime": 17.58260000000002,
         "view": "Reedwater Crossing"
       }
     },
@@ -107,6 +145,25 @@
         }
       ],
       "telemetry": {
+        "duel": {
+          "active": false,
+          "auto": false,
+          "round": 1,
+          "hero": {
+            "hp": 100,
+            "art": 0,
+            "anim": "idle"
+          },
+          "rival": {
+            "hp": 100,
+            "art": 0,
+            "anim": "idle",
+            "pos": [
+              0,
+              -4.55
+            ]
+          }
+        },
         "realm": "folded",
         "worldId": "valley",
         "realmLoading": false,
@@ -116,17 +173,17 @@
           29
         ],
         "height": 1.68,
-        "fps": 59.99142979574359,
+        "fps": 30.00545553737055,
         "speed": 0,
         "score": 2,
         "over": false,
-        "draws": 41,
-        "tris": 616154,
+        "draws": 84,
+        "tris": 1051026,
         "started": true,
         "evening": false,
         "texturesLoaded": 12,
         "grassBlades": 0,
-        "windTime": 30.865299999999532,
+        "windTime": 31.165400000000165,
         "view": "The Folded Court"
       }
     }

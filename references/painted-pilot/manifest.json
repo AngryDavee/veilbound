@@ -1,0 +1,25 @@
+{
+  "provider": "Atlas MCP",
+  "purpose": "Hand-painted anime-style tileable materials, pilot for World II (Lamplight Avenue) and World VII (Endless Keep)",
+  "workspace": "404 Marketing Credits",
+  "project_id": "5ddfa217-86f4-43a9-8c83-8612f69c7365",
+  "operation_id": "c45072cb-68e3-4a3f-9d15-4d5606d7c2dc",
+  "date": "2026-11-12",
+  "credits": 55,
+  "accountingComplete": true,
+  "generator": {"node_type": "material_generation", "backend": "patina", "image_size": "square_hd", "tiling_mode": "both", "upscale_factor": 1, "maps": ["basecolor", "normal", "roughness"]},
+  "style_prompt_suffix": "flat even lighting, no baked shadows or highlights, orthographic straight-on view, seamless tileable, hand-painted stylized anime background texture",
+  "materials": [
+    {"set": "city-brick", "node_id": "f3ea363f-18f3-4675-8c30-a589b70beb06", "fids": {"basecolor": "414fd6bb-39e0-43e9-9eec-15cf17acdbea", "normal": "a0e8b10c-bb9f-431a-a901-fb3c2f8481d2", "roughness": "d314e9b4-10c5-4168-8870-b03eaca795dd"}, "prompt": "Taisho-era red-brown brick wall, pale cream mortar, running bond"},
+    {"set": "city-cobble", "node_id": "e4c44337-bf54-41ee-982c-af6d7319a054", "fids": {"basecolor": "22f99668-c50e-43aa-9088-a41fad0cd3ae", "normal": "0d5d3b88-ce00-450f-909c-4fec1e229f06", "roughness": "8b77d8e4-1902-40a6-8b96-521561b55504"}, "prompt": "dark blue-grey granite paving setts, rain-wet painted look", "local_edit": "basecolor desaturated to 32%, brightness 62%, contrast 115% (generated colour was too saturated)"},
+    {"set": "city-timber", "node_id": "ea665d70-61eb-411a-9241-66ee3d1f8782", "fids": {"basecolor": "df9479e3-f335-4fc0-b731-c795d4ea6ded", "normal": "c71ad16d-2e8e-40d8-aeaf-0087f79622d6", "roughness": "023196ec-f8b2-4c1e-916b-9227a8f71d93"}, "prompt": "dark lacquered wooden shopfront planks"},
+    {"set": "keep-floor", "node_id": "75b87f7f-da85-4621-9d88-311c7c327ac2", "fids": {"basecolor": "648e56f9-d3d3-4f73-9149-35a52c87b1c8", "normal": "e36ea896-ddfc-488a-b7ad-59f678d37795", "roughness": "f53b9925-1f91-4fef-a83c-dfaf10e6a6ad"}, "prompt": "polished dark cedar floorboards", "note": "boards were generated vertical; rotated 90 degrees in realms/painted.js"},
+    {"set": "keep-washi", "node_id": "cf83af91-0e17-43f2-b8a3-6c3801938e70", "fids": {"basecolor": "9c5b9580-658a-45f0-b1dc-6a92951ca114", "normal": "c474c4af-ed79-4f7c-ab04-75780462b63a", "roughness": "1543c709-18e9-4496-9d87-e0853b50345f"}, "prompt": "backlit Japanese washi paper, warm cream-amber fibres"},
+    {"set": "keep-lacquer", "node_id": "d0d85bd8-1a43-4539-bee8-7b60bbc40a8c", "fids": {"basecolor": "9cc8466d-e632-4a57-8929-c791437d7dc0", "normal": "48b72a9a-06a6-4759-957f-1efc7c214a69", "roughness": "b09f53e6-9ed7-4cd1-940f-7fe54db4a41f"}, "prompt": "deep vermilion red lacquer with sparse gold-leaf flecks"}
+  ],
+  "not_run": [
+    {"node": "sky-city", "node_id_prefix": "f925296f", "reason": "image model reserves up to 84 credits per run; exceeded the approved pilot budget"},
+    {"node": "sky-keep", "node_id_prefix": "fc344dfa", "reason": "image model reserves up to 84 credits per run; exceeded the approved pilot budget"}
+  ],
+  "local_files": "game/textures/painted-<set>-{basecolor,normal,roughness}.png"
+}
