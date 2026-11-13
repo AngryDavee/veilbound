@@ -1,6 +1,24 @@
-# Handoff: pick up here (2026-11-12)
+# Handoff: pick up here (2026-11-12, combat v2)
 
 Read this first, then `CLAUDE.md` for setup, the code map and the recipe rules.
+
+## Latest session (2026-11-12): action combat v2, built against the Hinokami Chronicles trailer
+
+The user watched the first spar and said: the scabbards pass through the bodies, the camera is static behind the character, the sparring is "very mid", swords fly everywhere; they want an action fighting-game trailer feel (the Steam trailer at `~/Downloads/Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles on Steam.mp4`, studied frame by frame: gameplay 22–50 s), extreme detail in the sword combat, defence and fighting beyond swords, and "flying screen animations". All of that is now in. Original content only (names, kanji, arts are ours).
+
+| File | What it owns |
+|---|---|
+| `game/fighter-moves.js` | Every move. Sword cuts are **arcs** (`cutClip`): the blade sweeps in one plane from a wind-up direction `u` to an impact direction `i` and on through `follow` degrees; the edge always leads; hands extend at impact; hips, chest, feet and face run on the same clock (wind-up → accelerating strike → follow-through → recovery). Haru: kesa, kiriage, yoko, tsuki thrust, leaping karatake, launcher, air cut. Mitsuki: one-handed crescent, backhand, full spin, open-palm strike, flipping cleave, launcher, air cut. Plus front kick, spinning back kick / shoulder charge, sweep, throw + thrown, guard (mid/high, Mitsuki braces the back of her blade), parry, deflected, recoil, blade lock, guard break, side-steps, back-step, dash, roll, back-flip, jump/land, hit high/mid, stagger, knockdown, launched tumble, crash, KO, iaido draw, chiburi win, bow, and two special arts built from the cuts (`seqClip`). Body transform supports spins, flips and rolls about the waist. Calls `userData.updateGear(dt)` each frame. |
+| `game/combat.js` | Fight rules. Hits are **contact**: the blade's swept segment (last frame → this frame) against two body capsules; feet/hands/shoulder spheres for kicks, palm and charge. Blades meeting in flight **clash**; two clashes in quick succession (or 22%) start a **blade lock** (mash F). Guard chips a guard meter; a guard pressed in the last 0.2 s is a **parry** (attacker deflected, slow-mo). Kicks/palm/charge **break guards**; throws ignore them. Launchers send the opponent airborne for a jump + air cut; air cuts spike down. Combo scaling, 5th consecutive hit always knocks down. AI reads attacks (parry/guard/side-step/meet the cut), punishes openings, mixes sword chains, kicks, throws, dashes, juggles and arts. Rounds: VS splash + iaido draw intro → fight → KO slow-mo → next round. `window.__DUEL__.force(who, what)` triggers `art`, `lock`, `clash`, `parry`, `grab`, `c1`, `kick`, `launcher`… for tests. |
+| `game/duel-camera.js` | The camera director (built by a sub-agent). Side-on 3/4 two-shot by default (critically damped springs, side hysteresis, swings when blocked), plus cue shots: intro, hit punch, clash, lock close-up, parry orbit, launch low angle, down pull-back, dash tracking, kick-into-lens, 3-shot art sequence, KO orbit. In duels main.js hands the view camera to it and WASD moves relative to it. |
+| `game/anime-fx.js` | Effects (built by a sub-agent): streak sparks, hit bursts with ink shards, clash X-flash fountains, dust, debris, shockwave domes, painted water/ember crescents for arts, afterimages; screen overlays: speed lines, 2–4 frame ink/invert impact frames, flashes, letterbox, live-portrait cut-ins with brush kanji, VS splash, callouts, hit counter. Layer 30 is reserved for portraits. `fx.update` runs after `renderer.render`. |
+| `game/assets/fighter.js` | Scabbard rebuilt (sub-agent): curved lacquered saya through the obi, spring-driven around 69 skinned body proxies so it never intersects (≥1.5 cm clearance in every stress pose). `userData.sayaPoint('koiguchi'|'hilt'|'kojiri')`. |
+
+Controls in a duel: F sword chain · G kick chain · E throw · Q guard (tap just before a hit = parry) · Space dash (direction from WASD: in = dash, away = back-step / back-flip while guarding, sideways = side-step) · C jump (F in the air = air cut) · S+F launcher · R special art when the gauge glows · K let both fighters fight on AI.
+
+Tools: `node tools/duel-shot.mjs --region <id> --secs 14 --every .25 --out <dir> [--player 0] [--script "3:f,5.6:hero:art,7:x:lock"]` plays a real duel and saves frames + a state log; `node tools/clip-strip.mjs --who haru --clips c1,c5 --cams side` makes filmstrips of any move from the lab (`game/lab/index.html?clip=…&t=…`); labs: `lab/duel-cam.html`, `lab/fx.html`, `lab/gear.html`; `node tools/demo.mjs` runs a visible demo tour (five worlds, a duel in each).
+
+Ideas not yet done: per-world opponents (the five Heralds) with their own move sets, sound, touch-tested pads, a proper hit-react variety per direction, real stroke-order kanji, sword sparks lighting the scene.
 
 ## Latest session (2026-11-12): painted-anime pass tried and REJECTED
 

@@ -17,15 +17,15 @@ if(fighters.length===2){fighters[0].position.x=-.45;fighters[1].position.x=.45;}
 const build=Math.round(performance.now()-t0);
 const views={front:[[0,1.05,4.6],[0,.9,0]],side:[[4.6,1.05,0],[0,.9,0]],back:[[0,1.2,-4.6],[0,.9,0]],face:[[fighters.length>1?-.45:0,1.58,.75],[fighters.length>1?-.45:0,1.57,0]],face2:[[.45,1.6,.75],[.45,1.6,0]],three:[[2.6,1.6,3.4],[0,.9,0]],left:[[-3.6,1.3,2.2],[0,.95,0]],low:[[1.8,.6,3.2],[0,1.0,0]]};
 const v=views[q.get('cam')||'three'];cam.position.set(...v[0]);const controls=new OrbitControls(cam,renderer.domElement);controls.target.set(...v[1]);controls.update();
-let moves=null;try{moves=await import('../fighter-moves.js');}catch(e){console.warn('moves',e.message);}
+let moves=null;try{moves=await import(q.get('moves')?'../fighter-moves-'+q.get('moves')+'.js':'../fighter-moves.js');}catch(e){console.warn('moves',e.message);}
 const mixers=fighters.map(f=>moves?moves.animate(THREE,f):null);
 const clip=q.get('clip');if(clip&&moves)mixers.forEach(m=>{m?.play(clip,0);if(q.get('speed'))m.setSpeed(+q.get('speed'),clip);});
 if(q.get('drawn'))fighters.forEach(f=>f.userData.setDrawn(true));
-const fixedT=q.get('t');
+let fixedT=q.get('t');
 document.getElementById('info').textContent=fighters.map(f=>f.userData.name+' '+f.userData.triangles+' tris').join(' · ')+' · build '+build+' ms';
 let last=performance.now();
 function tick(now){requestAnimationFrame(tick);const dt=Math.min(.05,(now-last)/1000);last=now;
- mixers.forEach(m=>{if(!m)return;if(fixedT!==null){m.seek(+fixedT);}else m.update(dt);});
+ mixers.forEach((m,i)=>{if(!m)return;if(fixedT!==null){m.seek(+fixedT);}else m.update(dt);if(m.air!==undefined)fighters[i].position.y=m.air||0;});
  controls.update();renderer.render(scene,cam);}
-requestAnimationFrame(tick);window.__LAB__={ready:true,build,fighters,scene,cam,mixers};
+requestAnimationFrame(tick);window.__LAB__={ready:true,build,fighters,scene,cam,mixers,setT:v=>{fixedT=v;},play:(n)=>mixers.forEach(m=>m?.restart?m.restart(n,0):m?.play(n,0))};
 addEventListener('resize',()=>{cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});

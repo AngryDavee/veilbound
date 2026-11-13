@@ -7,15 +7,21 @@
         "active": false,
         "auto": false,
         "round": 1,
+        "phase": "off",
+        "lock": false,
         "hero": {
           "hp": 100,
           "art": 0,
-          "anim": "walk"
+          "guard": 100,
+          "anim": "idle",
+          "air": 0
         },
         "rival": {
           "hp": 100,
           "art": 0,
-          "anim": "bow",
+          "guard": 100,
+          "anim": "idle",
+          "air": 0,
           "pos": [
             0,
             3.85
@@ -28,21 +34,21 @@
       "arena": "Training court",
       "pos": [
         0,
-        4.530990000000031
+        -11.417909999999994
       ],
-      "height": 1.68,
-      "fps": 30.005455537370402,
-      "speed": 3.3,
+      "height": 2.539798205460402,
+      "fps": 57.2146246162432,
+      "speed": 0,
       "score": 0,
       "over": false,
-      "draws": 115,
-      "tris": 2003250,
+      "draws": 77,
+      "tris": 1761588,
       "started": true,
       "evening": false,
       "texturesLoaded": 23,
       "grassBlades": 41705,
-      "windTime": 9.149600000000012,
-      "view": "Cloudveil Courtyard"
+      "windTime": 13.999199999999925,
+      "view": "The Training Hall"
     },
     {
       "check": "hall-letter",
@@ -50,15 +56,21 @@
         "active": false,
         "auto": false,
         "round": 1,
+        "phase": "off",
+        "lock": false,
         "hero": {
           "hp": 100,
           "art": 0,
-          "anim": "idle"
+          "guard": 100,
+          "anim": "idle",
+          "air": 0
         },
         "rival": {
           "hp": 100,
           "art": 0,
+          "guard": 100,
           "anim": "idle",
+          "air": 0,
           "pos": [
             0,
             3.85
@@ -70,21 +82,21 @@
       "realmLoading": false,
       "arena": "Training court",
       "pos": [
-        0.6080159020040107,
-        -16.757248522645273
+        0.5878252501039131,
+        -16.864931999445773
       ],
-      "height": 2.5399999999785168,
-      "fps": 30.005455537370402,
+      "height": 2.539999999986313,
+      "fps": 30.696246686200766,
       "speed": 0,
       "score": 1,
       "over": false,
-      "draws": 70,
-      "tris": 1760328,
+      "draws": 71,
+      "tris": 1743444,
       "started": true,
       "evening": false,
       "texturesLoaded": 23,
       "grassBlades": 41705,
-      "windTime": 22.74910000000007,
+      "windTime": 31.897999999999897,
       "view": "The Training Hall"
     },
     {
@@ -93,15 +105,21 @@
         "active": false,
         "auto": false,
         "round": 1,
+        "phase": "off",
+        "lock": false,
         "hero": {
           "hp": 100,
           "art": 0,
-          "anim": "idle"
+          "guard": 100,
+          "anim": "idle",
+          "air": 0
         },
         "rival": {
           "hp": 100,
           "art": 0,
+          "guard": 100,
           "anim": "idle",
+          "air": 0,
           "pos": [
             0,
             3.85
@@ -113,21 +131,21 @@
       "realmLoading": false,
       "arena": "Training court",
       "pos": [
-        31.598400000000044,
-        -42.19740000000009
+        31.69560000000003,
+        -42.09659999999997
       ],
-      "height": 12.371874383700625,
-      "fps": 30.00545553737055,
+      "height": 12.365569899490396,
+      "fps": 60.00558191459683,
       "speed": 0,
       "score": 3,
       "over": false,
-      "draws": 49,
-      "tris": 1375914,
+      "draws": 51,
+      "tris": 1376710,
       "started": true,
       "evening": false,
       "texturesLoaded": 23,
       "grassBlades": 41705,
-      "windTime": 44.23160000000022,
+      "windTime": 53.729500000000556,
       "view": "The Silent Bell"
     },
     {
@@ -136,15 +154,21 @@
         "active": false,
         "auto": false,
         "round": 1,
+        "phase": "off",
+        "lock": false,
         "hero": {
           "hp": 100,
           "art": 0,
-          "anim": "idle"
+          "guard": 100,
+          "anim": "idle",
+          "air": 0
         },
         "rival": {
           "hp": 100,
           "art": 0,
+          "guard": 100,
           "anim": "idle",
+          "air": 0,
           "pos": [
             0,
             3.85
@@ -157,20 +181,20 @@
       "arena": "Training court",
       "pos": [
         0,
-        17.53611529411768
+        17.74358823529415
       ],
       "height": 1.6799999999999997,
-      "fps": 29.99727297518409,
+      "fps": 46.36574389744993,
       "speed": 0,
       "score": 3,
       "over": false,
-      "draws": 105,
-      "tris": 1834776,
+      "draws": 110,
+      "tris": 1836368,
       "started": true,
       "evening": false,
       "texturesLoaded": 23,
       "grassBlades": 20861,
-      "windTime": 4.183199999999997,
+      "windTime": 3.966299999999994,
       "view": "Cloudveil Courtyard"
     }
   ],

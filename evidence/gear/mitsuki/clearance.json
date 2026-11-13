@@ -1,0 +1,39 @@
+{
+ "table": [
+  {
+   "pose": "rest",
+   "drawn": false,
+   "who": "mitsuki",
+   "body": 0.0196,
+   "arms": 0.0659,
+   "ground": 0.6826,
+   "worst": {
+    "part": "saya",
+    "at": [
+     0.218,
+     0.981,
+     0.03
+    ],
+    "v": [
+     0.183,
+     0.975,
+     0.019
+    ],
+    "n": [
+     0.96,
+     0.2,
+     0.2
+    ],
+    "bone": "hips:1.00"
+   },
+   "a": 0,
+   "b": 0,
+   "c": 0,
+   "proxy": 0.0102
+  }
+ ],
+ "sweeps": [],
+ "errors": [
+  "Failed to load resource: the server responded with a status of 404 (Not Found)"
+ ]
+}

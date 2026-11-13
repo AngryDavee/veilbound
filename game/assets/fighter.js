@@ -492,10 +492,168 @@ const sword = new THREE.Group(); sword.name = 'katana';
   const kashira = new THREE.Mesh(new THREE.SphereGeometry(.017, 10, 6), brass); kashira.scale.set(1, .6, .8); kashira.position.y = -.248; sword.add(kashira);
   sword.traverse(o => { if (o.isMesh) o.castShadow = true; });
 }
+// ---------- saya: worn through the obi, pivoting there ----------
+// Local frame of `saya`: origin at the koiguchi (mouth), +y runs mouth -> kojiri (tip) and follows
+// the blade's curve, +x is the edge side (worn edge up). The scabbard is thrust through the obi at
+// the front-left of the belt and runs down and back past the left hip, outside the haori.
+// hips -> sayaMount (at the obi, rest orientation) -> sayaSwing (spring + collision) -> saya.
+const horn = new THREE.MeshStandardMaterial({ color: 0x17120f, metalness: .05, roughness: .35 });
+const SAYA_L = .78, SAYA_PIVOT = .075; // pivot: where the scabbard passes through the obi
+const sayaCurve = y => .022 * Math.pow(Math.max(0, y) / .74, 2);
 const saya = new THREE.Group(); saya.name = 'saya';
-{ const s = new THREE.Mesh(new THREE.CylinderGeometry(.017, .021, .78, 10), lacquer); s.scale.z = .62; s.position.y = .39; saya.add(s); const k = new THREE.Mesh(new THREE.CylinderGeometry(.022, .022, .03, 10), brass); k.scale.z = .62; k.position.y = .015; saya.add(k); const cord = new THREE.Mesh(new THREE.TorusGeometry(.03, .005, 6, 14), new THREE.MeshToonMaterial({ color: D.cord, gradientMap: ramp })); cord.position.set(0, .12, .02); saya.add(cord); }
-// scabbard rides the left hip, mouth forward, edge up
-saya.position.set(.15 * S - J.hips[0], .99 * S - J.hips[1], .11 * S); saya.rotation.set(-1.95, 0, .2); bones.hips.add(saya);
+{
+  // oval, gently curved lacquer body with a horn collar at the mouth and a horn cap at the tip
+  const N = 16, R = 12, pos = [], idx = [];
+  const wX = t => .0185 - t * .003, wZ = t => .0125 - t * .002;
+  for (let i = 0; i <= N; i++) { const t = i / N, y = .03 + t * (SAYA_L - .075), cx = sayaCurve(y); for (let j = 0; j < R; j++) { const a = j / R * Math.PI * 2; pos.push(cx + Math.cos(a) * wX(t), y, Math.sin(a) * wZ(t)); } }
+  for (let i = 0; i < N; i++) for (let j = 0; j < R; j++) { const a = i * R + j, b = i * R + (j + 1) % R; idx.push(a, a + R, b, b, a + R, b + R); }
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setIndex(idx); g.computeVertexNormals();
+  saya.add(new THREE.Mesh(g, lacquer));
+  // thin ink hull so the scabbard reads with the same outline as the body
+  const hullMat = new THREE.MeshBasicMaterial({ color: D.outline, side: THREE.BackSide });
+  hullMat.onBeforeCompile = sh => { sh.vertexShader = sh.vertexShader.replace('#include <begin_vertex>', '#include <begin_vertex>\ntransformed += normal * .0032;'); };
+  hullMat.customProgramCacheKey = () => 'veilbound-saya-ink';
+  const hull = new THREE.Mesh(g, hullMat); hull.name = 'saya-ink'; saya.add(hull);
+  const ring = (y0, y1, sx, sz, mat, close) => { const m = new THREE.Mesh(new THREE.CylinderGeometry(1, close ? .55 : 1, y1 - y0, R, 1, false), mat); m.scale.set(sx, 1, sz); m.position.set(sayaCurve((y0 + y1) / 2), (y0 + y1) / 2, 0); return m; };
+  saya.add(ring(0, .032, .0205, .014, horn));                       // koiguchi collar
+  const cap = ring(SAYA_L - .046, SAYA_L, .0162, .0108, horn, true); cap.rotation.z = Math.atan(2 * .022 * (SAYA_L - .02) / (.74 * .74)); saya.add(cap); // kojiri
+  const kuri = new THREE.Mesh(new THREE.BoxGeometry(.012, .026, .012), horn); kuri.position.set(sayaCurve(.11) + .002, .11, .0135); saya.add(kuri); // kurikata on the outer face
+  const cord = new THREE.Mesh(new THREE.TorusGeometry(.016, .0045, 6, 14), new THREE.MeshToonMaterial({ color: D.cord, gradientMap: ramp })); cord.position.set(sayaCurve(.11) - .004, .11, .026); cord.rotation.y = Math.PI / 2; saya.add(cord);
+  saya.traverse(o => { if (o.isMesh) o.castShadow = true; });
+}
+// rest placement: the pivot touches the front-left of the obi; direction back, down ~30°, a little outward
+const sayaMount = new THREE.Object3D(); sayaMount.name = 'sayaMount';
+const sayaSwing = new THREE.Object3D(); sayaSwing.name = 'sayaSwing';
+{
+  // the pivot sits just outside the coat at belt height, 1 rad round from the front toward the left hip
+  const hr1 = (F ? .118 : .122), hr2 = (F ? .19 : .175), ry = 1.0, rr = hr1 + (hr2 - hr1) * (1.17 - ry) / .53 + .008 + .021 + .016, zc = -.014 - .016 * (1.17 - ry) / .53, th = 1.0;
+  const pivot = P(Math.sin(th) * rr, ry, zc + Math.cos(th) * rr);
+  const out = F ? .33 : .3, down = .52; // outward yaw and downward pitch (radians)
+  const d0 = new THREE.Vector3(Math.sin(out) * Math.cos(down), -Math.sin(down), -Math.cos(out) * Math.cos(down)).normalize();
+  const up = new THREE.Vector3(0, 1, 0), x0 = up.clone().sub(d0.clone().multiplyScalar(up.dot(d0))).normalize(), z0 = new THREE.Vector3().crossVectors(x0, d0);
+  sayaMount.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(x0, d0, z0));
+  sayaMount.position.set(pivot[0] - J.hips[0], pivot[1] - J.hips[1], pivot[2] - J.hips[2]);
+  saya.position.set(0, -SAYA_PIVOT, 0);
+  bones.hips.add(sayaMount); sayaMount.add(sayaSwing); sayaSwing.add(saya);
+}
+// ---------- gear dynamics: keep the scabbard outside the body, swing it with the hips ----------
+// The body is approximated by round cones whose ends are skinned exactly like the mesh (same bone
+// weights as the sculpt), so the proxies bend with the thighs, hakama and haori skirt. Each frame the
+// scabbard's swing (pitch about its pivot, a little yaw) is sprung toward the nearest collision-free
+// angle, then projected out of any remaining contact so it never visibly passes through the body.
+const gearProxies = [], GEAR_OUT = new THREE.Vector3();
+{
+  // Proxies are measured from the finished mesh itself (rest pose = bind pose), so they match the
+  // real surface, smooth-union bulges included. Torso and haori skirt: a ring of vertical staves whose
+  // outer edge sits on the measured outer radius at each height/angle, skinned with the average bone
+  // weights of the vertices there. Legs: cones around the thigh and shin bones, radius measured.
+  const prox = (a, wa, b, wb, ra, rb) => gearProxies.push({ a, wa, b, wb, ra, rb, A: new THREE.Vector3(), B: new THREE.Vector3(), AB: new THREE.Vector3(), l2: 0, C: new THREE.Vector3(), R2: 0 });
+  const nV = aP.length / 3, skip = boneNames.map(n => /^(clav|upperArm|forearm|hand|sleeve|neck|head|tail)/.test(n));
+  const ok = new Uint8Array(nV);
+  for (let i = 0; i < nV; i++) { let w = 0; for (let k = 0; k < 4; k++) if (skip[aSI[i * 4 + k]]) w += aSW[i * 4 + k]; ok[i] = w < .3 ? 1 : 0; }
+  const levels = [1.3, 1.13, 1.0, .85, .72, .64].map(v => v * S), band = .07 * S;
+  const zc = y => (-.014 - .016 * (1.17 * S - y) / (.53 * S)) * S;
+  const NA = 13, a0 = -1.35, a1 = Math.PI + .05, win = .2, angs = [...Array(NA)].map((_, k) => a0 + k / (NA - 1) * (a1 - a0));
+  const bins = levels.map(() => angs.map(() => ({ R: 0, w: {}, n: 0 })));
+  const visit = (fn) => { for (let i = 0; i < nV; i++) { if (!ok[i]) continue; const x = aP[i * 3], y = aP[i * 3 + 1], z = aP[i * 3 + 2];
+    for (let l = 0; l < levels.length; l++) { if (Math.abs(y - levels[l]) > band) continue; const dz = z - zc(y), r = Math.hypot(x, dz), th = Math.atan2(x, dz);
+      for (let k = 0; k < NA; k++) { let d = th - angs[k]; d = Math.atan2(Math.sin(d), Math.cos(d)); if (Math.abs(d) < win) fn(bins[l][k], r, i, l, k); } } } };
+  visit((b, r) => { if (r > b.R) b.R = r; });
+  visit((b, r, i) => { if (r < b.R - .02 * S) return; b.n++; for (let k = 0; k < 4; k++) { const w = aSW[i * 4 + k]; if (w > 0) { const n = boneNames[aSI[i * 4 + k]]; b.w[n] = (b.w[n] || 0) + w; } } });
+  const sr = .05 * S, cen = (l, k) => { const b = bins[l][k], r = Math.max(.01, b.R + .003 * S - sr), y = levels[l]; return [Math.sin(angs[k]) * r, y, zc(y) + Math.cos(angs[k]) * r]; };
+  { // seat the scabbard's pivot just outside the measured coat at belt height, 1 rad round toward the left hip
+    const th = 1.0, k = angs.reduce((best, a, i) => Math.abs(a - th) < Math.abs(angs[best] - th) ? i : best, 0), R = Math.max(bins[2][k].R, bins[3][k].R) + .0205 + .0135, y = 1.0 * S;
+    sayaMount.position.set(Math.sin(th) * R - J.hips[0], y - J.hips[1], zc(y) + Math.cos(th) * R - J.hips[2]);
+    GEAR_OUT.set(Math.sin(th), 0, Math.cos(th)).applyQuaternion(sayaMount.quaternion.clone().invert()); }
+  for (let l = 0; l < levels.length - 1; l++) for (let k = 0; k < NA; k++) { const A = bins[l][k], B = bins[l + 1][k]; if (!A.n || !B.n) continue; prox(cen(l, k), A.w, cen(l + 1, k), B.w, sr, sr); }
+  // legs: hakama thigh and shin, measured around the bone axis from vertices that move only with that bone
+  for (const L of ['L', 'R']) {
+    const segs = [['thigh' + L, J['thigh' + L], J['shin' + L]], ['shin' + L, J['shin' + L], lerp3(J['shin' + L], J['foot' + L], .92)]];
+    for (const [bn, a, b] of segs) {
+      const bi = boneNames.indexOf(bn), ab = [b[0] - a[0], b[1] - a[1], b[2] - a[2]], l2 = ab[0] ** 2 + ab[1] ** 2 + ab[2] ** 2; let rA = 0, rB = 0;
+      for (let i = 0; i < nV; i++) { let w = 0; for (let k = 0; k < 4; k++) if (aSI[i * 4 + k] === bi) w += aSW[i * 4 + k]; if (w < .9) continue;
+        const px = aP[i * 3] - a[0], py = aP[i * 3 + 1] - a[1], pz = aP[i * 3 + 2] - a[2], t = Math.max(0, Math.min(1, (px * ab[0] + py * ab[1] + pz * ab[2]) / l2));
+        const d = Math.hypot(px - ab[0] * t, py - ab[1] * t, pz - ab[2] * t); if (t < .5) rA = Math.max(rA, d); else rB = Math.max(rB, d); }
+      const top = bn.startsWith('thigh') ? lerp3(a, b, .12) : a;
+      prox(top, { [bn]: 1 }, b, { [bn]: 1 }, (rA || .09 * S) + .003, (rB || .09 * S) + .003);
+    }
+  }
+}
+const gear = { a: 0, b: 0, c: 0, va: 0, vb: 0, ta: 0, tb: 0, ground: null, contact: 0, prevTip: null, pen: (a, b, c) => gearPen(a, b, c) };
+const gearPts = [];
+{ for (let i = 0; i <= 13; i++) { const y = .02 + i / 13 * (SAYA_L - .03); gearPts.push({ p: new THREE.Vector3(sayaCurve(y), y - SAYA_PIVOT, 0), r: .02 - i * .0003, hilt: false }); }
+  for (const [y, r] of [[-.016, .034], [-.07, .021], [-.14, .02], [-.21, .02], [-.255, .02]]) gearPts.push({ p: new THREE.Vector3(0, y - SAYA_PIVOT, 0), r, hilt: true }); }
+const _m = new THREE.Matrix4(), _q = new THREE.Quaternion(), _qa = new THREE.Quaternion(), _qb = new THREE.Quaternion(), _v = new THREE.Vector3(), _w = new THREE.Vector3(), _s = new THREE.Vector3();
+const AX = new THREE.Vector3(0, 0, 1), AXB = new THREE.Vector3(1, 0, 0);
+const swingQ = (a, b, out) => out.copy(_qa.setFromAxisAngle(AX, a)).multiply(_qb.setFromAxisAngle(AXB, b));
+const skinPoint = (p, w, out) => { out.set(0, 0, 0); let tw = 0; for (const n in w) { const k = w[n]; if (!(k > 0)) continue; const b = bones[n]; _s.set(p[0] - J[n][0], p[1] - J[n][1], p[2] - J[n][2]).applyMatrix4(b.matrixWorld); out.addScaledVector(_s, k); tw += k; } return tw > 0 ? out.multiplyScalar(1 / tw) : out; };
+const mountW = new THREE.Matrix4(), gearMargin = .008, gearInv = new THREE.Matrix4(), gearTmp = new THREE.Vector3(), gearQ = new THREE.Quaternion();
+const TIP_LOCAL = new THREE.Vector3(sayaCurve(SAYA_L), SAYA_L, 0), TIP_A0 = Math.atan2(-sayaCurve(SAYA_L), SAYA_L - SAYA_PIVOT);
+function gearPen(a, b, c = 0) {
+  swingQ(a, b, _q); _m.compose(_v.copy(GEAR_OUT).multiplyScalar(c), _q, _w.set(1, 1, 1)).premultiply(mountW);
+  let pen = 0, min = Infinity; const hilt = !drawn, e = _m.elements;
+  for (let gi = 0; gi < gearPts.length; gi++) {
+    const g = gearPts[gi]; if (g.hilt && !hilt) continue;
+    const x0 = g.p.x, y0 = g.p.y, z0 = g.p.z, px = e[0] * x0 + e[4] * y0 + e[8] * z0 + e[12], py = e[1] * x0 + e[5] * y0 + e[9] * z0 + e[13], pz = e[2] * x0 + e[6] * y0 + e[10] * z0 + e[14];
+    for (let ci = 0; ci < gearProxies.length; ci++) {
+      const P = gearProxies[ci], dx0 = px - P.C.x, dy0 = py - P.C.y, dz0 = pz - P.C.z; if (dx0 * dx0 + dy0 * dy0 + dz0 * dz0 > P.R2) continue; // broadphase
+      const ax = px - P.A.x, ay = py - P.A.y, az = pz - P.A.z; let t = P.l2 > 1e-9 ? (ax * P.AB.x + ay * P.AB.y + az * P.AB.z) / P.l2 : 0; t = t < 0 ? 0 : t > 1 ? 1 : t;
+      const qx = ax - P.AB.x * t, qy = ay - P.AB.y * t, qz = az - P.AB.z * t, d = Math.sqrt(qx * qx + qy * qy + qz * qz) - (P.ra + (P.rb - P.ra) * t) - g.r;
+      if (d < min) { min = d; gear.worstPt = gi; gear.worstProxy = ci; } const k = gearMargin - d; if (k > 0) pen += k * k;
+    }
+    if (gear.ground !== null) { const k = gear.ground + g.r + .01 - py; if (k > 0) pen += k * k; }
+  }
+  gear.contact = min; return Math.sqrt(pen);
+}
+const C_MAX = .045, clampC = c => Math.min(C_MAX, Math.max(0, c));
+const A_MIN = -.95, A_MAX = 1.05, B_MIN = -.95, B_MAX = .3; // pitch (+: tip down), yaw (-: tip outward)
+const GEAR_SEEDS = [[0, 0], [-.55, -.1], [-.3, -.55], [.45, -.2]];
+const clampA = a => Math.min(A_MAX, Math.max(A_MIN, a)), clampB = b => Math.min(B_MAX, Math.max(B_MIN, b));
+function gearProject(a, b, c, iters = 10) {
+  for (let k = 0; k < iters; k++) {
+    const f = gearPen(a, b, c); if (f < 1e-5) break; const e = .015, ec = .004;
+    // c is solved in units of c*10 so that a 4.5 cm slide weighs about like a 0.45 rad swing
+    const ga = (gearPen(a + e, b, c) - f) / e, gb = (gearPen(a, b + e, c) - f) / e, gc = c < C_MAX ? (gearPen(a, b, c + ec) - f) / ec / 10 : 0, g2 = ga * ga + gb * gb + gc * gc;
+    if (g2 < 1e-10) { a = clampA(a - .1); continue; }
+    const st = Math.min(.5, f / g2 * 1.35); a = clampA(a - ga * st); b = clampB(b - gb * st * .7); c = clampC(c - gc * st / 10);
+  }
+  return [a, b, c];
+}
+function updateGear(dt = 1 / 60) {
+  sayaMount.updateWorldMatrix(true, false); mountW.copy(sayaMount.matrixWorld);
+  for (const p of gearProxies) { skinPoint(p.a, p.wa, p.A); skinPoint(p.b, p.wb, p.B); p.AB.copy(p.B).sub(p.A); p.l2 = p.AB.lengthSq(); p.C.copy(p.A).add(p.B).multiplyScalar(.5); const r = Math.sqrt(p.l2) / 2 + Math.max(p.ra, p.rb) + .05 + gearMargin; p.R2 = r * r; }
+  if (gear.ground === null || gear.autoGround !== false) { group.updateWorldMatrix(true, false); gear.ground = _v.setFromMatrixPosition(group.matrixWorld).y; }
+  // inertia: the kojiri lags behind sudden hip motion (expressed as an angle change in the mount frame)
+  if (gear.prevTip && dt > 0) {
+    const lp = gearTmp.copy(gear.prevTip).applyMatrix4(gearInv.copy(mountW).invert()).sub(_v.copy(GEAR_OUT).multiplyScalar(gear.c)).applyQuaternion(swingQ(gear.a, gear.b, gearQ).invert());
+    const da = Math.atan2(-lp.x, lp.y) - TIP_A0, db = Math.atan2(lp.z, lp.y);
+    gear.va += Math.max(-.5, Math.min(.5, da)) * 5; gear.vb += Math.max(-.5, Math.min(.5, db)) * 3;
+  }
+  // target: the nearest collision-free swing, preferring tip-up/outward over tip-down and staying seated in the obi
+  let ta = 0, tb = 0, tc = 0, bestC = Infinity;
+  if (gearPen(0, 0, 0) < 1e-5) bestC = 0;
+  else {
+    const tryFrom = (sa, sb, sc) => { const [pa, pb, pc] = gearProject(sa, sb, sc, 8), pen = gearPen(pa, pb, pc);
+      const cost = (pa > 0 ? 2.2 : 1) * pa * pa + 1.3 * pb * pb + 60 * pc * pc + .6 * ((pa - gear.ta) ** 2 + (pb - gear.tb) ** 2) + pen * 400;
+      if (cost < bestC) { bestC = cost; ta = pa; tb = pb; tc = pc; } return pen; };
+    const warm = tryFrom(gear.ta, gear.tb, gear.tc || 0);
+    if (warm > 1e-5 || (gear.seedT = (gear.seedT || 0) + 1) % 6 === 0) for (const [sa, sb] of GEAR_SEEDS) tryFrom(sa, sb, 0); // full search when stuck, and every few frames
+  }
+  gear.ta = ta; gear.tb = tb; gear.tc = tc;
+  const k = 140, c = 13, h = Math.min(dt, 1 / 30);
+  gear.va += (k * (ta - gear.a) - c * gear.va) * h; gear.vb += (k * (tb - gear.b) - c * gear.vb) * h;
+  let a = clampA(gear.a + gear.va * h), b = clampB(gear.b + gear.vb * h), cc = gear.c + (tc - gear.c) * Math.min(1, h * 18);
+  const [pa, pb, pc] = gearProject(a, b, cc, 10); if (pa !== a || pb !== b) { gear.va *= .4; gear.vb *= .4; }
+  gear.a = pa; gear.b = pb; gear.c = pc; gearPen(pa, pb, pc);
+  swingQ(gear.a, gear.b, sayaSwing.quaternion); sayaSwing.position.copy(GEAR_OUT).multiplyScalar(gear.c); sayaSwing.updateMatrixWorld(true);
+  gear.prevTip = (gear.prevTip || new THREE.Vector3()).copy(TIP_LOCAL).applyMatrix4(saya.matrixWorld);
+  return gear;
+}
+// world-space reference points on the worn scabbard, for hand IK (resting hand, iai draw):
+// 'koiguchi' (mouth, where the left hand rests/thumbs the tsuba), 'hilt' (middle of the sheathed handle), 'kojiri' (tip)
+const SAYA_POINTS = { koiguchi: new THREE.Vector3(0, .015, 0), hilt: new THREE.Vector3(0, -.13, 0), kojiri: new THREE.Vector3(sayaCurve(SAYA_L), SAYA_L, 0) };
+function sayaPoint(name, out = new THREE.Vector3()) { saya.updateWorldMatrix(true, false); return out.copy(SAYA_POINTS[name] || SAYA_POINTS.koiguchi).applyMatrix4(saya.matrixWorld); }
+function resetGear() { gear.a = gear.b = gear.c = gear.va = gear.vb = gear.ta = gear.tb = 0; gear.prevTip = null; swingQ(0, 0, sayaSwing.quaternion); sayaSwing.position.set(0, 0, 0); }
 // grip pose: the sword's handle axis runs through the right fist
 const gripAnchor = new THREE.Object3D(); gripAnchor.name = 'grip';
 { const w = J.handR, f = J.forearmR, d = new THREE.Vector3(w[0] - f[0], w[1] - f[1], w[2] - f[2]).normalize(); gripAnchor.position.copy(d.clone().multiplyScalar(.072 * S)).add(new THREE.Vector3(-.006, 0, .01)); gripAnchor.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, .25, 1).normalize()); bones.handR.add(gripAnchor); }
@@ -507,7 +665,7 @@ const tipLocal = new THREE.Vector3(.022, .775, 0), baseLocal = new THREE.Vector3
 
 group.userData = {
   design: which, name: D.name, title: D.title, colors: D, bones, skeleton, mesh, ink, sword, saya, uniforms,
-  face: { draw: drawFace, texture: faceTex }, setDrawn, get drawn() { return drawn; },
+  face: { draw: drawFace, texture: faceTex }, setDrawn, get drawn() { return drawn; }, updateGear, resetGear, gear, gearProxies, sayaMount, sayaPoint,
   bladePoints(tip, base) { sword.updateWorldMatrix(true, false); tip.copy(tipLocal).applyMatrix4(sword.matrixWorld); base.copy(baseLocal).applyMatrix4(sword.matrixWorld); },
   breakdown: all.map(m => m.idx.length / 3), restPositions: J, height: 1.7 * S, triangles: ix.length / 3, nativeSize: [1.2 * S, 1.72 * S, .6 * S],
 };
